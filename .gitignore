@@ -30,3 +30,6 @@ dist/*
 
 # Config
 .env
+
+# WebStorm .idea
+.idea
