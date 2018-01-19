@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { logger } from "../utils/consoleLogger";
+import AppTitle from "./AppTitle";
 
 class AuthLogin extends Component {
 
@@ -58,7 +59,6 @@ class AuthLogin extends Component {
 	render() {
 		const { isProcessing, isError, errorMessage } = this.props;
 		const logoSrc = require('../styles/images/logo.png');
-		console.log(errorMessage)
 
 		return (
 			<div id="login">
@@ -66,16 +66,9 @@ class AuthLogin extends Component {
 					<div className="logo">
 						<img src={ logoSrc } alt=""/>
 					</div>
-					<div className="title">
-						<h1 className="txt-alt txt-jaapokki">
-							pun
-						</h1>
-						<h2 className="txt-alt txt-jaapokki">
-							nishers
-						</h2>
-					</div>
+					<AppTitle/>
 				</header>
-				{ isError ? <div>{ errorMessage }</div> : null }
+				{ isError ? <div className="txt-small alert">{ errorMessage }</div> : null }
 				<form onSubmit={ this.onSubmit } name="form">
 					<div className={ "input-email" + ( this.state.inputFocus.email ? " input-email--active" : "" ) }>
 						<input

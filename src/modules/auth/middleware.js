@@ -1,6 +1,7 @@
 import LocalStorageManager from 'utils/LocalStorageManager';
 import AuthActions from './actions';
 import { auth, firebaseLogin, firebaseLogout } from "../../shared/firebase.config";
+import { logger } from "../../utils/consoleLogger";
 
 export default class AuthMiddleware {
 
@@ -16,7 +17,8 @@ export default class AuthMiddleware {
 	static signinWithUserCredentials( dispatch, credentials ) {
 		// fake login
 		if ( credentials ) {
-			console.log( 'credentials for firebase :: ', credentials.email, credentials.password)
+			logger( 'credentials for firebase :: ', 'info',
+				{ email: credentials.email, password: credentials.password } )
 
 			auth.signInWithEmailAndPassword( credentials.email, credentials.password ).then( ( res ) => {
 				dispatch( AuthActions.signinSuccessful( res.data ) );

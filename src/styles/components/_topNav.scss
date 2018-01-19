@@ -1,0 +1,60 @@
+.top-bar {
+	width: 100vw;
+	height: 8rem;
+	display: flex;
+	background-color: $PRIMARY;
+	justify-content: space-between;
+	box-shadow: $SH_LARGE;
+	.left-col,
+	.mid-col,
+	.right-col {
+		width: 30%;
+		height: 100%;
+		padding: .8rem 1.6rem;
+		box-sizing: border-box;
+	}
+	.mid-col {
+		.title {
+			padding-top: .2rem;
+			transform: scale(.9);
+			h1, h2 {
+				color: $BACKGROUND;
+			}
+		}
+	}
+	.right-col {
+		display: flex;
+		justify-content: flex-end;
+		.profile-btn,
+		.logout-btn {
+			width: 6.4rem;
+			height: 6.4rem;
+			display: flex;
+			align-content: center;
+			margin: 0 1.6rem;
+			overflow: hidden;
+			cursor: pointer;
+			svg {
+				height: auto;
+				width: 100%;
+				path {
+					transition: all .3s ease-in-out;
+					fill: $BACKGROUND
+				}
+			}
+			&:hover {
+				svg {
+					path {
+						stroke: $BASE;
+						fill: $BASE
+					}
+				}
+			}
+		}
+		.profile-btn {
+			svg {
+				transform: scale(1.2);
+			}
+		}
+	}
+}

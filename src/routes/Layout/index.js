@@ -31,8 +31,8 @@ const Layout = () => (
 		<Switch>
 			<PublicRoute path="/" component={ Home } exact={ true }/>
 			<PublicRoute path="/login" component={ Login } exact={ true }/>
-			<PublicRoute path="/Signup" component={ Signup } exact={ true }/>
-			<PrivateRoute path="/Landing" component={ Landing } exact={ true }/>
+			<PublicRoute path="/signup" component={ Signup } exact={ true }/>
+			<PrivateRoute path="/app" component={ Landing } exact={ true }/>
 			<Route component={ Miss404 }/>
 		</Switch>
 

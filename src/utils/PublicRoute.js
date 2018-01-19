@@ -60,7 +60,7 @@ class PublicRoute extends Component {
 						) : (
 							<Redirect
 								to={ {
-									pathname: '/landing',
+									pathname: '/app',
 									state: { from: props.location }
 								} }
 							/>

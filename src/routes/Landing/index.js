@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import AuthMiddleware from 'modules/auth/middleware';
+import AppTitle from "../../components/AppTitle";
+import { userSvg, logoutSvg } from "../../utils/SVG";
+import TopNav from "../../components/TopNav";
+import { logger } from "../../utils/consoleLogger";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const mapStateToProps = () => {
 	return {};
@@ -31,12 +36,9 @@ export class Landing extends Component {
 		const { logout } = this.props;
 
 		return (
-			<section className="container text-xs-center">
-				<h4>Hello Landing Page</h4>
-				<a>now the login/signup routes are denied access</a>
-				<h4>
-					<button onClick={ logout }>Logout</button>
-				</h4>
+			<section className="landing">
+				<TopNav onLogout={ logout } onOpenProfile={ () => logger( 'OPEN USER PROFILE ACTION REQUIRED', 'warn' ) }/>
+				<Sidebar/>
 			</section>
 		);
 	}
