@@ -1,43 +1,102 @@
 .sidebar {
-	position: fixed;
-	width: 320px;
+	position: relative;
+	display: block;
+	width: 280px;
 	height: 100vh;
 	box-sizing: border-box;
-	box-shadow: $SH_MEDIUM;
+	box-shadow: $SH_MEDIUM_STRONG;
+	z-index: $LAYER_2;
 	header {
-		height: 8rem;
+		height: 9.6rem;
 		text-align: center;
-		line-height: 8rem;
-		padding-bottom: .8rem;
+		line-height: 9.6rem;
+		padding-bottom: 1.6rem;
 	}
 	.sidebar-nav {
 		padding: 0;
 		&-element {
-			position: relative;
-			height: 6.4rem;
-			width: 100%;
-			padding: .8rem 1.6rem;
-			margin-bottom: .8rem;
-			display: flex;
-			align-content: center;
-			box-sizing: border-box;
-			.icon {
-				width: auto;
-				height: 100%;
-				min-width: 4.8rem;
-				svg {
-					path {
-						fill: rgba( $BASE, .3 )
+			a {
+				position: relative;
+				height: 7.2rem;
+				width: 100%;
+				padding: .8rem 1.6rem;
+				margin-bottom: 1.2rem;
+				display: flex;
+				align-content: center;
+				align-items: center;
+				background-color: $BACKGROUND;
+				box-sizing: border-box;
+				overflow: hidden;
+				cursor: pointer;
+				transition: background-color .2s ease-in-out;
+				.icon {
+					width: auto;
+					height: 4.8rem;
+					min-width: 4.8rem;
+					transition: all .6s cubic-bezier(.2,.66,.84,.49);
+					svg {
+						transition: transform .6s ease-in-out;
+						path {
+							fill: rgba( $BASE, .1 )
+						}
+					}
+				}
+				.label {
+					line-height: 4.8rem;
+					padding: 0 1.6rem;
+					transition: padding .3s ease-in-out;
+					height: 4.8rem;
+					color: rgba( $BASE, .1 );
+					font-weight: 500;
+				}
+				&:hover {
+					background-color: rgba( $BASE, .1 );
+					.label {
+						padding: 0 1.6rem 0 2.4rem;
+						color: $BACKGROUND
+					}
+					.icon {
+						svg {
+							transform: rotate( 360deg );
+							path {
+								fill: $BACKGROUND
+							}
+						}
+					}
+				}
+				&:active,
+				&:focus {
+					background-color: $PRIMARY;
+					.label {
+						color: $BACKGROUND;
+					}
+					.icon {
+						transform: translateX( calc( 256px ) ) scale( 2 );
+						svg {
+							transform: rotate( -990deg );
+							path {
+								fill: $BACKGROUND
+							}
+						}
 					}
 				}
 			}
-			.label {
-				height: 100%;
-				line-height: 4.8rem;
-				padding: 0 1.6rem;
+			&__active {
+				pointer-events: none;
 				a {
-					height: 4.8rem;
-					color: rgba( $BASE, .3 )
+					background-color: $PRIMARY;
+					.label {
+						color: $BACKGROUND;
+					}
+					.icon {
+						transform: translateX( calc( 256px ) ) scale( 2 );
+						svg {
+							transform: rotate( -990deg );
+							path {
+								fill: $BACKGROUND
+							}
+						}
+					}
 				}
 			}
 		}

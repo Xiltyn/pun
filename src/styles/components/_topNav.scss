@@ -1,10 +1,12 @@
 .top-bar {
+	position: relative;
 	width: 100vw;
 	height: 8rem;
 	display: flex;
 	background-color: $PRIMARY;
 	justify-content: space-between;
 	box-shadow: $SH_LARGE;
+	z-index: $LAYER_3;
 	.left-col,
 	.mid-col,
 	.right-col {

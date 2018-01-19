@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import AuthMiddleware from 'modules/auth/middleware';
-import AppTitle from "../../components/AppTitle";
-import { userSvg, logoutSvg } from "../../utils/SVG";
+import dataInitializerMiddleware from "modules/dataInitializer/middleware";
 import TopNav from "../../components/TopNav";
 import { logger } from "../../utils/consoleLogger";
 import Sidebar from "../../components/Sidebar/Sidebar";
@@ -15,30 +14,36 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = ( dispatch ) => {
 	return bindActionCreators( {
-		logout: () => AuthMiddleware.logout()
+		logout: () => AuthMiddleware.logout(),
+		getCharacterData: () => dataInitializerMiddleware.getCharacterData()
 	}, dispatch );
 };
 
 export class Landing extends Component {
 	static propTypes = {
-		logout: PropTypes.func.isRequired
+		logout: PropTypes.func.isRequired,
+		getCharacterData: PropTypes.func.isRequired
 	};
 
-	// constructor(props) {
-	//   super(props);
-	// }
+	 constructor(props) {
+	   super(props);
+	 }
 
-	componentWillMount() {}
+	componentWillMount() {
+	 	this.props.getCharacterData();
+	}
 
 	componentWillUnmount() {}
 
 	render() {
-		const { logout } = this.props;
+		const { logout, location } = this.props;
+
+		logger( '===> CURRENT LOCATION :: ', 'info', location);
 
 		return (
 			<section className="landing">
 				<TopNav onLogout={ logout } onOpenProfile={ () => logger( 'OPEN USER PROFILE ACTION REQUIRED', 'warn' ) }/>
-				<Sidebar/>
+				<Sidebar currentLocation={ location.pathname }/>
 			</section>
 		);
 	}

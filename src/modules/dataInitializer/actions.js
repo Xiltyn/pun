@@ -1,0 +1,18 @@
+export default class dataInitializerActions {
+
+	// STATICS
+	static GET_CHARACTER_DATA = 'GET_CHARACTER_DATA';
+	static GET_CHARACTER_DATA_SUCCESSFUL = 'GET_CHARACTER_DATA_SUCCESSFUL';
+	static GET_CHARACTER_DATA_FAILED = 'GET_CHARACTER_DATA_FAILED';
+
+	static GET_SPELLS_DATA = 'GET_SPELLS_DATA';
+	static GET_SPELLS_DATA_SUCCESSFUL = 'GET_SPELLS_DATA_SUCCESSFUL';
+	static GET_SPELLS_DATA_FAILED = 'GET_SPELLS_DATA_FAILED';
+
+	static getCharacterData() {
+		return {
+			type: dataInitializerActions.GET_CHARACTER_DATA
+		}
+	}
+
+}

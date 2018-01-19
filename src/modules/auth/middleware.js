@@ -1,4 +1,3 @@
-import LocalStorageManager from 'utils/LocalStorageManager';
 import AuthActions from './actions';
 import { auth, firebaseLogin, firebaseLogout } from "../../shared/firebase.config";
 import { logger } from "../../utils/consoleLogger";
@@ -15,7 +14,6 @@ export default class AuthMiddleware {
 	}
 
 	static signinWithUserCredentials( dispatch, credentials ) {
-		// fake login
 		if ( credentials ) {
 			logger( 'credentials for firebase :: ', 'info',
 				{ email: credentials.email, password: credentials.password } )
@@ -40,8 +38,6 @@ export default class AuthMiddleware {
 	}
 
 	static logoutFromAPI( dispatch ) {
-		//LocalStorageManager.removeUserToken();
-		//LocalStorageManager.clearLocalStorage();
 		auth.signOut().then( ( res ) => {
 			dispatch( AuthActions.logoutSuccessful() );
 		} ).catch( ( err ) => {

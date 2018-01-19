@@ -27,9 +27,9 @@ dist/*
 
 # DS_Store
 .DS_Store
+.idea
 
 # Config
 .env
 
 # WebStorm .idea
-.idea

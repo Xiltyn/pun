@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import SidebarNav from "./SidebarNav";
+import { logger } from "../../utils/consoleLogger";
 
 class Sidebar extends Component {
 	constructor( props ) {
@@ -7,27 +8,31 @@ class Sidebar extends Component {
 	}
 
 	render() {
+		const { currentLocation } = this.props;
+
 		const sectionsData = [
 			{
-				name: 'Characters',
+				name: 'characters',
 				url: '/app/characters'
 			},
 			{
-				name: 'Journal',
+				name: 'journal',
 				url: '/app/journal'
 			},
 			{
-				name: 'Spellbook',
+				name: 'spellbook',
 				url: '/app/spellbook'
 			}
 		];
+
+		logger(currentLocation.split('/')[2], 'info')
 
 		return(
 			<section className="sidebar">
 				<header className="h2 txt-alt txt-jaapokki">
 					menu
 				</header>
-				<SidebarNav sections={ sectionsData }/>
+				<SidebarNav sections={ sectionsData } location={ currentLocation } />
 			</section>
 		)
 	}
