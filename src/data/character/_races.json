@@ -620,11 +620,11 @@
 						"name": "Variant Features (Choose 1)",
 						"text": [
 							"Devil's Tongue.",
-							"	You know the vicious mockery cantrip. When your reach 3rd level, you can cast the charm person spell as a 2nd-level spell once with this trait. When you reach 5th level, you can cast the enthrall spell once with this trait. You must finish a long rest to cast these spells once again with this trait. Charisma is your spellcasting ability for them. This trait replaces the Infernal Legacy trait.",
+							"You know the vicious mockery cantrip. When your reach 3rd level, you can cast the charm person spell as a 2nd-level spell once with this trait. When you reach 5th level, you can cast the enthrall spell once with this trait. You must finish a long rest to cast these spells once again with this trait. Charisma is your spellcasting ability for them. This trait replaces the Infernal Legacy trait.",
 							"Hellfire.",
-							"	Once you reach 3rd level, you can cast the burning hands spell once per day as a 2nd-level spell. This trait replaces the hellish rebuke spell of the Infernal Legacy trait.",
+							"Once you reach 3rd level, you can cast the burning hands spell once per day as a 2nd-level spell. This trait replaces the hellish rebuke spell of the Infernal Legacy trait.",
 							"Winged.",
-							"	You have bat-like wings sprouting form your shoulder blades. You have a flying speed of 30 feet. This trait replaces the Infernal Legacy trait."
+							"You have bat-like wings sprouting form your shoulder blades. You have a flying speed of 30 feet. This trait replaces the Infernal Legacy trait."
 						]
 					},
 					{
@@ -1035,8 +1035,8 @@
 						"name": "Radiant Soul",
 						"text": [
 							"Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to glimmer and two luminous, incorporeal wings to sprout from your back.",
-							"	Your transformation lasts for 1 minute or until you end it as a bonus action.. During it, you have a flysing speed of 30 feet, and once on each of your turns, you can deal extra radiant damageto one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
-							"	Once you use this trait, you can't use it again until you finish a long rest."
+							"Your transformation lasts for 1 minute or until you end it as a bonus action.. During it, you have a flysing speed of 30 feet, and once on each of your turns, you can deal extra radiant damageto one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
+							"Once you use this trait, you can't use it again until you finish a long rest."
 						]
 					}
 				]
@@ -1071,8 +1071,8 @@
 						"name": "Radiant Consumption",
 						"text": [
 							"Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing light to radiate from you, pour out of your eyes and mouth, and threaten to char you.",
-							"	Your transformation lasts for 1 minute or until you end it as a bonus action.. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
-							"	Once you use this trait, you can't use it again until you finish a long rest."
+							"Your transformation lasts for 1 minute or until you end it as a bonus action.. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
+							"Once you use this trait, you can't use it again until you finish a long rest."
 						]
 					}
 				]

@@ -12,15 +12,16 @@ import dataInitializerActions from "./actions";
 
 export default class dataInitializerMiddleware {
 
-	static characterData = {
-		//races: require('src/data/character/_races'),
-		classes: require('src/data/character/_classes'),
-		feats: require('src/data/character/_feats'),
-		backgrounds: require('src/data/character/_backgrounds')
-	};
-
-	static spellData = {
-		phb: require('src/data/spells/_phb')
+	static data = {
+		character: {
+			races: require('src/data/character/_races'),
+			classes: require('src/data/character/_classes'),
+			feats: require('src/data/character/_feats'),
+			backgrounds: require('src/data/character/_backgrounds')
+		},
+		spells: {
+			phb: require('src/data/spells/_phb')
+		}
 	};
 
 	static getCharacterData() {
@@ -28,12 +29,16 @@ export default class dataInitializerMiddleware {
 
 		return ( dispatch ) => {
 			dispatch( dataInitializerActions.getCharacterData() );
-			dataInitializerMiddleware.parseJson( dispatch, dataInitializerMiddleware.characterData.classes)
+			dataInitializerMiddleware.parseJson( dispatch, dataInitializerMiddleware.data)
 		}
 	}
 
 	static parseJson( dispatch, data ) {
-		logger( 'parseJson function result :: ', 'info', data.compendium )
+		logger( Object.keys( data.character )[0] + ' parseJson function result :: ', 'info', data.character.races );
+		logger( Object.keys( data.character )[1] + ' parseJson function result :: ', 'info', data.character.classes );
+		logger( Object.keys( data.character )[2] + ' parseJson function result :: ', 'info', data.character.feats );
+		logger( Object.keys( data.character )[3] + ' parseJson function result :: ', 'info', data.character.backgrounds );
+		logger( Object.keys( data.spells )[0] + ' parseJson function result :: ', 'info', data.spells.phb )
 
 	}
 

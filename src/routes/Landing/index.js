@@ -7,6 +7,8 @@ import dataInitializerMiddleware from "modules/dataInitializer/middleware";
 import TopNav from "../../components/TopNav";
 import { logger } from "../../utils/consoleLogger";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import { Route } from "react-router-dom";
+import Characters from "../../components/Characters/Character";
 
 const mapStateToProps = () => {
 	return {};
@@ -43,7 +45,10 @@ export class Landing extends Component {
 		return (
 			<section className="landing">
 				<TopNav onLogout={ logout } onOpenProfile={ () => logger( 'OPEN USER PROFILE ACTION REQUIRED', 'warn' ) }/>
-				<Sidebar currentLocation={ location.pathname }/>
+				<article>
+					<Sidebar currentLocation={ location.pathname }/>
+					<Route path="/app/characters" component={ Characters } exact={true}/>
+				</article>
 			</section>
 		);
 	}
