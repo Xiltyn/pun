@@ -13,7 +13,7 @@ import dataInitializerActions from "./actions";
 export default class dataInitializerMiddleware {
 
 	static characterData = {
-		races: require('src/data/character/_races'),
+		//races: require('src/data/character/_races'),
 		classes: require('src/data/character/_classes'),
 		feats: require('src/data/character/_feats'),
 		backgrounds: require('src/data/character/_backgrounds')
@@ -28,12 +28,12 @@ export default class dataInitializerMiddleware {
 
 		return ( dispatch ) => {
 			dispatch( dataInitializerActions.getCharacterData() );
-			dataInitializerMiddleware.parseJson( dispatch, dataInitializerMiddleware.characterData.feats)
+			dataInitializerMiddleware.parseJson( dispatch, dataInitializerMiddleware.characterData.classes)
 		}
 	}
 
 	static parseJson( dispatch, data ) {
-		logger( 'parseJson function result :: ', 'info', data.compendium.feat )
+		logger( 'parseJson function result :: ', 'info', data.compendium )
 
 	}
 
