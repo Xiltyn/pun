@@ -1,7 +1,7 @@
 .top-bar {
 	position: relative;
 	width: 100vw;
-	height: 8rem;
+	height: $TOP_NAV_HEIGHT;
 	display: flex;
 	background-color: $PRIMARY;
 	justify-content: space-between;

@@ -1,7 +1,9 @@
 .sidebar {
-	position: relative;
+	position: fixed;
+	left: 0;
+	top: $TOP_NAV_HEIGHT;
 	display: block;
-	width: 280px;
+	width: $SIDEBAR_WIDTH;
 	height: 100vh;
 	box-sizing: border-box;
 	box-shadow: $SH_MEDIUM_STRONG;
@@ -82,7 +84,6 @@
 				}
 			}
 			&__active {
-				pointer-events: none;
 				a {
 					background-color: $PRIMARY;
 					.label {

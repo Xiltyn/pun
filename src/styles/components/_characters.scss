@@ -1,0 +1,31 @@
+#characters {
+	width: 100vw;
+	display: flex;
+	flex-wrap: nowrap;
+	box-sizing: border-box;
+	.add-character {
+		width: 300px;
+		height: 440px;
+		display: flex;
+		padding: 4.8rem;
+		align-items: center;
+		background-color: rgba( $BACKGROUND, .5 );
+		border: 1.6rem solid rgba( $BASE, .1 );
+		box-sizing: border-box;
+		transition: all .3s ease-in-out;
+		cursor: pointer;
+		p {
+			width: 100%;
+			text-align: center;
+			color: rgba( $BASE, .1 );
+			transition: inherit;
+		}
+		&:hover {
+			background-color: rgba( $BACKGROUND, .8 );
+			border-color: rgba( $BASE, .3 );
+			p {
+				color: rgba( $BASE, .3 );
+			}
+		}
+	}
+}

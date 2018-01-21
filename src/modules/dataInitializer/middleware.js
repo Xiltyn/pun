@@ -34,12 +34,22 @@ export default class dataInitializerMiddleware {
 	}
 
 	static parseJson( dispatch, data ) {
-		logger( Object.keys( data.character )[0] + ' parseJson function result :: ', 'info', data.character.races );
-		logger( Object.keys( data.character )[1] + ' parseJson function result :: ', 'info', data.character.classes );
-		logger( Object.keys( data.character )[2] + ' parseJson function result :: ', 'info', data.character.feats );
-		logger( Object.keys( data.character )[3] + ' parseJson function result :: ', 'info', data.character.backgrounds );
-		logger( Object.keys( data.spells )[0] + ' parseJson function result :: ', 'info', data.spells.phb )
+		data = {
+			character: {
+				races: data.character.races.compendium.race,
+				classes: data.character.classes.compendium.class,
+				classSpells: data.character.classes.compendium.spell,
+				feats: data.character.feats.compendium.feat,
+				backgrounds: data.character.backgrounds.compendium.background
+			},
+			spells: {
+				phb: data.spells.phb.compendium
+			}
+		};
 
+		logger( Object.keys( data.spells )[0] + ' parseJson function result :: ', 'info', data )
+
+		dispatch( dataInitializerActions.setCharacterData( data ) )
 	}
 
 }

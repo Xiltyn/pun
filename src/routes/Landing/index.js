@@ -8,7 +8,8 @@ import TopNav from "../../components/TopNav";
 import { logger } from "../../utils/consoleLogger";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Route } from "react-router-dom";
-import Characters from "../../components/Characters/Character";
+import Characters from "../../containers/Characters";
+import NewCharacter from "../../containers/NewCharacter";
 
 const mapStateToProps = () => {
 	return {};
@@ -48,6 +49,7 @@ export class Landing extends Component {
 				<article>
 					<Sidebar currentLocation={ location.pathname }/>
 					<Route path="/app/characters" component={ Characters } exact={true}/>
+					<Route path="/app/characters/new" component={ NewCharacter } exact={true}/>
 				</article>
 			</section>
 		);
