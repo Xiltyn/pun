@@ -1,6 +1,6 @@
 {
   "name": "pun",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Punnishers APP for D&D 5e",
   "main": "app.js",
   "scripts": {
