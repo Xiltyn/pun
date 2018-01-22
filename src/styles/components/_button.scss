@@ -1,0 +1,21 @@
+button {
+	display: block;
+	position: relative;
+	height: 6rem;
+	width: 240px;
+	margin: auto;
+	font-weight: 800;
+	font-size: 2rem;
+	color: $BASE;
+	text-align: center;
+	text-transform: lowercase;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: $PRIMARY;
+	transition: all .3s ease-in-out;
+	&.disabled {
+		background: rgba( $BASE, .3 );
+	}
+}

@@ -12,6 +12,7 @@ import Input from "../Input";
 import { logger } from "../../utils/consoleLogger";
 import { Character } from "../../modules/character/models";
 import { getTimestamp } from "../../utils/getTimestamp";
+import Button from "../Button";
 
 class Name extends Component {
 	constructor( props ) {
@@ -52,10 +53,7 @@ class Name extends Component {
 				</p>
 				<Input name="name" label="Character's name" isRequired={ true } onChange={ this.updateData }/>
 				<Input name="playerName" label="Player's name" isRequired={ false } onChange={ this.updateData }/>
-				<button className={ !this.state.name ? "disabled" : "" } onSubmit={ this.handleSubmit }
-						disabled={ !this.state.name }>
-					Confirm
-				</button>
+				<Button isDisabled={ !this.state.name } onSubmit={ this.handleSubmit } label="Confirm" />
 			</form>
 		)
 	}

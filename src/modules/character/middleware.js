@@ -30,6 +30,20 @@ export default class characterMiddleware {
 
 	}
 
+	static dispatchSetBackground( characterID, backgroundName ) {
+		logger( characterActions.SET_BACKGROUND + ' dispatched @ ', 'process', getTimestamp() )
 
+		return ( dispatch, getState ) => {
+			const newBackground = getState().compendium.data.character.backgrounds.filter( ( background ) => background.name === backgroundName )[0];
+
+			characterMiddleware.setBackground( newBackground, characterID, dispatch )
+		}
+	}
+
+	static setBackground( background, characterID, dispatch ) {
+		logger( '===> New background created | RESULT :: ', 'process', background );
+
+		dispatch( characterActions.setBackground( background, characterID ) )
+	}
 
 }

@@ -96,110 +96,110 @@ export class Character {
 				isProficient: false
 			}
 		};
-		this.abilities = [
-			{
+		this.abilities = {
+			"acrobatics": {
 				name: "acrobatics",
 				base: 0,
 				stat: "dex",
 				isProficient: false
 			},
-			{
+			"animal handling": {
 				name: "animal handling",
 				base: 0,
 				stat: "wis",
 				isProficient: false
 			},
-			{
+			"arcana": {
 				name: "arcana",
 				base: 0,
 				stat: "int",
 				isProficient: false
 			},
-			{
+			"athletics": {
 				name: "athletics",
 				base: 0,
 				stat: "str",
 				isProficient: false
 			},
-			{
+			"deception": {
 				name: "deception",
 				base: 0,
 				stat: "cha",
 				isProficient: false
 			},
-			{
+			"history": {
 				name: "history",
 				base: 0,
 				stat: "int",
 				isProficient: false
 			},
-			{
+			"insight": {
 				name: "insight",
 				base: 0,
 				stat: "wis",
 				isProficient: false
 			},
-			{
+			"intimidation": {
 				name: "intimidation",
 				base: 0,
 				stat: "cha",
 				isProficient: false
 			},
-			{
+			"medicine": {
 				name: "medicine",
 				base: 0,
 				stat: "wis",
 				isProficient: false
 			},
-			{
+			"nature": {
 				name: "nature",
 				base: 0,
 				stat: "int",
 				isProficient: false
 			},
-			{
+			"perception": {
 				name: "perception",
 				base: 0,
 				stat: "wis",
 				isProficient: false
 			},
-			{
+			"performance": {
 				name: "performance",
 				base: 0,
 				stat: "cha",
 				isProficient: false
 			},
-			{
+			"persuasion": {
 				name: "persuasion",
 				base: 0,
 				stat: "cha",
 				isProficient: false
 			},
-			{
+			"religion": {
 				name: "religion",
 				base: 0,
 				stat: "int",
 				isProficient: false
 			},
-			{
+			"sleight of hand": {
 				name: "sleight of hand",
 				base: 0,
 				stat: "dex",
 				isProficient: false
 			},
-			{
+			"stealth": {
 				name: "stealth",
 				base: 0,
 				stat: "dex",
 				isProficient: false
 			},
-			{
+			"survival": {
 				name: "survival",
 				base: 0,
 				stat: "wis",
 				isProficient: false
 			}
-		];
+		};
 	}
 
 	static incrementId() {

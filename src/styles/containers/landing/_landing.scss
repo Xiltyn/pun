@@ -4,12 +4,12 @@
 	article {
 		position: relative;
 		width: 100vw;
-		height: calc( 100vh - 80px );
+		min-height: 100vh;
 		display: flex;
 		padding: 4.8rem;
 		padding-left: $SIDEBAR_SPACING_LEFT;
 		background: url('./images/back_logo.png');
-		background-size: auto 75%;
+		background-size: auto 75vh;
 		background-position: center 4.8rem;
 		background-repeat: no-repeat;
 		box-sizing: border-box;

@@ -1,10 +1,11 @@
 .sidebar {
-	position: fixed;
+	position: absolute;
 	left: 0;
-	top: $TOP_NAV_HEIGHT;
+	top: 0;
 	display: block;
 	width: $SIDEBAR_WIDTH;
-	height: 100vh;
+	height: 100%;
+	background: $BACKGROUND;
 	box-sizing: border-box;
 	box-shadow: $SH_MEDIUM_STRONG;
 	z-index: $LAYER_2;
