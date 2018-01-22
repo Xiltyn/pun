@@ -4,8 +4,8 @@ import DataInitializerReducer from "./dataInitializer/reducers";
 import CharacterReducer from "./character/reducers";
 
 const rootReducer = combineReducers( {
-	character: CharacterReducer,
-	data: DataInitializerReducer,
+	characters: CharacterReducer,
+	compendium: DataInitializerReducer,
 	auth: AuthReducer
 } );
 

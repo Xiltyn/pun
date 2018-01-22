@@ -10,14 +10,14 @@
 import { logger } from "../../utils/consoleLogger";
 import { getTimestamp } from "../../utils/getTimestamp";
 import characterActions from "./actions";
-import { statsModel } from "./models";
+import { Stats } from "./models";
 
 export default class characterMiddleware {
 
 	static dispatchSetStats( data ) {
 		logger( characterActions.SET_STATS + ' dispatched @ ', 'process', getTimestamp() )
 
-		const stats = new statsModel( 10, 12, 15, 6, 9, 18 );
+		const stats = new Stats( 10, 12, 15, 6, 9, 18 );
 
 		logger( '==> New stats object :: ', 'info', stats )
 

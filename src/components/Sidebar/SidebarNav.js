@@ -11,7 +11,7 @@ const SidebarNav = ( { sections, location } ) => (
 						<div className="icon">
 							{ d20 }
 						</div>
-						<div className="p label">
+						<div className="h5 label">
 							{ section.name }
 						</div>
 					</Link>

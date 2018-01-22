@@ -17,6 +17,7 @@ export default class AuthActions {
 	}
 
 	static signinSuccessful( authUser ) {
+		console.log(authUser)
 		return {
 			type: AuthActions.SIGNIN_SUCCESSFUL,
 			payload: authUser

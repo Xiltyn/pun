@@ -1,0 +1,75 @@
+.input {
+	position: relative;
+	height: 6rem;
+	width: 240px;
+	margin: auto;
+	display: flex;
+	align-content: center;
+	label {
+		position: absolute;
+		width: 100%;
+		padding-top: 2.4rem;
+		text-align: center;
+		font-size: 1.8rem;
+		pointer-events: none;
+	}
+	input {
+		color: $BASE;
+		text-align: center;
+		background: none;
+		border: none;
+		outline: none;
+		width: 100%;
+		font-size: 1.8rem;
+		font-family: $ROBOTO;
+		font-weight: 300;
+		transition: all .5s ease-in-out;
+		&::placeholder {
+			color: rgba($BASE, .1);
+		}
+		& + label {
+			transition: all .5s ease-in-out;
+		}
+		&:focus + label {
+			font-size: 1.2rem;
+			width: 6rem;
+			height: 1.4rem;
+			padding-top: .1rem;
+			color: $BASE;
+			transform: rotate(-90deg) translate(-2.4rem, -3.2rem);
+			z-index: $LAYER_2;
+		}
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 0;
+		height: .1rem;
+		width: 100%;
+		background-color: rgba($BASE, .1);
+		z-index: $LAYER_2;
+		transition: all .5s ease-in-out;
+	}
+	&--active {
+		&:after {
+			top: 0;
+			width: 6rem;
+			height: 1.4rem;
+			transform: rotate(-90deg) translate(-2.4rem, -3.2rem);
+			background-color: $PRIMARY;
+			z-index: $LAYER_1;
+		}
+	}
+	&--optional {
+		color: rgba( $BASE, .3 );
+		&:before {
+			content: 'optional';
+			position: absolute;
+			top: calc( 100% + .8rem );
+			left: 85%;
+			font-size: 1.2rem;
+			color: rgba( $BASE, .3 )
+		}
+	}
+}

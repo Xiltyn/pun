@@ -10,6 +10,8 @@
 import React, { Component, PropTypes } from 'react';
 import characterMiddleware from "../modules/character/middleware";
 import { connect } from "react-redux";
+import Name from "../components/NewCharacter/Name";
+import { Route } from "react-router-dom";
 
 const mapStateToProps = ( state ) => {
 	return {
@@ -29,20 +31,31 @@ class NewCharacter extends Component {
 	constructor( props ) {
 		super( props );
 
+		this.state = {
+			character: {}
+		};
+
+		this.handleCharacterData = this.handleCharacterData.bind(this);
+	}
+
+	handleCharacterData( data ) {
+		this.setState({
+			character: data
+		})
 	}
 
 	render() {
+		const { character } = this.state;
+
+		const Step1 = !character.name ? <Name newCharacter={this.handleCharacterData}/> : null;
+		const Step2 = character.name ? <h2>Here you will choose your background</h2> : null;
+
 		return (
 			<div className="new-character">
-				<p className="txt-alt h1 txt-jaapokki">
-					 Character creation view
-				</p>
+				{ Step1 }
+				{ Step2 }
 			</div>
 		)
-	}
-
-	componentWillMount() {
-		this.props.setStats( 'stats' );
 	}
 }
 

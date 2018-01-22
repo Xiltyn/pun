@@ -19,7 +19,7 @@ export default class AuthMiddleware {
 				{ email: credentials.email, password: credentials.password } )
 
 			auth.signInWithEmailAndPassword( credentials.email, credentials.password ).then( ( res ) => {
-				dispatch( AuthActions.signinSuccessful( res.data ) );
+				dispatch( AuthActions.signinSuccessful( res ) );
 			} ).catch( ( err ) => {
 				console.log( err )
 				dispatch( AuthActions.signinRejected( err.message ) )
@@ -52,7 +52,7 @@ export default class AuthMiddleware {
 		return ( dispatch ) => {
 			auth.onAuthStateChanged( ( user ) => {
 				if ( user ) {
-					AuthMiddleware.ensureAuthenticated( dispatch, user.email );
+					AuthMiddleware.ensureAuthenticated( dispatch, user );
 				}
 				else {
 					console.log( 'not logged in ' );
@@ -64,10 +64,10 @@ export default class AuthMiddleware {
 	}
 
 	// ensureAuthenticated
-	static ensureAuthenticated( dispatch, email ) {
-		if ( email ) {
+	static ensureAuthenticated( dispatch, user ) {
+		if ( user ) {
 			console.log( 'authentication successfull ' );
-			dispatch( AuthActions.isLoggedInSuccess() );
+			dispatch( AuthActions.isLoggedInSuccess( user ) );
 		}
 		else {
 			// never gonna happen

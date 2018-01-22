@@ -1,0 +1,59 @@
+.new-character {
+	position: relative;
+	width: 100%;
+	&--name {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 40%;
+		min-width: 320px;
+		padding: 3.2rem 1.6rem;
+		background: $BACKGROUND;
+		box-shadow: $SH_MEDIUM;
+		box-sizing: border-box;
+		transform: translate( -50%, -50% );
+		overflow: hidden;
+		&:after {
+			content: '';
+			position: absolute;
+			top: -20%;
+			left: -5%;
+			height: 50%;
+			width: 120%;
+			background-color: rgba( $BASE, .1 );
+			z-index: $LAYER_2;
+			transform: rotate(-6deg);
+		}
+		p {
+			position: relative;
+			padding: 0 1.6rem 6.4rem;
+			text-align: center;
+			box-sizing: border-box;
+			font-weight: 600;
+			z-index: $LAYER_3;
+		}
+		.input {
+			margin-bottom: 1.6rem;
+		}
+		button {
+			color: $BASE;
+			text-align: center;
+			text-transform: lowercase;
+			background: none;
+			border: none;
+			outline: none;
+			position: relative;
+			height: 6rem;
+			width: 240px;
+			margin: 8rem auto 0;
+			font-weight: 800;
+			font-size: 2rem;
+			display: block;
+			background-color: $PRIMARY;
+			transition: all .3s ease-in-out;
+			&.disabled {
+				background: rgba( $BASE, .3 );
+			}
+		}
+	}
+}

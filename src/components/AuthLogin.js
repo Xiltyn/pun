@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { logger } from "../utils/consoleLogger";
 import AppTitle from "./AppTitle";
+import Input from "./Input";
 
 class AuthLogin extends Component {
 
@@ -70,34 +71,8 @@ class AuthLogin extends Component {
 				</header>
 				{ isError ? <div className="txt-small alert">{ errorMessage }</div> : null }
 				<form onSubmit={ this.onSubmit } name="form">
-					<div className={ "input-email" + ( this.state.inputFocus.email ? " input-email--active" : "" ) }>
-						<input
-							name="email"
-							value={ this.state.email }
-							onChange={ e => this.setState( { email: e.target.value } ) }
-							type="email"
-							required=""
-							onBlur={this.handleInputBlur}
-							onFocus={this.handleInputBlur}
-						/>
-						<label htmlFor="email">
-							{ this.state.email === '' || this.state.inputFocus.email ? 'email' : '' }
-						</label>
-					</div>
-					<div className={ "input-password" + ( this.state.inputFocus.password ? " input-password--active" : "" ) }>
-						<input
-							name="password"
-							value={ this.state.password }
-							onChange={ e => this.setState( { password: e.target.value } ) }
-							type={ this.state.showPassword ? 'text' : 'password' }
-							required=""
-							onBlur={this.handleInputBlur}
-							onFocus={this.handleInputBlur}
-						/>
-						<label htmlFor="password">
-							{ this.state.password === '' || this.state.inputFocus.password ? 'password' : '' }
-						</label>
-					</div>
+					<Input name='email' label="email" type="email" onChange={ ( e ) => this.setState({ email: e.target.value }) } isRequired={true} />
+					<Input name='password' label="password" type={ this.state.showPassword ? 'text' : 'password' } onChange={ e => this.setState( { password: e.target.value } ) } isRequired={true} />
 					{/*<div>*/}
 						{/*<label htmlFor="remember">*/}
 							{/*<input id="remember" type="checkbox"/><i className="info"/> Keep me signed in*/}

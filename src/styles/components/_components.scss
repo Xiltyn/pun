@@ -1,4 +1,5 @@
 @import "_reusables/appTitle";
+@import "input";
 @import "topNav";
 @import "sidebar";
-@import "characters";
+@import "../containers/characters/characters";
