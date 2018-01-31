@@ -1,12 +1,12 @@
 .landing {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: calc( 100vh - 80px );
 	article {
 		position: relative;
-		width: 100vw;
-		min-height: 100vh;
+		width: 100%;
+		min-height: calc( 100vh - 80px );
 		display: flex;
-		padding: 4.8rem;
+		padding: 4.8rem 8rem;
 		padding-left: $SIDEBAR_SPACING_LEFT;
 		background: url('./images/back_logo.png');
 		background-size: auto 75vh;

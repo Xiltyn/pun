@@ -18,7 +18,7 @@ class AddCharacter extends Component {
 
 	render() {
 		return (
-			<Link to="/app/characters/new">
+			<Link to="/app/characters/new/name">
 				<div className="add-character" onClick={ ( evt ) => { logger( '==> add character clicked', 'info', evt.target ) } }>
 					<p className="h1 txt-dim txt-jaapokki">
 						create new

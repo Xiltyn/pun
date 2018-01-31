@@ -13,10 +13,13 @@ import { connect } from "react-redux";
 import Name from "../components/NewCharacter/Name";
 import Backgrounds from "../components/NewCharacter/Backgrounds";
 import { logger } from "../utils/consoleLogger";
+import Races from "../components/NewCharacter/Races";
+import { sort } from "../utils/sort";
 
 const mapStateToProps = ( state ) => {
 	return {
-		backgrounds: state.compendium.data.character.backgrounds
+		backgrounds: state.compendium.data.character.backgrounds,
+		races: state.compendium.data.character.races
 	}
 };
 
@@ -44,7 +47,9 @@ class NewCharacter extends Component {
 	handleCharacterData( data ) {
 		this.setState({
 			character: data
-		})
+		});
+
+		this.state.character.name !== '' ? this.props.history.push( '/app/characters/new/background' ) : null
 	}
 
 	updateProficiencies( proficiencies ) {
@@ -76,16 +81,18 @@ class NewCharacter extends Component {
 
 		setTimeout( () => {
 			logger( 'NewCharacter.js curret state :: ', 'info', this.state );
-		}, 2000 );
+
+			this.state.character.background !== '' ? this.props.history.push( '/app/characters/new/race' ) : null
+		}, 300 );
 	}
 
 	render() {
-		const { backgrounds } = this.props;
+		const { match: { params }, backgrounds, races } = this.props;
 		const { character } = this.state;
 
-		const Step1 = !character.name ? <Name newCharacter={this.handleCharacterData}/> : null;
-		const Step2 = !Step1 && character.background === '' ? <Backgrounds backgrounds={ backgrounds } newBackground={ this.newBackground } /> : null;
-		const Step3 = !Step2 && character.race === '' ? <h3>Here you'll choose your race</h3> : null;
+		const Step1 = params.stepName === 'name' ? <Name newCharacter={this.handleCharacterData}/> : null;
+		const Step2 = params.stepName === 'background' ? <Backgrounds backgrounds={ sort(backgrounds) } newBackground={ this.newBackground } /> : null;
+		const Step3 = params.stepName === 'race' ? <Races races={ sort(races) } /> : null;
 
 		return (
 			<div className="new-character">

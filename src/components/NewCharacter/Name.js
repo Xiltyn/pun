@@ -44,6 +44,10 @@ class Name extends Component {
 		this.props.newCharacter( newCharacter );
 	}
 
+	componentDidMount() {
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		return (
 			<form className="new-character--name" onSubmit={ this.handleSubmit }>

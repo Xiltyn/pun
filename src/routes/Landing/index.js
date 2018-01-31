@@ -49,7 +49,7 @@ export class Landing extends Component {
 				<article>
 					<Sidebar currentLocation={ location.pathname }/>
 					<Route path="/app/characters" component={ Characters } exact={true}/>
-					<Route path="/app/characters/new" component={ NewCharacter } exact={true}/>
+					<Route path="/app/characters/new/:stepName" component={ NewCharacter } exact={false}/>
 				</article>
 			</section>
 		);

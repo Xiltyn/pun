@@ -32,6 +32,7 @@ html, body {
 	&-jaapokki {
 		font-family: $JAAPOKKI;
 		text-transform: uppercase;
+		letter-spacing: .1rem;
 	}
 }
 
@@ -41,7 +42,7 @@ input,
 }
 
 p, .p {
-	font-size: 2rem;
+	font-size: 1.8rem;
 	line-height: 2.4rem;
 }
 

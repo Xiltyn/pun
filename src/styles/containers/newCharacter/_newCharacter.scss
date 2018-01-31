@@ -1,6 +1,20 @@
 .new-character {
 	position: relative;
 	width: 100%;
+	&--name,
+	&--background,
+	&--race {
+		header {
+			padding-bottom: 4.8rem;
+			.title {
+				padding-bottom: 2.4rem;
+			}
+			.instructions {
+				padding-bottom: .8rem;
+				text-align: justify;
+			}
+		}
+	}
 	&--name {
 		position: absolute;
 		top: 50%;
@@ -66,6 +80,10 @@
 				width: 45%
 			}
 
+			@media screen and (max-width: 800px) {
+				width: 100%
+			}
+
 			&:after {
 				content: '';
 				position: absolute;
@@ -77,43 +95,6 @@
 				z-index: $LAYER_2;
 				transform: rotate(-6deg);
 				transition: inherit;
-			}
-			.close-wrapper {
-				position: absolute;
-				top: .8rem;
-				left: 100%;
-				height: 2.8rem;
-				width: 2.8rem;
-				margin-left: -4rem;
-				cursor: pointer;
-				z-index: $LAYER_4;
-				.close {
-					position: relative;
-					height: 1px;
-					width: 100%;
-					margin-top: 1.39rem;
-					background: none;
-					transform: rotate(0deg);
-					transition: .3s all ease-in-out;
-					&:after {
-						position: absolute;
-						content: '';
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background: inherit;
-						transform: rotate(0deg);
-						transition: inherit;
-					}
-					&.active {
-						background: $BACKGROUND;
-						transform: rotate(-45deg);
-						&:after {
-							transform: rotate(90deg);
-						}
-					}
-				}
 			}
 			h3 {
 				position: relative;
@@ -159,6 +140,156 @@
 				cursor: initial;
 				max-height: 2000px;
 				transition: all .3s ease-in-out;
+			}
+		}
+	}
+	&--race {
+		.cards {
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-around;
+			overflow: hidden;
+			.race-card {
+				position: relative;
+				top: 0;
+				width: 277px;
+				height: 400px;
+				background-color: $BACKGROUND;
+				margin: 0 .8rem 2.4rem;
+				transform: scale(.98);
+				cursor: pointer;
+				box-shadow: $GLOW_SM_DIM;
+				transition: all .3s ease-out;
+				overflow: hidden;
+				h3 {
+				 	width: 100%;
+					text-align: center;
+					padding-top: 168px;
+					transition: inherit;
+				}
+				svg {
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: auto;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					& > g > path {
+						fill: rgba( $BASE, .3 );
+						transition: all .3s ease-out;
+					}
+				}
+				&:hover {
+					transform: scale(1);
+					box-shadow: $SH_LARGE;
+					h3 {
+						color: $PRIMARY;
+					}
+					svg > g > path {
+						fill: $PRIMARY;
+					}
+				}
+				&.active {
+					position: fixed;
+					top: 360px;
+					left: calc( 277px + 4.8rem );
+					z-index: $LAYER_6;
+					box-shadow: $SH_LARGE;
+					transform: scale(1);
+					pointer-events: none;
+					h3 {
+						color: $PRIMARY;
+					}
+					svg > g > path {
+						fill: $PRIMARY;
+					}
+				}
+			}
+		}
+		.details {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100vh;
+			padding-top: 365px;
+			background: $BACKGROUND;
+			opacity: 0;
+			pointer-events: none;
+			z-index: $LAYER_1;
+			box-sizing: border-box;
+			transform: translateY( 150px );
+			transition: all .3s ease-in;
+			p {
+				font-size: 2.2rem;
+				font-weight: 400;
+				line-height: 3rem;
+				text-align: justify;
+				opacity: 0;
+				padding: 0 4.8rem 0 640px;
+			}
+			&.active {
+				opacity: 1;
+				transform: translateY( 0 );
+				pointer-events: all;
+				h3,
+				p {
+					opacity: 1;
+				}
+			}
+			.close-wrapper {
+				position: fixed;
+				top: 240px;
+				margin-left: -8rem;
+				.close {
+					&.active {
+						background: $PRIMARY;
+						transform: rotate(-45deg);
+						&:after {
+							transform: rotate(90deg);
+						}
+					}
+				}
+			}
+		}
+	}
+	.close-wrapper {
+		position: absolute;
+		top: .8rem;
+		left: 100%;
+		height: 2.8rem;
+		width: 2.8rem;
+		margin-left: -4rem;
+		cursor: pointer;
+		z-index: $LAYER_4;
+		.close {
+			position: relative;
+			height: 1px;
+			width: 100%;
+			margin-top: 1.39rem;
+			background: none;
+			transform: rotate(0deg);
+			transition: .3s all ease-in-out;
+			&:after {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: inherit;
+				transform: rotate(0deg);
+				transition: inherit;
+			}
+			&.active {
+				background: $BACKGROUND;
+				transform: rotate(-45deg);
+				&:after {
+					transform: rotate(90deg);
+				}
 			}
 		}
 	}

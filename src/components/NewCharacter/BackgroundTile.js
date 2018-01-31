@@ -19,8 +19,8 @@ class BackgroundTile extends Component {
 			isActive: false
 		};
 
-		this.handleOpen = this.handleOpen.bind(this);
-		this.handleClose = this.handleClose.bind(this);
+		this.handleOpen = this.handleOpen.bind( this );
+		this.handleClose = this.handleClose.bind( this );
 	}
 
 	handleOpen() {
@@ -40,9 +40,11 @@ class BackgroundTile extends Component {
 		const { data } = this.props;
 
 		return (
-			<div className={ "tile" + ( isActive ? " active" : "" ) } onClick={ !this.state.isActive ? this.handleOpen : () => logger( 'Element isActive, no action will be taken', 'info' ) } >
-				<div className="close-wrapper" onClick={ this.handleClose } >
-					<div className={ "close" + ( isActive ? " active" : "" ) } />
+			<div className={ "tile" + (isActive ? " active" : "") }
+				 onClick={ !this.state.isActive ? this.handleOpen : () => logger(
+					 'Element isActive, no action will be taken', 'info' ) }>
+				<div className="close-wrapper" onClick={ this.handleClose }>
+					<div className={ "close" + (isActive ? " active" : "") }/>
 				</div>
 				<h3 className="h4 name txt-dark txt-jaapokki">
 					{ data.name }
@@ -57,13 +59,11 @@ class BackgroundTile extends Component {
 						) )
 					}
 				</div>
-				<Button label="Choose" onClick={ () => this.props.newBackground( data.name ) } />
+				<Button label="Choose" onClick={ () => this.props.newBackground( data.name ) }/>
 			</div>
 		);
 	}
 }
-
-
 
 
 export default BackgroundTile;
