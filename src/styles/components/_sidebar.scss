@@ -40,7 +40,7 @@
 					svg {
 						transition: transform .6s ease-in-out;
 						path {
-							fill: rgba( $BASE, .1 )
+							fill: rgba( $BASE, .3 )
 						}
 					}
 				}
@@ -49,11 +49,11 @@
 					padding: 0 1.6rem;
 					transition: padding .3s ease-in-out;
 					height: 4.8rem;
-					color: rgba( $BASE, .1 );
+					color: rgba( $BASE, .3 );
 					font-weight: 500;
 				}
 				&:hover {
-					background-color: rgba( $BASE, .1 );
+					background-color: rgba( $BASE, .3 );
 					.label {
 						padding: 0 1.6rem 0 2.4rem;
 						color: $BACKGROUND

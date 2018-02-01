@@ -34,7 +34,7 @@
 			left: -5%;
 			height: 50%;
 			width: 120%;
-			background-color: rgba( $BASE, .1 );
+			background-color: rgba( $BASE, .3 );
 			z-index: $LAYER_2;
 			transform: rotate(-6deg);
 		}
@@ -91,7 +91,7 @@
 				left: -25%;
 				height: 200px;
 				width: 150%;
-				background-color: rgba( $BASE, .1 );
+				background-color: rgba( $BASE, .3 );
 				z-index: $LAYER_2;
 				transform: rotate(-6deg);
 				transition: inherit;
@@ -122,24 +122,38 @@
 			}
 			button {
 				margin: 2.4rem auto 1.6rem;
-				background: rgba( $BASE, .1 );
+				background: rgba( $BASE, .3 );
 				z-index: $LAYER_4;
 				&:hover {
 					background: $PRIMARY;
 				}
 			}
 			&:hover,
-			&.active {
-				box-shadow: $GLOW_MED_PRIMARY;
-				&:after {
-					background-color: $PRIMARY;
-					top: -100px;
+				&.active {
+					box-shadow: $GLOW_MED_PRIMARY;
+					&:after {
+						background-color: $PRIMARY;
+						top: -100px;
+					}
 				}
-			}
 			&.active {
 				cursor: initial;
-				max-height: 2000px;
+				max-height: 600px;
 				transition: all .3s ease-in-out;
+				overflow-y: scroll;
+				&::-webkit-scrollbar {
+					width: .4rem;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: none;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					width: .2rem;
+					border-radius: 10px;
+					background: rgba( $BASE, .3 );
+				}
 			}
 		}
 	}
@@ -162,11 +176,9 @@
 				cursor: pointer;
 				box-shadow: $GLOW_SM_DIM;
 				transition: all .3s ease-out;
-				//overflow: hidden;
 				h3 {
 				 	width: 100%;
 					text-align: center;
-					padding-top: 184px;
 					transition: inherit;
 				}
 				svg {
@@ -182,8 +194,17 @@
 						transition: all .3s ease-out;
 					}
 				}
+				.symbol {
+					svg {
+						position: relative;
+						top: 0;
+						left: 0;
+						padding: 2.4rem 0 .8rem;
+						transform: translate( 0, 0 ) scale( .8 );
+					}
+				}
 				&:hover {
-					transform: scale(1);
+					//transform: scale(1);
 					box-shadow: $SH_LARGE;
 					h3 {
 						color: $PRIMARY;
@@ -191,9 +212,12 @@
 					svg > g > path {
 						fill: $PRIMARY;
 					}
-				}
-				button {
-					display: none;
+					.symbol {
+						svg > g > path {
+							fill: $PRIMARY;
+							box-shadow: $SH_MEDIUM_STRONG;
+						}
+					}
 				}
 				&.active {
 					position: fixed;
@@ -208,18 +232,6 @@
 					}
 					svg > g > path {
 						fill: $PRIMARY;
-					}
-					button {
-						position: absolute;
-						display: block;
-						top: 100%;
-						left: 50%;
-						transform: translate(-50%, 8rem);
-						background: rgba( $BASE, .3 );
-						pointer-events: all;
-						&:hover {
-							background: $PRIMARY
-						}
 					}
 				}
 			}
@@ -239,6 +251,19 @@
 			transform: translateY( 150px );
 			transition: all .3s ease-in;
 			overflow: auto;
+			&::-webkit-scrollbar {
+				width: .4rem;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: none;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				width: .2rem;
+				border-radius: 10px;
+				background: rgba( $BASE, .3 );
+			}
 			.description {
 				font-size: 2.2rem;
 				font-weight: 400;
@@ -313,6 +338,27 @@
 						}
 					}
 				}
+				.subraces {
+					padding: 0 4.8rem 3.2rem 640px;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					.choice {
+						background: $BACKGROUND;
+						cursor: pointer;
+						padding: 1.2rem 1.6rem .8rem;
+						border: .1rem solid $PRIMARY;
+						transition: all .2s ease-in;
+						&:hover {
+							background: $PRIMARY;
+							color: $BACKGROUND;
+						}
+						&.active {
+							background: $PRIMARY;
+							color: $BACKGROUND;
+						}
+					}
+				}
 				.proficiency {
 					display: flex;
 					padding: 0 4.8rem 4.8rem 640px;
@@ -346,10 +392,24 @@
 					.trait {
 						width: 23%;
 						margin: 0 1% 2.4rem;
+						height: 240px;
 						padding: 1.6rem;
 						box-sizing: border-box;
 						box-shadow: $SH_MEDIUM;
-						overflow: hidden;
+						overflow-y: scroll;
+						&::-webkit-scrollbar {
+							width: .4rem;
+						}
+
+						&::-webkit-scrollbar-track {
+							background: none;
+						}
+
+						&::-webkit-scrollbar-thumb {
+							width: .2rem;
+							border-radius: 10px;
+							background: rgba( $BASE, .3 );
+						}
 						@media screen and ( max-width: 1660px ) {
 							width: 31%;
 						}
@@ -398,6 +458,17 @@
 							transform: rotate(270deg);
 						}
 					}
+				}
+			}
+			button {
+				position: fixed;
+				display: block;
+				top: 72%;
+				left: 352px;
+				background: rgba( $BASE, .3 );
+				pointer-events: all;
+				&:hover {
+					background: $PRIMARY
 				}
 			}
 		}

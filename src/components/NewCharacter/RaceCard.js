@@ -8,8 +8,7 @@
 // ------------------------------
 
 import React, { Component, PropTypes } from 'react';
-import { cardBackground } from "../../utils/SVG";
-import Button from "../Button";
+import { cardBackground, logo } from "../../utils/SVG";
 
 class RaceCard extends Component {
 	constructor( props ) {
@@ -28,13 +27,13 @@ class RaceCard extends Component {
 
 		return(
 			<div className={ "race-card" + ( isActive ? " active" : "" ) } onClick={ this._handleClick }>
+				<div className="symbol">
+					{ logo }
+				</div>
 				<h3 className="h2 txt-dim txt-jaapokki">
 					{ name }
 				</h3>
 				{ cardBackground }
-				{
-					isActive && <Button label="choose" onClick={ () => newRace( name ) } />
-				}
 			</div>
 		)
 	}

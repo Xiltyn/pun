@@ -11,6 +11,22 @@
 @import "containers/login/login";
 @import "containers/newCharacter/newCharacter";
 
+body {
+	&::-webkit-scrollbar {
+		width: .4rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		width: .2rem;
+		border-radius: 10px;
+		background: rgba( $BASE, .3 );
+	}
+}
+
 
 
 

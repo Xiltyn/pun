@@ -11,7 +11,7 @@ import React, { PropTypes } from 'react';
 import { logger } from "../../utils/consoleLogger";
 
 export class Stats {
-	constructor( str, dex, con, int, wis, cha ) {
+	constructor( str = 0, dex = 0, con = 0, int = 0, wis = 0, cha = 0 ) {
 		this.str = {
 			base: str,
 			modifier: Stats.getStatModifier( str ),
@@ -66,10 +66,13 @@ export class Character {
 		this.exp = 0;
 		this.background = '';
 		this.race = '';
+		this.speed = 0;
+		this.size = 0;
 		this.className = '';
 		this.classAbilities = '';
 		this.stats = {};
 		this.spells = [];
+		this.traits = [];
 		this.savingThrows = {
 			str: {
 				base: 0,

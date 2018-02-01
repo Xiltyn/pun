@@ -15,6 +15,7 @@ import Backgrounds from "../components/NewCharacter/Backgrounds";
 import { logger } from "../utils/consoleLogger";
 import Races from "../components/NewCharacter/Races";
 import { sort } from "../utils/sort";
+import { Stats } from "../modules/character/models";
 
 const mapStateToProps = ( state ) => {
 	return {
@@ -39,18 +40,51 @@ class NewCharacter extends Component {
 			character: {}
 		};
 
-		this.handleCharacterData 	= this.handleCharacterData.bind(this);
-		this.updateProficiencies 	= this.updateProficiencies.bind(this);
-		this.newBackground 			= this.newBackground.bind(this);
-		this.newRace 				= this.newRace.bind(this)
+		this.handleCharacterData = this.handleCharacterData.bind( this );
+		this.updateProficiencies = this.updateProficiencies.bind( this );
+		this.newBackground = this.newBackground.bind( this );
+		this.updateTraits = this.updateTraits.bind( this );
+		this.updateStats = this.updateStats.bind( this );
+		this.newRace = this.newRace.bind( this );
 	}
 
 	handleCharacterData( data ) {
-		this.setState({
+		this.setState( {
 			character: data
-		});
+		} );
 
 		this.state.character.name !== '' ? this.props.history.push( '/app/characters/new/background' ) : null
+	}
+
+	updateTraits( traits ) {
+		const currentTraits = this.state.character.traits;
+
+		return [ ...currentTraits, ...traits ]
+	}
+
+	updateStats( stats ) {
+		const newStats = {
+			str: 0,
+			con: 0,
+			dex: 0,
+			int: 0,
+			wis: 0,
+			cha: 0,
+		};
+
+		logger( 'STATS TO UPDATE ::', 'info', stats );
+
+		if ( stats ) {
+			stats.split( ', ' ).map( ( stat ) => {
+				const split = stat.split( ' ' );
+
+				logger( split[ 0 ] + ' ability bonus :: ', 'info', split[ 1 ] );
+
+				newStats[ split[ 0 ].toLowerCase() ] += parseInt(split[ 1 ]);
+			} )
+		}
+
+		return newStats;
 	}
 
 	updateProficiencies( proficiencies ) {
@@ -69,7 +103,8 @@ class NewCharacter extends Component {
 	}
 
 	newBackground( backgroundName ) {
-		const chosenBackground = this.props.backgrounds.filter( ( background ) => background.name === backgroundName )[0];
+		const chosenBackground = this.props.backgrounds.filter(
+			( background ) => background.name === backgroundName )[ 0 ];
 
 
 		this.setState( {
@@ -80,49 +115,60 @@ class NewCharacter extends Component {
 			}
 		} );
 
+
+		this.props.history.push( '/app/characters/new/race' );
+
 		setTimeout( () => {
 			logger( 'NewCharacter.js curret state :: ', 'info', this.state );
 
-			this.state.character.background !== '' ? this.props.history.push( '/app/characters/new/race' ) : null
 		}, 300 );
 	}
 
-	newRace( raceName ) {
-		const chosenRace = this.props.races.filter( ( race ) => race.name === raceName )[0];
+	newRace( chosenRace ) {
 
 		this.setState( {
 			character: {
 				...this.state.character,
-				race: chosenRace
+				race: chosenRace.name,
+				abilities: this.updateProficiencies( chosenRace.proficiency ),
+				stats: this.updateStats( chosenRace.ability ),
+				size: chosenRace.size,
+				speed: chosenRace.speed,
+				traits: this.updateTraits( chosenRace.trait )
 			}
 		} );
 
+		this.props.history.push( '/app/characters/new/class' );
+
 		setTimeout( () => {
 			logger( 'NewCharacter.js curret state :: ', 'info', this.state );
-
-			this.state.character.background !== '' ? this.props.history.push( '/app/characters/new/class' ) : null
 		}, 300 );
 	}
 
 	componentDidMount() {
-		this.props.history.location !== ( '/app/characters/new' || '/app/characters/new/name' ) && this.props.history.push( '/app/characters/new/name' );
+		this.props.history.location !== ('/app/characters/new' || '/app/characters/new/name') && this.props.history.push(
+			'/app/characters/new/name' );
 	}
 
 	render() {
 		const { match: { params }, backgrounds, races } = this.props;
 		const { character } = this.state;
 
-		const Name = params.stepName === 'name' ? <Name newCharacter={this.handleCharacterData}/> : null;
-		const Background = params.stepName === 'background' ? <Backgrounds backgrounds={ sort(backgrounds) } newBackground={ this.newBackground } /> : null;
-		const Race = params.stepName === 'race' ? <Races races={ sort(races) } newRace={ this.newRace } /> : null;
-		const Class = params.stepName === 'class' ? <h2 className="txt-jaapokki txt-dim">Here you will choose your class</h2> : null;
+		logger( '===> NewCharacter.js location match :: ', 'info', params.stepName );
+
+		const newName = params.stepName === 'name' ? <Name newCharacter={ this.handleCharacterData }/> : null;
+		const newBackground = params.stepName === 'background' ?
+			<Backgrounds backgrounds={ sort( backgrounds ) } newBackground={ this.newBackground }/> : null;
+		const newRace = params.stepName === 'race' ? <Races races={ sort( races ) } newRace={ this.newRace }/> : null;
+		const newClass = params.stepName === 'class' ?
+			<h2 className="txt-jaapokki txt-dim">Here you will choose your class</h2> : null;
 
 		return (
 			<div className="new-character">
-				{ Name }
-				{ Background }
-				{ Race }
-				{ Class }
+				{ newName }
+				{ newBackground }
+				{ newRace }
+				{ newClass }
 			</div>
 		)
 	}
@@ -133,4 +179,4 @@ NewCharacter.PropTypes = {
 	races: PropTypes.array.isRequired
 };
 
-export default connect( mapStateToProps, mapDisptachToProps )(NewCharacter);
+export default connect( mapStateToProps, mapDisptachToProps )( NewCharacter );

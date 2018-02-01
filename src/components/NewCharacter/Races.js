@@ -20,7 +20,7 @@ class Races extends Component {
 			activeRaceName: ''
 		};
 
-		this.setActiveCard = this.setActiveCard.bind(this)
+		this.setActiveCard = this.setActiveCard.bind( this )
 	}
 
 	setActiveCard( name ) {
@@ -28,7 +28,8 @@ class Races extends Component {
 			this.setState( {
 				activeRaceName: name
 			} )
-		} else {
+		}
+		else {
 			this.setState( {
 				activeRaceName: ''
 			} )
@@ -37,44 +38,49 @@ class Races extends Component {
 	}
 
 	componentDidMount() {
-		window.scrollTo(0, 0);
+		window.scrollTo( 0, 0 );
 	}
 
 	render() {
 		const { activeRaceName } = this.state;
 		const { races, newRace } = this.props;
 
-		const activeRace = races.filter( ( race ) => race.name === activeRaceName )[0];
+		const activeRace = races.filter( ( race ) => race.name === activeRaceName )[ 0 ];
 
 		logger( '==> Active Race Object :: ', 'info', activeRace );
 
-		return(
+		return (
 			<div className="new-character--race">
 				<header>
 					<h2 className="title txt-alt txt-jaapokki">
 						Choose your Race
 					</h2>
 					<p className="instructions txt-dim">
-						It's time to decide on a race for your character. Aside from RolePlaying reasons, you might also want to consider proficiencies or bonuses each race provides and how would those play out with your future character class.
+						It's time to decide on a race for your character. Aside from RolePlaying reasons, you might also
+						want to consider proficiencies or bonuses each race provides and how would those play out with
+						your future character class.
 					</p>
 					<p className="instructions txt-dim">
-						Mind that you can always go one step back, if your chosen race happens not to play well together with a class you wish to choose in the next step
+						Mind that you can always go one step back, if your chosen race happens not to play well together
+						with a class you wish to choose in the next step
 					</p>
 				</header>
 				<div className="cards" style={ { maxHeight: activeRaceName !== "" ? '0' : '9999px' } }>
 					{
 						races.map( ( race, index ) =>
 							<RaceCard
-								key={index}
-								race={race}
-								activeRace={activeRaceName}
-								onClick={ race.name !== activeRaceName ? this.setActiveCard : ( name ) => logger( name + ' card active :: ', 'info', 'onClick event disabled' )}
-								newRace={ ( raceName ) => newRace( raceName ) }
+								key={ index }
+								race={ race }
+								activeRace={ activeRaceName }
+								onClick={ race.name !== activeRaceName ? this.setActiveCard : ( name ) => logger( name + ' card active :: ',
+									'info', 'onClick event disabled' ) }
 							/>
 						)
 					}
 				</div>
-				<RaceDetails activeRace={ activeRace } activeRaceName={ activeRaceName } onCloseClick={ () => { this.setState( { activeRaceName: '' } ) } } />
+				<RaceDetails activeRace={ activeRace } activeRaceName={ activeRaceName }
+							 newRace={ ( race ) => newRace( race ) }
+							 onCloseClick={ () => { this.setState( { activeRaceName: '' } ) } }/>
 			</div>
 		)
 	}

@@ -8,10 +8,15 @@
 // ------------------------------
 
 import React, { Component, PropTypes } from 'react';
+import Button from "../Button";
 
 class RaceDetails extends Component {
 	constructor( props ) {
 		super( props );
+
+		this.state = {
+			race: {},
+		}
 
 	}
 
@@ -27,8 +32,25 @@ class RaceDetails extends Component {
 		return result
 	};
 
+	componentWillReceiveProps( newProps ) {
+		if ( newProps.activeRace ) {
+			if ( newProps.activeRace.subraces ) {
+				this.setState( {
+					race: newProps.activeRace.subraces[ 0 ]
+				} )
+			}
+			else {
+				this.setState( {
+					race: newProps.activeRace,
+				} )
+			}
+		}
+
+	}
+
 	render() {
-		const { activeRaceName, activeRace, onCloseClick } = this.props;
+		const { activeRaceName, activeRace, onCloseClick, newRace } = this.props;
+		const { race } = this.state;
 
 		return activeRace ?
 			<div className={ "details" + (activeRaceName !== '' ? " active" : "") }>
@@ -36,76 +58,85 @@ class RaceDetails extends Component {
 					<div className={ "close" + (activeRaceName !== "" ? " active" : "") }/>
 				</div>
 				<p className="description txt-dim">
-					{ activeRace && activeRace.description }
+					{ activeRace.description }
 				</p>
 				<div className="base-info">
+					<div className="stripe">
+						{
+							race.ability && <ul className="h4 txt-dim abilities" style={ {
+								width: (RaceDetails.getAbilities( race.ability ).length * 9.6) + 'rem'
+							} }>
+								{
+									race.ability && RaceDetails.getAbilities( race.ability )
+										.map( ( ability, index ) =>
+											<div className="stat-box" key={ index }>
+												<h4 className="p label txt-dark">
+													{ ability.text }
+												</h4>
+												<p className="h1 value txt-alt txt-jaapokki">
+													{ ability.val }
+												</p>
+											</div>
+										)
+								}
+							</ul>
+						}
+					</div>
+					<div className="stripe">
+						{
+							race.size && <div className="h4 txt-dim size">
+								<h4 className="p label txt-dark">
+									Size
+								</h4>
+								<p className="h1 value txt-alt txt-jaapokki">
+									{ race.size }
+								</p>
+							</div>
+						}
+						{
+							race.speed && <div className="h4 txt-dim speed">
+								<h4 className="p label txt-dark">
+									Speed
+								</h4>
+								<p className="h1 value txt-alt txt-jaapokki">
+									{ race.speed }
+								</p>
+							</div>
+						}
+					</div>
 					{
-						!activeRace.subraces && <div className="stripe">
+						activeRace.subraces && <ul className="subraces">
 							{
-								activeRace.ability && <ul className="h4 txt-dim abilities" style={ {
-									width: (RaceDetails.getAbilities( activeRace.ability ).length * 9.6) + 'rem'
-								} }>
-									{
-										activeRace.ability && RaceDetails.getAbilities( activeRace.ability )
-											.map( ( ability, index ) =>
-												<div className="stat-box" key={ index }>
-													<h4 className="p label txt-dark">
-														{ ability.text }
-													</h4>
-													<p className="h1 value txt-alt txt-jaapokki">
-														{ ability.val }
-													</p>
-												</div>
-											)
-									}
-								</ul>
+								activeRace.subraces.map( ( subrace, index ) =>
+									<li className={ "p txt-alt txt-jaapokki choice" + (race.name === subrace.name ? " active" : "") }
+										key={ index } onClick={ () => this.setState(
+										{ race: activeRace.subraces.filter( ( race ) => subrace.name === race.name )[0] } ) }>
+										{ subrace.name.split( activeRace.name + ' ' ) }
+									</li>
+								)
 							}
-						</div>
+						</ul>
 					}
 					{
-						!activeRace.subraces && <div className="stripe">
-							{
-								activeRace.size && <div className="h4 txt-dim size">
-									<h4 className="p label txt-dark">
-										Size
-									</h4>
-									<p className="h1 value txt-alt txt-jaapokki">
-										{ activeRace.size }
-									</p>
-								</div>
-							}
-							{
-								activeRace.speed && <div className="h4 txt-dim speed">
-									<h4 className="p label txt-dark">
-										Speed
-									</h4>
-									<p className="h1 value txt-alt txt-jaapokki">
-										{ activeRace.speed }
-									</p>
-								</div>
-							}
-						</div>
-					}
-					{
-						activeRace.proficiency && <div className="p txt-dim proficiency">
+						race.proficiency && <div className="p txt-dim proficiency">
 							{
 
-								activeRace.proficiency.includes( ', ' ) ?
-									activeRace.proficiency.split( ', ' ).map( ( prof, index ) =>
-										<div className="proficiency--element txt-dark txt-jaapokki" key={index}>
+								race.proficiency.includes( ', ' ) ?
+									race.proficiency.split( ', ' ).map( ( prof, index ) =>
+										<div className="proficiency--element txt-dark txt-jaapokki" key={ index }>
 											{ prof }
 										</div>
 									) : <div className="proficiency--element txt-dark txt-jaapokki">
-										{ activeRace.proficiency }
+										{ race.proficiency }
 									</div>
 							}
 
 						</div>
 					}
 					{
-						activeRace.trait && <ul className="traits">
+						race.trait && <ul className="traits">
 							{
-								activeRace.trait.constructor === Array ? activeRace.trait.map( ( trait, index ) =>
+								race.trait.constructor === Array ? race.trait.map( ( trait, index ) =>
 									<div className="trait" key={ index }>
 										<h4 className="name txt-dim">
 											{ trait.name }
@@ -116,17 +147,17 @@ class RaceDetails extends Component {
 									</div>
 								) : <div className="trait">
 									<h4 className="name txt-dim">
-										{ activeRace.trait.name }
+										{ race.trait.name }
 									</h4>
 									<p className="desctiption txt-dim">
-										{ activeRace.trait.text }
+										{ race.trait.text }
 									</p>
 								</div>
 							}
 						</ul>
 					}
 				</div>
-				}
+				<Button label="choose" onClick={ () => newRace( race ) }/>
 			</div>
 			: <div/>
 	}
