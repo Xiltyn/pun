@@ -162,11 +162,11 @@
 				cursor: pointer;
 				box-shadow: $GLOW_SM_DIM;
 				transition: all .3s ease-out;
-				overflow: hidden;
+				//overflow: hidden;
 				h3 {
 				 	width: 100%;
 					text-align: center;
-					padding-top: 168px;
+					padding-top: 184px;
 					transition: inherit;
 				}
 				svg {
@@ -192,9 +192,12 @@
 						fill: $PRIMARY;
 					}
 				}
+				button {
+					display: none;
+				}
 				&.active {
 					position: fixed;
-					top: 360px;
+					top: 280px;
 					left: calc( 277px + 4.8rem );
 					z-index: $LAYER_6;
 					box-shadow: $SH_LARGE;
@@ -206,6 +209,18 @@
 					svg > g > path {
 						fill: $PRIMARY;
 					}
+					button {
+						position: absolute;
+						display: block;
+						top: 100%;
+						left: 50%;
+						transform: translate(-50%, 8rem);
+						background: rgba( $BASE, .3 );
+						pointer-events: all;
+						&:hover {
+							background: $PRIMARY
+						}
+					}
 				}
 			}
 		}
@@ -215,7 +230,7 @@
 			top: 0;
 			width: 100%;
 			height: 100vh;
-			padding-top: 365px;
+			padding-top: 280px;
 			background: $BACKGROUND;
 			opacity: 0;
 			pointer-events: none;
@@ -223,7 +238,8 @@
 			box-sizing: border-box;
 			transform: translateY( 150px );
 			transition: all .3s ease-in;
-			p {
+			overflow: auto;
+			.description {
 				font-size: 2.2rem;
 				font-weight: 400;
 				line-height: 3rem;
@@ -231,18 +247,140 @@
 				opacity: 0;
 				padding: 0 4.8rem 0 640px;
 			}
+			.base-info {
+				width: 100%;
+				.stripe {
+					display: flex;
+					flex-wrap: wrap;
+					width: 100%;
+					margin: 3.2rem 0;
+					padding: 0 4.8rem 0 640px;
+					text-align: center;
+					pointer-events: none;
+					justify-content: flex-start;
+					border-top: 1px solid rgba( $BASE, .3 );
+					border-bottom: 1px solid rgba( $BASE, .3 );
+					box-sizing: border-box;
+					&:first-of-type {
+						margin-bottom: 0;
+					}
+					&:nth-of-type(2) {
+						margin-top: .8rem;
+
+					}
+					.size,
+					.speed,
+					.abilities {
+						height: 5.6rem;
+						margin-left: 2.4rem;
+						.label {
+							position: absolute;
+							top: 1.6rem;
+							left: -4rem;
+							height: 2.4rem;
+							width: 5.6rem;
+							font-weight: 600;
+							background: rgba( $BASE, .3 );
+							transform: rotate(-90deg);
+						}
+						.value {
+							height: 5.6rem;
+							font-size: 5.6rem;
+							line-height: 6.8rem;
+							border-right: 1px solid rgba( $BASE, .3 );
+						}
+					}
+					.size,
+					.speed {
+						position: relative;
+						width: 9.6rem;
+					}
+					.abilities {
+						width: 16rem;
+						display: flex;
+						justify-content: space-between;
+						.stat-box {
+							position: relative;
+							width: 44%;
+							.value {
+								border-right: none;
+							}
+							&:last-of-type {
+								.value {
+									border-right: 1px solid rgba( $BASE, .3 );
+								}
+							}
+						}
+					}
+				}
+				.proficiency {
+					display: flex;
+					padding: 0 4.8rem 4.8rem 640px;
+					text-align: center;
+					&--element {
+						position: relative;
+						display: block;
+						width: 150px;
+						margin-left: 1.6rem;
+						padding: .2rem .4rem 0;
+						background: $PRIMARY;
+						&:after {
+							content: 'Proficiency';
+							position: absolute;
+							top: 100%;
+							left: 0;
+							width: 100%;
+							font-size: 1rem;
+							font-weight: 600;
+							color: $PRIMARY;
+							font-family: $ROBOTO;
+							margin-left: -.2rem;
+							text-align: right;
+						}
+					}
+				}
+				.traits {
+					display: flex;
+					flex-wrap: wrap;
+					padding: 0 4.8rem 0 640px;
+					.trait {
+						width: 23%;
+						margin: 0 1% 2.4rem;
+						padding: 1.6rem;
+						box-sizing: border-box;
+						box-shadow: $SH_MEDIUM;
+						overflow: hidden;
+						@media screen and ( max-width: 1660px ) {
+							width: 31%;
+						}
+
+						@media screen and ( max-width: 1280px ) {
+							width: 48%;
+						}
+
+						.name {
+							padding-bottom: 2.4rem;
+							transition: all .3s ease-in;
+						}
+						&:hover {
+							.name {
+								color: $PRIMARY;
+							}
+						}
+					}
+				}
+			}
 			&.active {
 				opacity: 1;
 				transform: translateY( 0 );
 				pointer-events: all;
-				h3,
-				p {
+				.description {
 					opacity: 1;
 				}
 			}
 			.close-wrapper {
 				position: fixed;
-				top: 240px;
+				top: 200px;
 				margin-left: -8rem;
 				.close {
 					&.active {
@@ -250,6 +388,14 @@
 						transform: rotate(-45deg);
 						&:after {
 							transform: rotate(90deg);
+						}
+					}
+				}
+				&:hover {
+					.close {
+						transform: rotate(45deg);
+						&:after {
+							transform: rotate(270deg);
 						}
 					}
 				}

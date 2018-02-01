@@ -1,4 +1,4 @@
-{
+export const feats = {
 	"compendium": {
 		"-version": "5",
 		"feat": [

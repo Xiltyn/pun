@@ -1,4 +1,4 @@
-{
+export const backgrounds = {
 	"compendium": {
 		"-version": "5",
 		"background": [

@@ -39,9 +39,10 @@ class NewCharacter extends Component {
 			character: {}
 		};
 
-		this.handleCharacterData = this.handleCharacterData.bind(this);
-		this.newBackground = this.newBackground.bind(this);
-		this.updateProficiencies = this.updateProficiencies.bind(this);
+		this.handleCharacterData 	= this.handleCharacterData.bind(this);
+		this.updateProficiencies 	= this.updateProficiencies.bind(this);
+		this.newBackground 			= this.newBackground.bind(this);
+		this.newRace 				= this.newRace.bind(this)
 	}
 
 	handleCharacterData( data ) {
@@ -86,25 +87,50 @@ class NewCharacter extends Component {
 		}, 300 );
 	}
 
+	newRace( raceName ) {
+		const chosenRace = this.props.races.filter( ( race ) => race.name === raceName )[0];
+
+		this.setState( {
+			character: {
+				...this.state.character,
+				race: chosenRace
+			}
+		} );
+
+		setTimeout( () => {
+			logger( 'NewCharacter.js curret state :: ', 'info', this.state );
+
+			this.state.character.background !== '' ? this.props.history.push( '/app/characters/new/class' ) : null
+		}, 300 );
+	}
+
+	componentDidMount() {
+		this.props.history.location !== ( '/app/characters/new' || '/app/characters/new/name' ) && this.props.history.push( '/app/characters/new/name' );
+	}
+
 	render() {
 		const { match: { params }, backgrounds, races } = this.props;
 		const { character } = this.state;
 
-		const Step1 = params.stepName === 'name' ? <Name newCharacter={this.handleCharacterData}/> : null;
-		const Step2 = params.stepName === 'background' ? <Backgrounds backgrounds={ sort(backgrounds) } newBackground={ this.newBackground } /> : null;
-		const Step3 = params.stepName === 'race' ? <Races races={ sort(races) } /> : null;
+		const Name = params.stepName === 'name' ? <Name newCharacter={this.handleCharacterData}/> : null;
+		const Background = params.stepName === 'background' ? <Backgrounds backgrounds={ sort(backgrounds) } newBackground={ this.newBackground } /> : null;
+		const Race = params.stepName === 'race' ? <Races races={ sort(races) } newRace={ this.newRace } /> : null;
+		const Class = params.stepName === 'class' ? <h2 className="txt-jaapokki txt-dim">Here you will choose your class</h2> : null;
 
 		return (
 			<div className="new-character">
-				{ Step1 }
-				{ Step2 }
-				{ Step3 }
+				{ Name }
+				{ Background }
+				{ Race }
+				{ Class }
 			</div>
 		)
 	}
 }
 
 NewCharacter.PropTypes = {
+	backgrounds: PropTypes.array.isRequired,
+	races: PropTypes.array.isRequired
 };
 
 export default connect( mapStateToProps, mapDisptachToProps )(NewCharacter);

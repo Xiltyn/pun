@@ -1,4 +1,4 @@
-{
+export const races = {
 	"compendium": {
 		"-version": "5",
 		"race": [

@@ -1,4 +1,4 @@
-{
+export const phb = {
 	"compendium": {
 		"-version": "5",
 		"spell": [

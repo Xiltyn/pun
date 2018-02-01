@@ -1,4 +1,4 @@
-{
+export const classes = {
 	"compendium": {
 		"-version": "5",
 		"class": [{

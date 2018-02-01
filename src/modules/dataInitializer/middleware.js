@@ -9,18 +9,23 @@
 
 import { logger } from "../../utils/consoleLogger";
 import dataInitializerActions from "./actions";
+import { races } from "../../data/character/_races";
+import { classes } from "../../data/character/_classes";
+import { feats } from "../../data/character/_feats";
+import { backgrounds } from "../../data/character/_backgrounds";
+import { phb } from "../../data/spells/_phb";
 
 export default class dataInitializerMiddleware {
 
 	static data = {
 		character: {
-			races: require('src/data/character/_races'),
-			classes: require('src/data/character/_classes'),
-			feats: require('src/data/character/_feats'),
-			backgrounds: require('src/data/character/_backgrounds')
+			races: races,
+			classes: classes,
+			feats: feats,
+			backgrounds: backgrounds
 		},
 		spells: {
-			phb: require('src/data/spells/_phb')
+			phb: phb
 		}
 	};
 
@@ -29,11 +34,11 @@ export default class dataInitializerMiddleware {
 
 		return ( dispatch ) => {
 			dispatch( dataInitializerActions.getCharacterData() );
-			dataInitializerMiddleware.parseJson( dispatch, dataInitializerMiddleware.data)
+			dataInitializerMiddleware.parseData( dispatch, dataInitializerMiddleware.data)
 		}
 	}
 
-	static parseJson( dispatch, data ) {
+	static parseData( dispatch, data ) {
 		data = {
 			character: {
 				races: data.character.races.compendium.race,
@@ -47,7 +52,7 @@ export default class dataInitializerMiddleware {
 			}
 		};
 
-		logger( Object.keys( data.spells )[0] + ' parseJson function result :: ', 'info', data )
+		logger( Object.keys( data.spells )[0] + ' parseData function result :: ', 'info', data )
 
 		dispatch( dataInitializerActions.setCharacterData( data ) )
 	}

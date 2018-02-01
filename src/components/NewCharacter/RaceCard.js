@@ -9,12 +9,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import { cardBackground } from "../../utils/SVG";
+import Button from "../Button";
 
 class RaceCard extends Component {
 	constructor( props ) {
 		super( props );
 
-		this._handleClick 				= this._handleClick.bind(this)
+		this._handleClick = this._handleClick.bind(this)
 	}
 
 	_handleClick() {
@@ -22,14 +23,18 @@ class RaceCard extends Component {
 	}
 
 	render() {
-		const { race: { name }, activeRace } = this.props;
+		const { race: { name }, activeRace, newRace } = this.props;
+		const isActive = activeRace === name;
 
 		return(
-			<div className={ "race-card" + ( activeRace === name ? " active" : "" ) } onClick={ this._handleClick }>
+			<div className={ "race-card" + ( isActive ? " active" : "" ) } onClick={ this._handleClick }>
 				<h3 className="h2 txt-dim txt-jaapokki">
 					{ name }
 				</h3>
 				{ cardBackground }
+				{
+					isActive && <Button label="choose" onClick={ () => newRace( name ) } />
+				}
 			</div>
 		)
 	}
@@ -38,7 +43,9 @@ class RaceCard extends Component {
 
 RaceCard.PropTypes = {
 	race: PropTypes.object.isRequired,
-	activeRace: PropTypes.string.isRequired
+	activeRace: PropTypes.string.isRequired,
+	newRace: PropTypes.func.isRequired,
+	onClick: PropTypes.func.isRequired
 };
 
 export default RaceCard;

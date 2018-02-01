@@ -10,6 +10,7 @@
 import React, { Component, PropTypes } from 'react';
 import RaceCard from "./RaceCard";
 import { logger } from "../../utils/consoleLogger";
+import RaceDetails from "./RaceDetails";
 
 class Races extends Component {
 	constructor( props ) {
@@ -19,7 +20,7 @@ class Races extends Component {
 			activeRaceName: ''
 		};
 
-		this.setActiveCard 			= this.setActiveCard.bind(this)
+		this.setActiveCard = this.setActiveCard.bind(this)
 	}
 
 	setActiveCard( name ) {
@@ -41,7 +42,7 @@ class Races extends Component {
 
 	render() {
 		const { activeRaceName } = this.state;
-		const { races } = this.props;
+		const { races, newRace } = this.props;
 
 		const activeRace = races.filter( ( race ) => race.name === activeRaceName )[0];
 
@@ -64,21 +65,16 @@ class Races extends Component {
 					{
 						races.map( ( race, index ) =>
 							<RaceCard
+								key={index}
 								race={race}
 								activeRace={activeRaceName}
-								onClick={this.setActiveCard}
-								key={index}/>
+								onClick={ race.name !== activeRaceName ? this.setActiveCard : ( name ) => logger( name + ' card active :: ', 'info', 'onClick event disabled' )}
+								newRace={ ( raceName ) => newRace( raceName ) }
+							/>
 						)
 					}
 				</div>
-				<div className={ "details" + ( activeRaceName !== '' ? " active" : "" ) }>
-					<div className="close-wrapper" onClick={ () => { this.setState( { activeRaceName: '' } ) } }>
-						<div className={ "close" + (activeRaceName !== "" ? " active" : "") }/>
-					</div>
-					<p className="txt-dim">
-						{ activeRace && activeRace.description || 'Description will come here' }
-					</p>
-				</div>
+				<RaceDetails activeRace={ activeRace } activeRaceName={ activeRaceName } onCloseClick={ () => { this.setState( { activeRaceName: '' } ) } } />
 			</div>
 		)
 	}
@@ -86,7 +82,8 @@ class Races extends Component {
 }
 
 Races.PropTypes = {
-	races: PropTypes.array.isRequired
+	races: PropTypes.array.isRequired,
+	newRace: PropTypes.func.isRequired
 };
 
 export default Races;
