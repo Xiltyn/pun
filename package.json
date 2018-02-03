@@ -1,6 +1,6 @@
 {
 	"name": "pun",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"description": "Punnishers APP for pen&paper RPG",
 	"main": "./src/main.js",
 	"engines": {
@@ -80,5 +80,4 @@
 		"webpack-md5-hash": "0.0.5",
 		"webpack-merge": "^4.0.0"
 	}
-
 }
