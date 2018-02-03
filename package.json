@@ -1,7 +1,7 @@
 {
   "name": "pun",
   "version": "0.0.12",
-  "description": "Punnishers APP for D&D 5e",
+  "description": "Punnishers APP for pen&paper RPG",
   "main": "app.js",
   "scripts": {
     "postinstall": "npm run build",
