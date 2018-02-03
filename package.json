@@ -4,9 +4,9 @@
 	"description": "Punnishers APP for pen&paper RPG",
 	"main": "./src/main.js",
 	"engines": {
-		"node": "8.4.0",
-		"npm": "5.5.1",
-		"yarn": "1.3.2"
+		"node": "^8.4.0",
+		"npm": "^5.5.1",
+		"yarn": "^1.3.2"
 	},
 	"scripts": {
 		"postinstall": "npm run build",
@@ -16,11 +16,11 @@
 		"git:push": "npm version patch && git push"
 	},
 	"repository": {
-		"type": "git",
-		"url": "https://github.com/Xiltyn/pun.git"
+		"type": "heroku",
+		"url": "https://pun-staging.herokuapp.com/"
 	},
 	"license": "MIT",
-	"author": "Xiltyn",
+	"author": "jakubbujko",
 	"dependencies": {
 		"body-parser": "~1.17.0",
 		"case-sensitive-paths-webpack-plugin": "^2.1.1",

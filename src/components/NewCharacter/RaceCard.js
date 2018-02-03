@@ -23,10 +23,10 @@ class RaceCard extends Component {
 
 	render() {
 		const { race: { name }, activeRace, newRace } = this.props;
-		const isActive = activeRace === name;
+		//const isActive = activeRace === name;
 
 		return(
-			<div className={ "race-card" + ( isActive ? " active" : "" ) } onClick={ this._handleClick }>
+			<div className="race-card" onClick={ this._handleClick }>
 				<div className="symbol">
 					{ logo }
 				</div>

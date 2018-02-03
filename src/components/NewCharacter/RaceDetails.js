@@ -9,6 +9,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import Button from "../Button";
+import { cardBackground, logo } from "../../utils/SVG";
 
 class RaceDetails extends Component {
 	constructor( props ) {
@@ -110,7 +111,10 @@ class RaceDetails extends Component {
 								activeRace.subraces.map( ( subrace, index ) =>
 									<li className={ "p txt-alt txt-jaapokki choice" + (race.name === subrace.name ? " active" : "") }
 										key={ index } onClick={ () => this.setState(
-										{ race: activeRace.subraces.filter( ( race ) => subrace.name === race.name )[0] } ) }>
+										{
+											race: activeRace.subraces.filter(
+												( race ) => subrace.name === race.name )[ 0 ]
+										} ) }>
 										{ subrace.name.split( activeRace.name + ' ' ) }
 									</li>
 								)
@@ -156,6 +160,15 @@ class RaceDetails extends Component {
 							}
 						</ul>
 					}
+				</div>
+				<div className={ "race-card" + ( isActive ? " active" : "" ) } onClick={ this._handleClick }>
+					<div className="symbol">
+						{ logo }
+					</div>
+					<h3 className="h2 txt-dim txt-jaapokki">
+						{ race.name }
+					</h3>
+					{ cardBackground }
 				</div>
 				<Button label="choose" onClick={ () => newRace( race ) }/>
 			</div>
