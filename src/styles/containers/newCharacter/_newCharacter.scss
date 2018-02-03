@@ -220,13 +220,17 @@
 					}
 				}
 				&.active {
-					position: fixed;
-					top: 280px;
-					left: calc( 277px + 4.8rem );
+					position: absolute;
+					top: 15.2rem;
+					left: 0;
 					z-index: $LAYER_6;
 					box-shadow: $SH_LARGE;
 					transform: scale(1);
 					pointer-events: none;
+
+					@media screen and (max-width: 1440px) {
+						top: 0;
+					}
 					h3 {
 						color: $PRIMARY;
 					}
@@ -251,6 +255,11 @@
 			transform: translateY( 150px );
 			transition: all .3s ease-in;
 			overflow: auto;
+
+			@media screen and (max-width: 1280px) {
+				padding-top: 16rem;
+			}
+
 			&::-webkit-scrollbar {
 				width: .4rem;
 			}
@@ -271,6 +280,11 @@
 				text-align: justify;
 				opacity: 0;
 				padding: 0 4.8rem 0 640px;
+
+				@media screen and ( max-width: 1440px ) {
+					padding-left: 580px;
+				}
+
 			}
 			.base-info {
 				width: 100%;
@@ -286,6 +300,11 @@
 					border-top: 1px solid rgba( $BASE, .3 );
 					border-bottom: 1px solid rgba( $BASE, .3 );
 					box-sizing: border-box;
+
+					@media screen and ( max-width: 1440px ) {
+						padding-left: 580px;
+					}
+
 					&:first-of-type {
 						margin-bottom: 0;
 					}
@@ -343,6 +362,11 @@
 					display: flex;
 					justify-content: space-around;
 					align-items: center;
+
+					@media screen and ( max-width: 1440px ) {
+						padding-left: 580px;
+					}
+
 					.choice {
 						background: $BACKGROUND;
 						cursor: pointer;
@@ -363,6 +387,11 @@
 					display: flex;
 					padding: 0 4.8rem 4.8rem 640px;
 					text-align: center;
+
+					@media screen and ( max-width: 1440px ) {
+						padding-left: 580px;
+					}
+
 					&--element {
 						position: relative;
 						display: block;
@@ -389,6 +418,11 @@
 					display: flex;
 					flex-wrap: wrap;
 					padding: 0 4.8rem 0 640px;
+
+					@media screen and ( max-width: 1440px ) {
+						padding-left: 580px;
+					}
+
 					.trait {
 						width: 23%;
 						margin: 0 1% 2.4rem;
@@ -439,9 +473,14 @@
 				}
 			}
 			.close-wrapper {
-				position: fixed;
+				position: absolute;
 				top: 200px;
 				margin-left: -8rem;
+
+				@media screen and ( max-width: 1440px ) {
+					top: 10.4rem;
+				}
+
 				.close {
 					&.active {
 						background: $PRIMARY;
@@ -467,6 +506,11 @@
 				left: 352px;
 				background: rgba( $BASE, .3 );
 				pointer-events: all;
+
+				@media screen and ( max-width: 1440px ) {
+					top: 84%;
+					left: 276px;
+				}
 				&:hover {
 					background: $PRIMARY
 				}

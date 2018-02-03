@@ -9,6 +9,11 @@
 	box-sizing: border-box;
 	box-shadow: $SH_MEDIUM_STRONG;
 	z-index: $LAYER_2;
+
+	@media screen and ( max-width: 1440px ) {
+		width: $SIDEBAR_SMALL_WIDTH;
+	}
+
 	header {
 		height: 9.6rem;
 		text-align: center;
@@ -32,6 +37,11 @@
 				overflow: hidden;
 				cursor: pointer;
 				transition: background-color .2s ease-in-out;
+
+				@media screen and ( max-width: 1440px ) {
+					padding: .8rem;
+				}
+
 				.icon {
 					width: auto;
 					height: 4.8rem;
@@ -47,7 +57,8 @@
 				.label {
 					line-height: 4.8rem;
 					padding: 0 1.6rem;
-					transition: padding .3s ease-in-out;
+					margin-left: 0;
+					transition: all .3s ease-in-out;
 					height: 4.8rem;
 					color: rgba( $BASE, .3 );
 					font-weight: 500;
@@ -72,9 +83,18 @@
 					background-color: $PRIMARY;
 					.label {
 						color: $BACKGROUND;
+
+						@media screen and ( max-width: 1440px ) {
+							margin-left: -4rem;
+						}
 					}
 					.icon {
-						transform: translateX( calc( 256px ) ) scale( 2 );
+						transform: translateX( 256px ) scale( 2 );
+
+						@media screen and ( max-width: 1440px ) {
+							transform: translateX( 184px ) scale( 2 );
+						}
+
 						svg {
 							transform: rotate( -990deg );
 							path {
@@ -89,9 +109,18 @@
 					background-color: $PRIMARY;
 					.label {
 						color: $BACKGROUND;
+
+						@media screen and ( max-width: 1440px ) {
+							margin-left: -4rem;
+						}
 					}
 					.icon {
-						transform: translateX( calc( 256px ) ) scale( 2 );
+						transform: translateX( 256px ) scale( 2 );
+
+						@media screen and ( max-width: 1440px ) {
+							transform: translateX( 184px ) scale( 2 );
+						}
+
 						svg {
 							transform: rotate( -990deg );
 							path {

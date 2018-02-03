@@ -23,7 +23,7 @@ class BackgroundTile extends Component {
 		this.handleClose = this.handleClose.bind( this );
 	}
 
-	handleOpen() {
+	handleOpen( evt ) {
 		this.setState( {
 			isActive: true
 		} );
