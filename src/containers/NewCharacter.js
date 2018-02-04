@@ -16,11 +16,13 @@ import { logger } from "../utils/consoleLogger";
 import Races from "../components/NewCharacter/Races";
 import { sort } from "../utils/sort";
 import { Stats } from "../modules/character/models";
+import Classes from "../components/NewCharacter/Classes";
 
 const mapStateToProps = ( state ) => {
 	return {
 		backgrounds: state.compendium.data.character.backgrounds,
-		races: state.compendium.data.character.races
+		races: state.compendium.data.character.races,
+		classes: state.compendium.data.character.classes
 	}
 };
 
@@ -151,7 +153,7 @@ class NewCharacter extends Component {
 	}
 
 	render() {
-		const { match: { params }, backgrounds, races } = this.props;
+		const { match: { params }, backgrounds, races, classes } = this.props;
 		const { character } = this.state;
 
 		logger( '===> NewCharacter.js location match :: ', 'info', params.stepName );
@@ -160,8 +162,7 @@ class NewCharacter extends Component {
 		const newBackground = params.stepName === 'background' ?
 			<Backgrounds backgrounds={ sort( backgrounds ) } newBackground={ this.newBackground }/> : null;
 		const newRace = params.stepName === 'race' ? <Races races={ sort( races ) } newRace={ this.newRace }/> : null;
-		const newClass = params.stepName === 'class' ?
-			<h2 className="txt-jaapokki txt-dim">Here you will choose your class</h2> : null;
+		const newClass = params.stepName === 'class' ? <Classes classes={classes} /> : null;
 
 		return (
 			<div className="new-character">
@@ -176,7 +177,8 @@ class NewCharacter extends Component {
 
 NewCharacter.PropTypes = {
 	backgrounds: PropTypes.array.isRequired,
-	races: PropTypes.array.isRequired
+	races: PropTypes.array.isRequired,
+	classes: PropTypes.array.isRequired
 };
 
 export default connect( mapStateToProps, mapDisptachToProps )( NewCharacter );

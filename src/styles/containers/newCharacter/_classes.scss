@@ -1,0 +1,84 @@
+.new-character--classes {
+	.cards {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-around;
+		overflow: hidden;
+		.class-card {
+			position: relative;
+			top: 0;
+			width: 277px;
+			height: 400px;
+			background-color: $BACKGROUND;
+			margin: 0 .8rem 2.4rem;
+			transform: scale(.98);
+			cursor: pointer;
+			box-shadow: $GLOW_SM_DIM;
+			transition: all .3s ease-out;
+			h3 {
+				width: 100%;
+				text-align: center;
+				transition: inherit;
+			}
+			svg {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: auto;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				& > g > path {
+					fill: rgba( $BASE, .3 );
+					transition: all .3s ease-out;
+				}
+			}
+			.symbol {
+				svg {
+					position: relative;
+					top: 0;
+					left: 0;
+					padding: 2.4rem 0 .8rem;
+					transform: translate( 0, 0 ) scale( .8 );
+				}
+			}
+			&:hover {
+				//transform: scale(1);
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $PRIMARY;
+				}
+				svg > g > path {
+					fill: $PRIMARY;
+				}
+				.symbol {
+					svg > g > path {
+						fill: $PRIMARY;
+						box-shadow: $SH_MEDIUM_STRONG;
+					}
+				}
+			}
+			&.active {
+				position: absolute;
+				top: 15.2rem;
+				left: 0;
+				z-index: $LAYER_6;
+				box-shadow: $SH_LARGE;
+				transform: scale(1);
+				pointer-events: none;
+
+				@media screen and (max-width: 1440px) {
+					top: 0;
+				}
+				h3 {
+					color: $PRIMARY;
+				}
+				svg > g > path {
+					fill: $PRIMARY;
+				}
+			}
+		}
+	}
+}

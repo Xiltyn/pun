@@ -1,0 +1,38 @@
+.new-character--name {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 40%;
+	min-width: 320px;
+	padding: 3.2rem 1.6rem;
+	background: $BACKGROUND;
+	box-shadow: $SH_MEDIUM;
+	box-sizing: border-box;
+	transform: translate( -50%, -50% );
+	overflow: hidden;
+	&:after {
+		content: '';
+		position: absolute;
+		top: -20%;
+		left: -5%;
+		height: 50%;
+		width: 120%;
+		background-color: rgba( $BASE, .3 );
+		z-index: $LAYER_2;
+		transform: rotate(-6deg);
+	}
+	p {
+		position: relative;
+		padding: 0 1.6rem 6.4rem;
+		text-align: center;
+		box-sizing: border-box;
+		font-weight: 600;
+		z-index: $LAYER_3;
+	}
+	.input {
+		margin-bottom: 1.6rem;
+	}
+	button {
+		margin: 8rem auto 0;
+	}
+}

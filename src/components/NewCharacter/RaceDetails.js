@@ -161,7 +161,7 @@ class RaceDetails extends Component {
 						</ul>
 					}
 				</div>
-				<div className={ "race-card" + ( isActive ? " active" : "" ) } onClick={ this._handleClick }>
+				<div className="race-card active">
 					<div className="symbol">
 						{ logo }
 					</div>

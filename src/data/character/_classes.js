@@ -1,590 +1,14 @@
 export const classes = {
 	"compendium": {
 		"-version": "5",
-		"class": [{
-			"name": "Artificer",
-			"hd": "8",
-			"proficiency": "Intelligence, Constitution",
-			"spellAbility": "Intelligence",
-			"autolevel": [{
-				"-level": "1",
-				"slots": "0,0,0,0,0,0"
-			},
-				{
-					"-level": "2",
-					"slots": "0,0,0,0,0,0"
-				},
-				{
-					"-level": "3",
-					"slots": "0,2,0,0,0,0"
-				},
-				{
-					"-level": "4",
-					"slots": "0,3,0,0,0,0"
-				},
-				{
-					"-level": "5",
-					"slots": "0,3,0,0,0,0"
-				},
-				{
-					"-level": "6",
-					"slots": "0,3,0,0,0,0"
-				},
-				{
-					"-level": "7",
-					"slots": "0,4,2,0,0,0"
-				},
-				{
-					"-level": "8",
-					"slots": "0,4,2,0,0,0"
-				},
-				{
-					"-level": "9",
-					"slots": "0,4,2,0,0,0"
-				},
-				{
-					"-level": "10",
-					"slots": "0,4,3,0,0,0"
-				},
-				{
-					"-level": "11",
-					"slots": "0,4,3,0,0,0"
-				},
-				{
-					"-level": "12",
-					"slots": "0,4,3,0,0,0"
-				},
-				{
-					"-level": "13",
-					"slots": "0,4,3,2,0,0"
-				},
-				{
-					"-level": "14",
-					"slots": "0,4,3,2,0,0"
-				},
-				{
-					"-level": "15",
-					"slots": "0,4,3,2,0,0"
-				},
-				{
-					"-level": "16",
-					"slots": "0,4,3,3,0,0"
-				},
-				{
-					"-level": "17",
-					"slots": "0,4,3,3,0,0"
-				},
-				{
-					"-level": "18",
-					"slots": "0,4,3,3,0,0"
-				},
-				{
-					"-level": "19",
-					"slots": "0,4,3,3,1,0"
-				},
-				{
-					"-level": "20",
-					"slots": "0,4,3,3,1,0"
-				},
-				{
-					"-level": "1",
-					"feature": [{
-						"name": "Starting Proficiencies",
-						"text": [
-							"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-							"Armor: light armor, medium armor",
-							"Weapons: simple weapons",
-							"Tools: thieves’ tools + 2 other of your choice",
-							"Skills: Choose three from Arcana, Deception, History, Investigation, Medicine, Nature, Religion, Sleight of Hand"
-						]
-					},
-						{
-							"name": "Starting Equipment",
-							"text": [
-								"You start with the following items, plus anything provided by your background.",
-								"• (a) a hand axe and light hammer or (b) any two simple weapons",
-								"• light crossbow and 20 bolts",
-								"• (a) scale mail or (b) studded leather armor",
-								"• Thieves’ tools and dungeoneer’s pack"
-							]
-						}
-					]
-				},
-				{
-					"-level": "1",
-					"feature": [{
-						"name": "Artificer Specialist",
-						"text": "At 1st level, you choose the type of Artificer Specialist you are: Alchemist or Gunsmith, both of which are detailed at the end of the class description. Your choice grants you features at 1st level and again at 3rd, 9th, 14th, and 17th level."
-					},
-						{
-							"name": "Magic Item Analysis",
-							"text": "Starting at 1st level, your understanding of magic items allows you to analyze and understand their secrets. You know the artificer spells detect magic and identify, and you can cast them as rituals. You don’t need to provide a material component when casting identify with this class feature."
-						},
-						{
-							"-optional": "YES",
-							"name": "Artificer Specialist: Alchemist",
-							"text": "An alchemist is an expert at combining exotic reagents to produce a variety of materials, from healing draughts that can mend a wound in moments to clinging goo that slows creatures down."
-						},
-						{
-							"-optional": "YES",
-							"name": "Artificer Specialist: Gunsmith",
-							"text": "A master of engineering, you forge a firearm powered by a combination of science and magic."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemist: Alchemist’s Satchel",
-							"text": [
-								"At 1st level, you craft an Alchemist’s Satchel, a bag of reagents that you use to create a variety of concoctions. The bag and its contents are both magical, and this magic allows you to pull out exactly the right materials you need for your Alchemical Formula options, described below. After you use one of those options, the bag reclaims the materials. ",
-								"If you lose this satchel, you can create a new one over the course of three days of work (eight hours each day) by expending 100 gp worth of leather, glass, and other raw materials."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemist: Alchemical Formula",
-							"text": [
-								"At 1st level, you learn three Alchemical Formula options: Alchemical Fire, Alchemical Acid, and one other option of your choice. You learn an additional formula of your choice at 3rd, 9th, 14th, and 17th levels.",
-								"To use any of these options, your Alchemist’s Satchel must be within reach. If an Alchemical Formula option requires a saving throw, the DC is 8 + your proficiency bonus + your Intelligence modifier."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Alchemical Fire",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel, pull out a vial of volatile liquid, and hurl the vial at a creature, object, or surface within 30 feet of you (the vial and its contents disappear if you don’t hurl the vial by the end of the current turn). On impact, the vial detonates in a 5-foot radius. Any creature in that area must succeed on a Dexterity saving throw or take 1d6 fire damage. ",
-								"This formula’s damage increases by 1d6 when you reach certain levels in this class: 4th level (2d6), 7th level (3d6), 10th level (4d6), 13th level (5d6), 16th level (6d6), and 19th level (7d6)."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Alchemical Acid",
-							"text": [
-								"Alchemical Acid. As an action, you can reach into your Alchemist’s Satchel, pull out a vial of acid, and hurl the vial at a creature or object within 30 feet of you (the vial and its contents disappear if you don’t hurl the vial by the end of the current turn). The vial shatters on impact. A creature must succeed on a Dexterity saving throw or take 1d6 acid damage. An object automatically takes that damage, and the damage is maximized.",
-								"This formula’s damage increases by 1d6 when you reach certain levels in this class: 3rd level (2d6), 5th level (3d6), 7th level (4d6), 9th level (5d6), 11th level (6d6), 13th level (7d6), 15th level (8d6), 17th level (9d6), and 19th level (10d6)."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Healing Draught",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a vial of healing liquid. A creature can drink it as an action to regain 1d8 hit points. The vial then disappears. Once a creature regains hit points from this alchemical formula, the creature can’t do so again until it finishes a long rest. If not used, the vial and its contents disappear after 1 hour. While the vial exists, you can’t use this formula.",
-								"This formula’s healing increases by 1d8 when you reach certain levels in this class: 3rd level (2d8), 5th level (3d8), 7th level (4d8), 9th level (5d8), 11th level (6d8), 13th level (7d8), 15th level (8d8), 17th level (9d8), and 19th level (10d8)."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Smoke Stick",
-							"text": "As an action, you can reach into your Alchemist’s Satchel and pull out a stick that produces a thick plume of smoke. You can hold on to the stick or throw it to a point up to 30 feet away as part of the action used to produce it. The area in a 10-foot radius around the stick is filled with thick smoke that blocks vision, including darkvision. The stick and smoke persist for 1 minute and then disappear. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Swift Step Draught",
-							"text": "Swift Step Draught. As a bonus action, you can reach into your Alchemist’s Satchel and pull out a vial filled with a bubbling, brown liquid. As an action, a creature can drink it. Doing so increases the creature’s speed by 20 feet for 1 minute, and the vial disappears. If not used, the vial and its contents disappear after 1 minute. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Tanglefoot Bag",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don’t hurl the bag by the end of the current turn). ",
-								"The bag bursts on impact and covers the ground in a 5- foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can’t do so again for 1 minute."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Thunderstone",
-							"text": "Thunderstone. As an action, you can reach into your Alchemist’s Satchel and pull out a crystalline shard and hurl it at a creature, object, or surface within 30 feet of you (the shard disappears if you don’t hurl it by the end of the current turn). The shard shatters on impact with a blast of concussive energy. Each creature within 10 feet of the point of impact must succeed on a Constitution saving throw or be knocked prone and pushed 10 feet away from that point."
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Master Smith",
-							"text": "When you choose this specialization at 1st level, you gain proficiency with smith’s tools, and you learn the mending cantrip."
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Thunder Cannon",
-							"text": [
-								"At 1st level, you forge a deadly firearm using a combination of arcane magic and your knowledge of engineering and metallurgy. This firearm is called a Thunder Cannon. It is a ferocious weapon that fires leaden bullets that can punch through armor with ease.",
-								"You are proficient with the Thunder Cannon. The firearm is a two-handed ranged weapon that deals 2d6 piercing damage. Its normal range is 150 feet, and its maximum range if 500 feet. Once fired, it must be reloaded as a bonus action.",
-								"If you lose your Thunder Cannon, you can create a new one over the course of three days of work (eight hours each day) by expending 100 gp worth of metal and other raw materials."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Arcane Magazine",
-							"text": [
-								"At 1st level, you craft a leather bag used to carry your tools and ammunition for your Thunder Cannon. Your Arcane Magazine includes the powders, lead shot, and other materials needed to keep that weapon functioning.",
-								"You can use the Arcane Magazine to produce ammunition for your gun. At the end of each long rest, you can magically produce 40 rounds of ammunition with this magazine. After each short rest, you can produce 10 rounds.",
-								"If you lose your Arcane Magazine, you can create a new one as part of a long rest, using 25 gp of leather and other raw materials."
-							]
-						}
-					]
-				},
-				{
-					"-level": "2",
-					"feature": [{
-						"name": "Tool Expertise",
-						"text": "Starting at 2nd level, your proficiency bonus is doubled for any ability check you make that uses any of the tool proficiencies you gain from this class."
-					},
-						{
-							"name": "Wondrous Invention",
-							"text": [
-								"At 2nd level, you gain the use of a magic item that you have crafted. Choose the item from the list of 2nd-level items below. ",
-								"Crafting an item is a difficult task. When you gain a magic item from this feature, it reflects long hours of study, tinkering, and experimentation that allowed you to finally complete the item. You are assumed to work on this item in your leisure time and to finish it when you level up.",
-								"You complete another item of your choice when you reach certain levels in this class: 5th, 10th, 15th, and 20th level. The item you choose must be on the list for your current artificer level or a lower level.",
-								"These magic items are detailed in the Dungeon Master’s Guide.",
-								"2nd Level: bag of holding, cap of water breathing, driftglobe, goggles of night, sending stones",
-								"5th Level: alchemy jug, helm of comprehending languages, lantern of revealing, ring of swimming, robe of useful items, rope of climbing, wand of magic detection, wand of secrets",
-								"10th Level: bag of beans, chime of opening, decanter of endless water, eyes of minute seeing, folding boat, Heward’s handy haversack",
-								"15th Level: boots of striding and springing, bracers of archery, brooch of shielding, broom of flying, hat of disguise, slippers of spider climbing",
-								"20th Level: eyes of the eagle, gem of brightness, gloves of missile snaring, gloves of swimming and climbing, ring of jumping, ring of mind shielding, wings of flying"
-							]
-						}
-					]
-				},
-				{
-					"-level": "3",
-					"feature": [{
-						"name": "Spellcasting",
-						"text": [
-							"As part of your study of magic, you gain the ability to cast spells at 3rd level. The spells you learn are limited in scope, primarily concerned with modifying creatures and objects or creating items.",
-							"Spell Slots",
-							"The Artificer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.",
-							"Spells Known of 1st Level and Higher",
-							"You know three 1st-level spells of your choice from the artificer spell list (which appears at the end of this document).",
-							"The Spells Known column of the Artificer table shows when you learn more artificer spells of your choice from this feature. Each of these spells must be of a level for which you have spell slots on the Artificer table.",
-							"Additionally, when you gain a level in this class, you can choose one of the artificer spells you know from this feature and replace it with another spell from the artificer spell list. The new spell must also be of a level for which you have spell slots on the Artificer table.",
-							"Spellcasting Ability",
-							"Intelligence is your spellcasting ability for your artificer spells; your understanding of the theory behind magic allows you to wield these spells with superior skill. You use your Intelligence whenever an artificer spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for an artificer spell you cast and when making an attack roll with one.",
-							"Spell save DC = 8 + your proficiency bonus + your Intelligence modifier",
-							"Spell attack modifier = your proficiency bonus + your Intelligence modifier",
-							"Spellcasting Focus",
-							"You can use an arcane focus as a spellcasting focus for your artificer spells. See chapter 5, “Equipment,” in the Player’s Handbook for various arcane focus options."
-						]
-					},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula - Healing Draught",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a vial of healing liquid. A creature can drink it as an action to regain 1d8 hit points. The vial then disappears. Once a creature regains hit points from this alchemical formula, the creature can’t do so again until it finishes a long rest. If not used, the vial and its contents disappear after 1 hour. While the vial exists, you can’t use this formula.",
-								"This formula’s healing increases by 1d8 when you reach certain levels in this class: 3rd level (2d8), 5th level (3d8), 7th level (4d8), 9th level (5d8), 11th level (6d8), 13th level (7d8), 15th level (8d8), 17th level (9d8), and 19th level (10d8)."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula - Smoke Stick",
-							"text": "As an action, you can reach into your Alchemist’s Satchel and pull out a stick that produces a thick plume of smoke. You can hold on to the stick or throw it to a point up to 30 feet away as part of the action used to produce it. The area in a 10-foot radius around the stick is filled with thick smoke that blocks vision, including darkvision. The stick and smoke persist for 1 minute and then disappear. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula - Swift Step Draught",
-							"text": "Swift Step Draught. As a bonus action, you can reach into your Alchemist’s Satchel and pull out a vial filled with a bubbling, brown liquid. As an action, a creature can drink it. Doing so increases the creature’s speed by 20 feet for 1 minute, and the vial disappears. If not used, the vial and its contents disappear after 1 minute. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula - Tanglefoot Bag",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don’t hurl the bag by the end of the current turn). ",
-								"The bag bursts on impact and covers the ground in a 5- foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can’t do so again for 1 minute."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula - Thunderstone",
-							"text": "As an action, you can reach into your Alchemist’s Satchel and pull out a crystalline shard and hurl it at a creature, object, or surface within 30 feet of you (the shard disappears if you don’t hurl it by the end of the current turn). The shard shatters on impact with a blast of concussive energy. Each creature within 10 feet of the point of impact must succeed on a Constitution saving throw or be knocked prone and pushed 10 feet away from that point."
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Thundermonger",
-							"text": [
-								"At 3rd level, you learn to channel thunder energy into your Thunder Cannon. As an action, you can make a special attack with your Thunder Cannon that deals an extra 1d6 thunder damage on a hit.",
-								"This extra damage increases by 1d6 when you reach certain levels in this class: 5th level (2d6), 7th level (3d6), 9th level (4d6), 11th level (5d6), 13th level (6d6), 15th level (7d6), 17th level (8d6), and 19th level (9d6)."
-							]
-						}
-					]
-				},
-				{
-					"-level": "4",
-					"feature": {
-						"-optional": "YES",
-						"name": "Ability Score Improvement",
-						"text": [
-							"When you reach 4th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
-						]
-					}
-				},
-				{
-					"-level": "5",
-					"feature": [{
-						"name": "Superior Attunement",
-						"text": [
-							"At 5th level, your superior understanding of magic items allows you to master their use. You can now attune to up to four, rather than three, magic items at a time.",
-							"At 15th level, this limit increases to five magic items."
-						]
-					},
-						{
-							"name": "Wondrous Invention 2",
-							"text": [
-								"At 5th level, you gain the use of a magic item that you have crafted.",
-								"Crafting an item is a difficult task. When you gain a magic item from this feature, it reflects long hours of study, tinkering, and experimentation that allowed you to finally complete the item. You are assumed to work on this item in your leisure time and to finish it when you level up.",
-								"The item you choose must be on the list for your current artificer level or a lower level.",
-								"These magic items are detailed in the Dungeon Master’s Guide.",
-								"2nd Level: bag of holding, cap of water breathing, driftglobe, goggles of night, sending stones",
-								"5th Level: alchemy jug, helm of comprehending languages, lantern of revealing, ring of swimming, robe of useful items, rope of climbing, wand of magic detection, wand of secrets"
-							]
-						}
-					]
-				},
-				{
-					"-level": "6",
-					"feature": {
-						"name": "Mechanical Servant",
-						"text": [
-							"At 6th level, your research and mastery of your craft allow you to produce a mechanical servant. The servant is a construct that obeys your commands without hesitation and functions in combat to protect you. Though magic fuels its creation, the servant is not magical itself. You are assumed to have been working on the servant for quite some time, finally finishing it during a short or long rest after you reach 6th level.",
-							"Select a Large beast with a challenge rating of 2 or less. The servant uses that beast’s game statistics, but it can look however you like, as long as its form is appropriate for its statistics. It has the following modifications:",
-							"• It is a construct instead of a beast.",
-							"• It can’t be charmed.",
-							"• It is immune to poison damage and the poisoned condition.",
-							"• It gains darkvision with a range of 60 feet if it doesn’t have it already.",
-							"• It understands the languages you can speak when you create it, but it can’t speak.",
-							"• If you are the target of a melee attack and the servant is within 5 feet of the attacker, you can use your reaction to command the servant to respond, using its reaction to make a melee attack against the attacker. ",
-							"The servant obeys your orders to the best of its ability. In combat, it rolls its own initiative and acts on its own.",
-							"If the servant is killed, it can be returned to life via normal means, such as with the revivify spell. In addition, over the course of a long rest, you can repair a slain servant if you have access to its body. It returns to life with 1 hit point at the end of the rest. If the servant is beyond recovery, you can build a new one with one week of work (eight hours each day) and 1,000 gp of raw materials."
-						]
-					}
-				},
-				{
-					"-level": "8",
-					"feature": {
-						"name": "Ability Score Improvement",
-						"text": [
-							"When you reach 8th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
-						]
-					}
-				},
-				{
-					"-level": "9",
-					"feature": [{
-						"-optional": "YES",
-						"name": "Alchemical Formula: Healing Draught",
-						"text": [
-							"As an action, you can reach into your Alchemist’s Satchel and pull out a vial of healing liquid. A creature can drink it as an action to regain 1d8 hit points. The vial then disappears. Once a creature regains hit points from this alchemical formula, the creature can’t do so again until it finishes a long rest. If not used, the vial and its contents disappear after 1 hour. While the vial exists, you can’t use this formula.",
-							"This formula’s healing increases by 1d8 when you reach certain levels in this class: 3rd level (2d8), 5th level (3d8), 7th level (4d8), 9th level (5d8), 11th level (6d8), 13th level (7d8), 15th level (8d8), 17th level (9d8), and 19th level (10d8)."
-						]
-					},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Smoke Stick",
-							"text": "As an action, you can reach into your Alchemist’s Satchel and pull out a stick that produces a thick plume of smoke. You can hold on to the stick or throw it to a point up to 30 feet away as part of the action used to produce it. The area in a 10-foot radius around the stick is filled with thick smoke that blocks vision, including darkvision. The stick and smoke persist for 1 minute and then disappear. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Swift Step Draught",
-							"text": "Swift Step Draught. As a bonus action, you can reach into your Alchemist’s Satchel and pull out a vial filled with a bubbling, brown liquid. As an action, a creature can drink it. Doing so increases the creature’s speed by 20 feet for 1 minute, and the vial disappears. If not used, the vial and its contents disappear after 1 minute. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Tanglefoot Bag",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don’t hurl the bag by the end of the current turn). ",
-								"The bag bursts on impact and covers the ground in a 5- foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can’t do so again for 1 minute."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula: Thunderstone",
-							"text": "Thunderstone. As an action, you can reach into your Alchemist’s Satchel and pull out a crystalline shard and hurl it at a creature, object, or surface within 30 feet of you (the shard disappears if you don’t hurl it by the end of the current turn). The shard shatters on impact with a blast of concussive energy. Each creature within 10 feet of the point of impact must succeed on a Constitution saving throw or be knocked prone and pushed 10 feet away from that point."
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Blast Wave",
-							"text": [
-								"Starting at 9th level, you can channel force energy into your Thunder Cannon. As an action, you can make a special attack with it. Rather than making an attack roll, you unleash force energy in a 15-foot cone from the gun. Each creature in that area must make a Strength saving throw with a DC of 8 + your proficiency bonus + your Intelligence modifier. On a failed saving throw, a target takes 2d6 force damage and is pushed 10 feet away from you.",
-								"This damage increases by 1d6 when you reach certain levels in this class: 13th level (3d6) and 17th level (4d6)."
-							]
-						}
-					]
-				},
-				{
-					"-level": "10",
-					"feature": {
-						"name": "Wondrous Invention",
-						"text": [
-							"At 10th level, you gain the use of a magic item that you have crafted.",
-							"Crafting an item is a difficult task. When you gain a magic item from this feature, it reflects long hours of study, tinkering, and experimentation that allowed you to finally complete the item. You are assumed to work on this item in your leisure time and to finish it when you level up.",
-							"The item you choose must be on the list for your current artificer level or a lower level.",
-							"These magic items are detailed in the Dungeon Master’s Guide.",
-							"2nd Level: bag of holding, cap of water breathing, driftglobe, goggles of night, sending stones",
-							"5th Level: alchemy jug, helm of comprehending languages, lantern of revealing, ring of swimming, robe of useful items, rope of climbing, wand of magic detection, wand of secrets",
-							"10th Level: bag of beans, chime of opening, decanter of endless water, eyes of minute seeing, folding boat, Heward’s handy haversack"
-						]
-					}
-				},
-				{
-					"-level": "12",
-					"feature": {
-						"name": "Ability Score Improvement",
-						"text": [
-							"When you reach 12th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
-						]
-					}
-				},
-				{
-					"-level": "14",
-					"feature": [{
-						"-optional": "YES",
-						"name": "Alchemical Formula 6 Healing Draught",
-						"text": [
-							"As an action, you can reach into your Alchemist’s Satchel and pull out a vial of healing liquid. A creature can drink it as an action to regain 1d8 hit points. The vial then disappears. Once a creature regains hit points from this alchemical formula, the creature can’t do so again until it finishes a long rest. If not used, the vial and its contents disappear after 1 hour. While the vial exists, you can’t use this formula.",
-							"This formula’s healing increases by 1d8 when you reach certain levels in this class: 3rd level (2d8), 5th level (3d8), 7th level (4d8), 9th level (5d8), 11th level (6d8), 13th level (7d8), 15th level (8d8), 17th level (9d8), and 19th level (10d8)."
-						]
-					},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 6 Smoke Stick",
-							"text": "As an action, you can reach into your Alchemist’s Satchel and pull out a stick that produces a thick plume of smoke. You can hold on to the stick or throw it to a point up to 30 feet away as part of the action used to produce it. The area in a 10-foot radius around the stick is filled with thick smoke that blocks vision, including darkvision. The stick and smoke persist for 1 minute and then disappear. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 6 Swift Step Draught",
-							"text": "Swift Step Draught. As a bonus action, you can reach into your Alchemist’s Satchel and pull out a vial filled with a bubbling, brown liquid. As an action, a creature can drink it. Doing so increases the creature’s speed by 20 feet for 1 minute, and the vial disappears. If not used, the vial and its contents disappear after 1 minute. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 6 Tanglefoot Bag",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don’t hurl the bag by the end of the current turn). ",
-								"The bag bursts on impact and covers the ground in a 5- foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can’t do so again for 1 minute."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 6 Thunderstone",
-							"text": "Thunderstone. As an action, you can reach into your Alchemist’s Satchel and pull out a crystalline shard and hurl it at a creature, object, or surface within 30 feet of you (the shard disappears if you don’t hurl it by the end of the current turn). The shard shatters on impact with a blast of concussive energy. Each creature within 10 feet of the point of impact must succeed on a Constitution saving throw or be knocked prone and pushed 10 feet away from that point."
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Piercing Round",
-							"text": [
-								"Starting at 14th level, you can shoot lightning energy through your Thunder Cannon. As an action, you can make a special attack with it. Rather than making an attack roll, you cause the gun to unleash a bolt of lightning, 5-feet wide and 30-feet long. Each creature in that area must make Dexterity saving throws with a DC of 8 + your proficiency bonus + your Intelligence modifier. On a failed saving throw, a target takes 4d6 lightning damage. ",
-								"This damage increases to 6d6 when you reach 19th level in this class."
-							]
-						}
-					]
-				},
-				{
-					"-level": "15",
-					"feature": [{
-						"name": "Superior Attunement",
-						"text": "At 15th level, your superior understanding of magic items allows you to master their use. You can now attune to up to five, rather than four, magic items at a time."
-					},
-						{
-							"name": "Wondrous Invention",
-							"text": [
-								"At 15th level, you gain the use of a magic item that you have crafted.",
-								"Crafting an item is a difficult task. When you gain a magic item from this feature, it reflects long hours of study, tinkering, and experimentation that allowed you to finally complete the item. You are assumed to work on this item in your leisure time and to finish it when you level up.",
-								"The item you choose must be on the list for your current artificer level or a lower level.",
-								"These magic items are detailed in the Dungeon Master’s Guide.",
-								"2nd Level: bag of holding, cap of water breathing, driftglobe, goggles of night, sending stones",
-								"5th Level: alchemy jug, helm of comprehending languages, lantern of revealing, ring of swimming, robe of useful items, rope of climbing, wand of magic detection, wand of secrets",
-								"10th Level: bag of beans, chime of opening, decanter of endless water, eyes of minute seeing, folding boat, Heward’s handy haversack",
-								"15th Level: boots of striding and springing, bracers of archery, brooch of shielding, broom of flying, hat of disguise, slippers of spider climbing"
-							]
-						}
-					]
-				},
-				{
-					"-level": "16",
-					"feature": {
-						"name": "Ability Score Improvement",
-						"text": [
-							"When you reach 16th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
-						]
-					}
-				},
-				{
-					"-level": "17",
-					"feature": [{
-						"-optional": "YES",
-						"name": "Alchemical Formula 7 Healing Draught",
-						"text": [
-							"As an action, you can reach into your Alchemist’s Satchel and pull out a vial of healing liquid. A creature can drink it as an action to regain 1d8 hit points. The vial then disappears. Once a creature regains hit points from this alchemical formula, the creature can’t do so again until it finishes a long rest. If not used, the vial and its contents disappear after 1 hour. While the vial exists, you can’t use this formula.",
-							"This formula’s healing increases by 1d8 when you reach certain levels in this class: 3rd level (2d8), 5th level (3d8), 7th level (4d8), 9th level (5d8), 11th level (6d8), 13th level (7d8), 15th level (8d8), 17th level (9d8), and 19th level (10d8)."
-						]
-					},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 7 Smoke Stick",
-							"text": "As an action, you can reach into your Alchemist’s Satchel and pull out a stick that produces a thick plume of smoke. You can hold on to the stick or throw it to a point up to 30 feet away as part of the action used to produce it. The area in a 10-foot radius around the stick is filled with thick smoke that blocks vision, including darkvision. The stick and smoke persist for 1 minute and then disappear. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 7 Swift Step Draught",
-							"text": "Swift Step Draught. As a bonus action, you can reach into your Alchemist’s Satchel and pull out a vial filled with a bubbling, brown liquid. As an action, a creature can drink it. Doing so increases the creature’s speed by 20 feet for 1 minute, and the vial disappears. If not used, the vial and its contents disappear after 1 minute. After using this formula, you can’t do so again for 1 minute."
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 7 Tanglefoot Bag",
-							"text": [
-								"As an action, you can reach into your Alchemist’s Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don’t hurl the bag by the end of the current turn). ",
-								"The bag bursts on impact and covers the ground in a 5- foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can’t do so again for 1 minute."
-							]
-						},
-						{
-							"-optional": "YES",
-							"name": "Alchemical Formula 7 Thunderstone",
-							"text": "Thunderstone. As an action, you can reach into your Alchemist’s Satchel and pull out a crystalline shard and hurl it at a creature, object, or surface within 30 feet of you (the shard disappears if you don’t hurl it by the end of the current turn). The shard shatters on impact with a blast of concussive energy. Each creature within 10 feet of the point of impact must succeed on a Constitution saving throw or be knocked prone and pushed 10 feet away from that point."
-						},
-						{
-							"-optional": "YES",
-							"name": "Gunsmith: Explosive Round",
-							"text": "Starting at 17th level, you can channel fiery energy into your Thunder Cannon. As an action, you can make a special attack with it. Rather than making an attack roll, you launch an explosive round from the gun. The round detonates in a 30-foot radius sphere at a point within range. Each creature in that area must make a Dexterity saving throw with a DC of 8 + your proficiency bonus + your Intelligence modifier. On a failed saving throw, a target takes 4d8 fire damage."
-						}
-					]
-				},
-				{
-					"-level": "18",
-					"feature": {
-						"name": "Ability Score Improvement",
-						"text": [
-							"When you reach 18th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-							"If your DM allows the use of feats, you may instead take a feat."
-						]
-					}
-				},
-				{
-					"-level": "20",
-					"feature": [{
-						"name": "Wondrous Invention",
-						"text": [
-							"At 20th level, you gain the use of a magic item that you have crafted.",
-							"Crafting an item is a difficult task. When you gain a magic item from this feature, it reflects long hours of study, tinkering, and experimentation that allowed you to finally complete the item. You are assumed to work on this item in your leisure time and to finish it when you level up.",
-							"The item you choose must be on the list for your current artificer level or a lower level.",
-							"These magic items are detailed in the Dungeon Master’s Guide.",
-							"2nd Level: bag of holding, cap of water breathing, driftglobe, goggles of night, sending stones",
-							"5th Level: alchemy jug, helm of comprehending languages, lantern of revealing, ring of swimming, robe of useful items, rope of climbing, wand of magic detection, wand of secrets",
-							"10th Level: bag of beans, chime of opening, decanter of endless water, eyes of minute seeing, folding boat, Heward’s handy haversack",
-							"15th Level: boots of striding and springing, bracers of archery, brooch of shielding, broom of flying, hat of disguise, slippers of spider climbing",
-							"20th Level: eyes of the eagle, gem of brightness, gloves of missile snaring, gloves of swimming and climbing, ring of jumping, ring of mind shielding, wings of flying"
-						]
-					},
-						{
-							"name": "Soul of Artifice",
-							"text": "At 20th level, your understanding of magic items is unmatched, allowing you to mingle your soul with items linked to you. You can attune to up to six magic items at once. In addition, you gain a +1 bonus to all saving throws per magic item you are currently attuned to."
-						}
-					]
-				}
-			]
-		},
+		"class": [
 			{
 				"name": "Barbarian",
 				"hd": "12",
 				"proficiency": "Strength, Constitution",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
-					"feature": [{
+					"feature": [ {
 						"name": "Starting Proficiencies",
 						"text": [
 							"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -608,7 +32,7 @@ export const classes = {
 				},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Rage",
 							"text": [
 								"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.",
@@ -629,7 +53,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Danger Sense",
 							"text": "At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
 						},
@@ -641,7 +65,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Increased Rages",
 							"text": "You may now rage 3 times before a long rest."
 						},
@@ -741,7 +165,7 @@ export const classes = {
 					},
 					{
 						"-level": "5",
-						"feature": [{
+						"feature": [ {
 							"name": "Extra Attack",
 							"text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
 						},
@@ -757,7 +181,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"name": "Increased Rages",
 							"text": "You may now rage 4 times before a long rest."
 						},
@@ -825,7 +249,7 @@ export const classes = {
 					},
 					{
 						"-level": "9",
-						"feature": [{
+						"feature": [ {
 							"name": "Brutal Critical (1 die)",
 							"text": [
 								"Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.",
@@ -840,7 +264,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Path of the Berserker: Intimidating Presence",
 							"text": [
@@ -872,7 +296,7 @@ export const classes = {
 					},
 					{
 						"-level": "12",
-						"feature": [{
+						"feature": [ {
 							"name": "Ability Score Improvement",
 							"text": [
 								"When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
@@ -894,7 +318,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Path of the Berserker: Retaliation",
 							"text": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you. you can use your reaction to make a melee weapon attack against that creature."
@@ -945,7 +369,7 @@ export const classes = {
 					},
 					{
 						"-level": "16",
-						"feature": [{
+						"feature": [ {
 							"name": "Ability Score Improvement",
 							"text": [
 								"When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
@@ -960,7 +384,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"name": "Brutal Critical (3 dice)",
 							"text": "You now roll three additional weapon damage dice when determining the extra damage for a critical hit with a melee attack."
 						},
@@ -989,10 +413,10 @@ export const classes = {
 					},
 					{
 						"-level": "20",
-						"feature": [{
+						"feature": [ {
 							"name": "Primal Champion",
 							"text": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.",
-							"modifier": [{
+							"modifier": [ {
 								"-category": "ability score",
 								"#text": "strength +4"
 							},
@@ -1010,7 +434,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Primal Path: Path of the Ancestral Guardian (UA)",
 							"text": [
@@ -1068,7 +492,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Path of the Ancestral Guardian: Ancestral Shield",
 							"text": "Beginning at 6th level, the guardian spirits that aid you can provide protection for your allies. If you are raging and an ally you can see within 30 feet of you takes bludgeoning, piercing, or slashing damage, you can use your reaction to transfer your resistance to those damage types to the ally. The resistance applies to the incoming damage. Until the start of your next turn, the ally keeps the resistance and you lack it, unless you also have it from a source other than Rage."
@@ -1092,7 +516,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Path of the Ancestral Guardian: Consult the Spirits",
 							"text": "At 10th level, you gain the ability to consult with your ancestral spirits. Right before you make an Intelligence or a Wisdom check, you can give yourself advantage on the check. You can use this feature three times, and you regain expended uses when you finish a long rest."
@@ -1114,7 +538,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Path of the Ancestral Guardian: Vengeful Ancestors",
 							"text": "At 14th level, your ancestral spirits grow powerful enough to strike your foes. When you or an ally you can see within 30 feet of you is damaged by a melee attack while you're raging, you can use your reaction to cause the attacker to take 2d8 force damage from the spirits."
@@ -1146,7 +570,7 @@ export const classes = {
 				"hd": "8",
 				"proficiency": "Dexterity, Charisma",
 				"spellAbility": "Charisma",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "2,2,0,0,0,0,0,0,0,0"
 				},
@@ -1228,7 +652,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -1253,7 +677,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Bardic Inspiration",
 							"text": [
 								"You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.",
@@ -1306,7 +730,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Bard College",
 							"text": "At 3rd level, you delve into the advanced techniques of a bard college of your choice: the College of Lore or the College of Valor, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th and 14th level."
 						},
@@ -1368,7 +792,7 @@ export const classes = {
 					},
 					{
 						"-level": "5",
-						"feature": [{
+						"feature": [ {
 							"name": "Bardic Inspiration (d8)",
 							"text": "At 5th level, your Bardic Inspiration die changes to a d8."
 						},
@@ -1380,7 +804,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"name": "Countercharm",
 							"text": "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early if you are incapacitated or silenced or if you voluntarily end it (no action required)."
 						},
@@ -1415,7 +839,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"name": "Bardic Inspiration (d10)",
 							"text": "At 10th level, your Bardic Inspiration die changes to a d10."
 						},
@@ -1452,7 +876,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"name": "Magical Secrets",
 							"text": [
 								"At 14th level, choose two additional spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.",
@@ -1524,7 +948,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Bard College: College of Swords (UA)",
 							"text": [
@@ -1649,7 +1073,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "College of Satire: Fool's Insight",
 							"text": [
@@ -1685,7 +1109,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "College of Satire: Fool's Luck ",
 							"text": [
@@ -1728,7 +1152,7 @@ export const classes = {
 				"hd": "8",
 				"proficiency": "Wisdom, Charisma",
 				"spellAbility": "Wisdom",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "3,2,0,0,0,0,0,0,0,0"
 				},
@@ -1810,7 +1234,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -1836,7 +1260,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Spellcasting",
 							"text": [
 								"As a conduit for divine power, you can cast cleric spells. See chapter 10 for the general rules of spellcasting and chapter 11 for a selection of cleric spells.",
@@ -2072,7 +1496,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Channel Divinity",
 							"text": [
 								"At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.",
@@ -2184,7 +1608,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"name": "Channel Divinity (2/rest)",
 							"text": "Beginning at 6th level, you can use your Channel Divinity twice between rests."
 						},
@@ -2245,7 +1669,7 @@ export const classes = {
 					},
 					{
 						"-level": "8",
-						"feature": [{
+						"feature": [ {
 							"name": "Ability Score Improvement",
 							"text": [
 								"When you reach 8th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
@@ -2260,7 +1684,7 @@ export const classes = {
 					},
 					{
 						"-level": "8",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Arcana Domain: Potent Spellcasting",
 							"text": "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
@@ -2354,7 +1778,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"name": "Destroy Undead (CR 4)",
 							"text": "Starting at 17th level, when an undead of CR 4 or lower fails its saving throw against your Turn Undead feature, the creature is instantly destroyed."
 						},
@@ -2436,7 +1860,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Divine Domain: Forge (UA)",
 							"text": [
@@ -2523,7 +1947,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Forge Domain Channel Divinty: Artisan's Blessing",
 							"text": [
@@ -2553,7 +1977,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Forge Domain: Soul of the Forge",
 							"text": [
@@ -2580,7 +2004,7 @@ export const classes = {
 					},
 					{
 						"-level": "8",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Forge Domain: Divine Strike",
 							"text": "At 8th level, you gain the ability to infuse your weapon strikes with the fiery power of the forge. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 fire damage to the target. When you reach 14th level, the extra damage increases to 2d8."
@@ -2599,7 +2023,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Forge Domain: Saint of Forge and Fire",
 							"text": "At 17th level, your affinity for fire and metal becomes more powerful due to your deity's blessing. You gain immunity to fire damage, and while you're wearing heavy armor, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks."
@@ -2626,7 +2050,7 @@ export const classes = {
 				"hd": "8",
 				"proficiency": "Intelligence, Wisdom",
 				"spellAbility": "Wisdom",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "2,2,0,0,0,0,0,0,0,0"
 				},
@@ -2708,7 +2132,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -2732,7 +2156,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Druidic",
 							"text": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
 						},
@@ -2761,7 +2185,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Wild Shape",
 							"text": [
 								"Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.",
@@ -2848,7 +2272,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Circle of Land: Land's Stride",
 							"text": [
@@ -2875,7 +2299,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Circle of Land: Nature's Ward",
 							"text": "When you reach 10th level, you can't be charmed or frightened by elementals or fey, and you are immune to poison and disease."
@@ -2899,7 +2323,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Circle of Land: Nature's Sanctuary",
 							"text": [
@@ -2926,7 +2350,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"name": "Timeless Body",
 							"text": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
 						},
@@ -2958,7 +2382,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Optional Rule: Wild Shape Forms",
 							"text": [
@@ -3044,7 +2468,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Circle of Dreams: Hearth of Moonlight and Shadow",
 							"text": "At 6th level, home is wherever you set up camp. During a short or long rest, you can invoke the shadowy power of the Gloaming Court to ward your campsite from intruders. At the start of the rest, you create an area with a 30-foot radius. Within this area, you and your allies gain a +5 bonus to Wisdom (Perception) checks to detect creatures, and any light from open flames (campfire, torches, and the like) is not visible outside the area. These effects end when the rest finishes or when you leave the area."
@@ -3066,7 +2490,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Circle of Dreams: Hidden Paths",
 							"text": [
@@ -3121,7 +2545,7 @@ export const classes = {
 				"hd": "10",
 				"proficiency": "Strength, Constitution",
 				"spellAbility": "Intelligence",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "3",
 					"slots": {
 						"-optional": "YES",
@@ -3249,7 +2673,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -3274,7 +2698,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Fighting Style",
 							"text": "You adopt a particular style of fighting as your specialty. Choose a fighting style from the list of optional features. You can't take the same Fighting Style option more than once, even if you get to choose again."
 						},
@@ -3329,7 +2753,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Martial Archetype",
 							"text": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level."
 						},
@@ -3542,7 +2966,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Battle Master: Additional Maneuvers",
 							"text": "At 7th level, you learn two additional maneuvers of your choice, which are listed in the Fighter (Battle Master) spell list, as well as optional features at level 3."
@@ -3617,7 +3041,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Battle Master: Additional Maneuvers",
 							"text": "At 10th level, you learn two additional maneuvers of your choice, which are listed in the Fighter (Battle Master) spell list, as well as optional features at level 3."
@@ -3688,7 +3112,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Battle Master: Additional Maneuvers",
 							"text": "At 15th level, you learn two additional maneuvers of your choice, which are listed in the Fighter (Battle Master) spell list, as well as optional features at level 3."
@@ -3732,7 +3156,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"name": "Action Surge (two uses)",
 							"text": "At 17th level, you can use Action Surge twice before a rest, but only once on the same turn."
 						},
@@ -3744,7 +3168,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Battle Master: Improved Combat Superiority (d12)",
 							"text": "At 18th level, your superiority dice turn into d12s."
@@ -3780,7 +3204,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Fighting Style: Close Quarters Shooter (UA)",
 							"text": [
@@ -3808,7 +3232,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Martial Archetype: Cavalier (UA)",
 							"text": [
@@ -4011,7 +3435,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Cavalier: Ferocious Charger",
 							"text": "At 7th level, you gain additional benefits when you use superiority dice to increase your damage when you attack with a lance. You can expend up to two superiority dice on the attack, adding both to the damage roll. If you spend two dice, the target has disadvantage on its Strength saving throw to avoid being knocked prone."
@@ -4056,7 +3480,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Cavalier: Improved Combat Superiority",
 							"text": "At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s."
@@ -4102,7 +3526,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Cavalier: Relentless",
 							"text": "Starting at 15th level, when you roll initiative and have no superiority dice remaining, you regain 1 superiority die."
@@ -4146,7 +3570,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Arcane Archer: Deadly Arrow",
 							"text": "At 18th level, your Arcane Arrow's bonus damage increases to 4d6 force damage."
@@ -4196,9 +3620,9 @@ export const classes = {
 				"hd": "8",
 				"proficiency": "Strength, Dexterity",
 				"spellAbility": "Wisdom",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
-					"feature": [{
+					"feature": [ {
 						"name": "Starting Proficiencies",
 						"text": [
 							"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -4222,7 +3646,7 @@ export const classes = {
 				},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Unarmored Defense",
 							"text": "Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
 						},
@@ -4241,7 +3665,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Ki",
 							"text": [
 								"Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.",
@@ -4277,7 +3701,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Monastic Tradition",
 							"text": "When you reach 3rd level, you commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
 						},
@@ -4361,7 +3785,7 @@ export const classes = {
 					},
 					{
 						"-level": "4",
-						"feature": [{
+						"feature": [ {
 							"name": "Ability Score Improvement",
 							"text": [
 								"When you reach 4th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
@@ -4376,7 +3800,7 @@ export const classes = {
 					},
 					{
 						"-level": "5",
-						"feature": [{
+						"feature": [ {
 							"name": "Extra Attack",
 							"text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
 						},
@@ -4392,7 +3816,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"name": "Ki-Empowered Strikes",
 							"text": "Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
 						},
@@ -4439,7 +3863,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"name": "Stillness of Mind",
 							"text": "Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened."
 						},
@@ -4468,7 +3892,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"name": "Purity of Body",
 							"text": "At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison."
 						},
@@ -4484,7 +3908,7 @@ export const classes = {
 					},
 					{
 						"-level": "11",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Way of Shadow: Cloak of Shadows",
 							"text": "You have learned to become one with the shadows. When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light."
@@ -4545,7 +3969,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"name": "Diamond Soul",
 							"text": [
 								"Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.",
@@ -4582,7 +4006,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"name": "Martial Arts (1d10)",
 							"text": "You can now roll a d10 in the place of the normal damage of your unarmed strike or monk weapon."
 						},
@@ -4624,7 +4048,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"name": "Empty Body",
 							"text": [
 								"Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.",
@@ -4660,7 +4084,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Monastic Tradition: Way of the Kensei (UA)",
 							"text": [
@@ -4713,7 +4137,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Way of the Kensei: One with the Blade",
 							"text": [
@@ -4736,7 +4160,7 @@ export const classes = {
 					},
 					{
 						"-level": "11",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Way of the Kensei: Sharpen the Blade",
 							"text": "At 11th level, you gain the ability to augment your weapons with the strength of your ki. As a bonus action, you can expend up to 3 ki points to grant a weapon you touch a bonus to attack and damage rolls while you wield it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute."
@@ -4753,7 +4177,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Way of the Kensei: Unerring Accuracy",
 							"text": "At 17th level, your mastery of weapons grants you extraordinary accuracy. On each of your turns, you can reroll one weapon attack roll you make that misses."
@@ -4771,614 +4195,11 @@ export const classes = {
 				]
 			},
 			{
-				"name": "Mystic (UA)",
-				"hd": "8",
-				"proficiency": "Intelligence, Wisdom",
-				"spellAbility": "Intelligence",
-				"autolevel": [{
-					"-level": "1",
-					"slots": "1,1,4,2,0,0,0,0,0,0"
-				},
-					{
-						"-level": "2",
-						"slots": "1,1,6,2,0,0,0,0,0,0"
-					},
-					{
-						"-level": "3",
-						"slots": "2,2,14,3,0,0,0,0,0,0"
-					},
-					{
-						"-level": "4",
-						"slots": "2,3,17,3,0,0,0,0,0,0"
-					},
-					{
-						"-level": "5",
-						"slots": "2,3,27,5,0,0,0,0,0,0"
-					},
-					{
-						"-level": "6",
-						"slots": "2,3,32,5,0,0,0,0,0,0"
-					},
-					{
-						"-level": "7",
-						"slots": "2,4,38,6,0,0,0,0,0,0"
-					},
-					{
-						"-level": "8",
-						"slots": "2,4,44,6,0,0,0,0,0,0"
-					},
-					{
-						"-level": "9",
-						"slots": "2,5,57,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "10",
-						"slots": "3,5,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "11",
-						"slots": "3,5,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "12",
-						"slots": "3,6,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "13",
-						"slots": "3,6,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "14",
-						"slots": "3,6,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "15",
-						"slots": "3,7,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "16",
-						"slots": "3,7,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "17",
-						"slots": "4,7,64,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "18",
-						"slots": "4,8,71,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "19",
-						"slots": "4,8,71,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "20",
-						"slots": "4,8,71,7,0,0,0,0,0,0"
-					},
-					{
-						"-level": "1",
-						"feature": [{
-							"name": "Starting Proficiencies",
-							"text": [
-								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-								"Armor: light armor",
-								"Weapons: simple weapons",
-								"Tools: none",
-								"Skills: Choose two skills from Arcana, History, Insight, Medicine, Nature, Perception, and Religion"
-							]
-						},
-							{
-								"name": "Starting Equipment",
-								"text": [
-									"You start with the following items, plus anything provided by your background.",
-									"• (a) a spear or (b) a mace ",
-									"• (a) leather armor or (b) studded leather armor ",
-									"• (a) a light crossbow and 20 bolts or (b) any simple weapon ",
-									"• (a) a scholar's pack or (b) an explorer's pack",
-									"Alternatively, you may start with 5d4 x 10 gold and choose your own equipment."
-								]
-							},
-							{
-								"name": "Important Notes",
-								"text": [
-									"The material here is presented for playtesting and to spark your imagination. ",
-									"These game mechanics are in draft form, usable in your campaign but not refined by design iterations or full game development and editing. ",
-									"They aren’t officially part of the game and aren’t permitted in DnD Adventurers League events",
-									"Also, spell slots are organized as such: Cantrips = Number of Talents, Level 1 Slots = Number of Disciplines, Level 2 Slots = Psi Points, Level 3 Slots = Psi Limit"
-								]
-							},
-							{
-								"name": "Psionics",
-								"text": "As a student of psionics, you can master and use psionic talents and disciplines, the rules for which appear at the end of this document. Psionics is a special form of magic use, distinct from spellcasting."
-							},
-							{
-								"name": "Psionic Talents",
-								"text": "A psionic talent is a minor psionic effect you have mastered. At 1st level, you know one psionic talent of your choice. You learn additional talents of your choice at higher levels. The Talents Known column of the Mystic table shows the total number of talents you know at each level; when that number goes up for you, choose a new talent."
-							},
-							{
-								"name": "Psionic Disciplines",
-								"text": [
-									"A psionic discipline is a rigid set of mental exercises that allows a mystic to manifest psionic power. A mystic masters only a few disciplines at a time. ",
-									"At 1st level, you know one psionic discipline of your choice. The Disciplines Known column of the Mystic table shows the total number of disciplines you know at each level; when that number goes up for you, choose a new discipline.",
-									"In addition, whenever you gain a level in this class, you can replace one discipline you know with a different one of your choice."
-								]
-							},
-							{
-								"name": "Psi Points",
-								"text": [
-									"You have an internal reservoir of energy that can be devoted to psionic disciplines you know. This energy is represented by psi points. Each psionic discipline describes effects you can create with it by spending a certain number of psi points. A psionic talent requires no psi points.",
-									"The number of psi points you have is based on your mystic level, as shown in the Psi Points column of the Mystic table. The number shown for your level is your psi point maximum. Your psi point total returns to its maximum when you finish a long rest. The number of psi points you have can’t go below 0 or over your maximum."
-								]
-							},
-							{
-								"name": "Psi Limit",
-								"text": "Though you have access to a potent amount of psionic energy, it takes training and practice to channel that energy. There is a limit on the number of psi points you can spend to activate a psionic discipline. The limit is based on your mystic level, as shown in the Psi Limit column of the Mystic table. For example, as a 3rd-level mystic, you can spend no more than 3 psi points on a discipline each time you use it, no matter how many psi points you have."
-							},
-							{
-								"name": "Psionic Chart",
-								"text": [
-									"Level - Psi Points - Psi Limit",
-									"1st - 4 - 2",
-									"2nd - 6 - 2",
-									"3rd - 14 - 3",
-									"4th - 17 - 3",
-									"5th - 27 - 5",
-									"6th - 32 - 5",
-									"7th - 38 - 6",
-									"8th - 44 - 6",
-									"9th - 57 - 7",
-									"10th - 64 - 7",
-									"11st - 64 - 7",
-									"12nd - 64 - 7",
-									"13rd - 64 - 7",
-									"14th - 64 - 7",
-									"15th - 64 - 7",
-									"16th - 64 - 7",
-									"17th - 64 - 7",
-									"18th - 71 - 7",
-									"19th - 71 - 7",
-									"20th - 71 - 7"
-								]
-							},
-							{
-								"name": "Talent / Discipline Chart",
-								"text": [
-									"Level - Talents - Disciplines",
-									"1st - 1 - 1",
-									"2nd - 1 - 1",
-									"3rd - 2 - 2",
-									"4th - 2 - 2",
-									"5th - 2 - 3",
-									"6th - 2 - 3",
-									"7th - 2 - 4",
-									"8th - 2 - 4",
-									"9th - 2 - 5",
-									"10th - 3 - 5",
-									"11st - 3 - 5",
-									"12nd - 3 - 6",
-									"13rd - 3 - 6",
-									"14th - 3 - 6",
-									"15th - 3 - 7",
-									"16th - 3 - 7",
-									"17th - 4 - 7",
-									"18th - 4 - 8",
-									"19th - 4 - 8",
-									"20th - 4 - 8"
-								]
-							},
-							{
-								"name": "Psychic Focus",
-								"text": [
-									"You can focus psionic energy on one of your psionic disciplines to draw ongoing benefits from it. As a bonus action, you can choose one of your psionic disciplines and gain its psychic focus benefit, which is detailed in that discipline’s description. The benefit lasts until you are incapacitated or until you use another bonus action to choose a different focus benefit.",
-									"You can have only one psychic focus benefit at a time, and using the psychic focus of one discipline doesn’t limit your ability to use other disciplines."
-								]
-							},
-							{
-								"name": "Psionic Ability",
-								"text": [
-									"Intelligence is your psionic ability for your psionic disciplines. You use your Intelligence modifier when setting the saving throw DC for a psionic discipline or when making an attack roll with one.",
-									"Discipline save DC = 8 + your proficiency bonus + your Intelligence modifier",
-									"Discipline attack modifier = your proficiency bonus + your Intelligence modifier"
-								]
-							},
-							{
-								"name": "Using Disciplines",
-								"text": [
-									"Each psionic discipline has several ways you can use it, all contained in its description. The discipline specifies the type of action and number of psi points it requires. It also details whether you must concentrate on its effects, how many targets it affects, what saving throws it requires, and so on.",
-									"The following sections go into more detail on using a discipline. Psionic disciplines are magical and function similarly to spells.",
-									"Psychic Focus",
-									"The Psychic Focus section of a discipline describes the benefit you gain when you choose that discipline for your psychic focus.",
-									"Effect Options and Psi Points",
-									"A discipline provides different options for how to use it with your psi points. Each effect option has a name, and the psi point cost of that option appears in parentheses after its name. You must spend that number of psi points to use that option, while abiding by your psi limit. If you don’t have enough psi points left, or the cost is above your psi limit, you can’t use the option.",
-									"Some options show a range of psi points, rather than a specific cost. To use that option, you must spend a number of points within that point range, still abiding by your psi limit. Some options let you spend additional psi points to increase a discipline’s potency. Again, you must abide by your psi limit, and you must spend all the points when you first use the discipline; you can’t decide to spend additional points once you see the discipline in action.",
-									"Each option notes specific information about its effect, including any action required to use it and its range.",
-									"Components",
-									"Disciplines don’t require the components that many spells require. Using a discipline requires no spoken words, gestures, or materials. The power of psionics comes from the mind.",
-									"Duration",
-									"An option in a discipline specifies how long its effect lasts. Instantaneous: If no duration is specified, the effect of an option is instantaneous. Concentration: Some options require concentration to maintain their effects. This requirement is noted with “Conc” after the option’s psi point cost. The “Conc” notation is followed by the maximum duration of the concentration. For example, if an option says “Conc 1m”, you can concentrate on its effect for up to 1 minute, if an option says “Conc 1h,” you can concentrate on its effect for up to 1 hour, and finally if an option says \"Conc 1r\", you can concentrate on its effect for up to 1 round.",
-									"Concentrating on a discipline follows the same rules as concentrating on a spell. This rule means you can’t concentrate on a spell and a discipline at the same time, nor can you concentrate on two disciplines at the same time. See chapter 10, “Spellcasting,” in the Player’s Handbook for how concentration works.",
-									"Targets and Areas of Effect",
-									"Psionic disciplines use the same rules as spells for determining targets and areas of effect. See chapter 10, “Spellcasting,” of the Player’s Handbook.",
-									"Saving Throws and Attack Rolls",
-									"If a discipline requires a saving throw, it specifies the type of save and the results of a successful or failed saving throw. The DC is determined by your psionic ability.",
-									"Some disciplines require you to make an attack roll to determine whether the discipline’s effect hits its target. The attack roll uses your psionic ability.",
-									"Combining Psionic Effects",
-									"The effects of different psionic disciplines add together while the durations of those disciplines overlap. Likewise, different options from a single psionic discipline combine if they are active at the same time. However, a specific option from a psionic discipline doesn’t combine with itself if that option is used multiple times. Instead, the most potent effect — usually dependent on how many psi points were used to create the effect — applies while the durations of the effects overlap.",
-									"Psionics and magic are separate effects, and therefore their benefits and drawbacks overlap. A psionic effect that reproduces a spell is an exception to this rule (see “Psionics and Magic” earlier, as well as “Combining Magical Effects” in chapter 10, “Spellcasting,” of the Player’s Handbook)."
-								]
-							},
-							{
-								"name": "Mystic Order",
-								"text": [
-									"At 1st level, you choose a Mystic Order: the Order of the Avatar, the Order of the Awakened, the Order of the Immortal, the Order of the Nomad, the Order of the Soul Knife, or the Order of the Wu Jen, each of which is detailed at the end of the class description. Each order specializes in a specific approach to psionics.",
-									"Your order gives you features when you choose it at 1st level and additional features at 3rd, 6th, and 14th level."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Order of the Avatar",
-								"text": [
-									"Mystics of the Order of the Avatar delve into the world of emotion, mastering their inner life to such an extent that they can manipulate and amplify the emotions of others with the same ease that an artist shapes clay. Known as Avatars, these mystics vary from tyrants to inspiring leaders who are loved by their followers.",
-									"Avatars can bring out extreme emotions in the people around them. For their allies, they can lend hope, ferocity, and courage, transforming a fighting band into a deadly, unified force. For their enemies, they bring fear, disgust, and trepidation that can make even the most hardened veteran act like a shaky rookie.",
-									"Bonus Diciplines",
-									"At 1st level, you learn two additional psionic disciplines of your choice. They must be chosen from among the Avatar disciplines.",
-									"Armor Training",
-									"At 1st level, you gain proficiency with medium armor and shields."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Order of the Awakened",
-								"text": [
-									"Mystics dedicated to the Order of the Awakened seek to unlock the full potential of the mind. By transcending the physical, the Awakened hope to attain a perfect state of being — focused on pure intellect and mental energy.",
-									"The Awakened are skilled at bending minds and unleashing devastating psychic attacks, and are able to read the secrets of the world through psionic energy. Awakened mystics who take to adventuring excel at unraveling mysteries, solving puzzles, and defeating monsters by turning them into unwilling pawns.",
-									"Bonus Diciplines",
-									"At 1st level, you learn two additional psionic disciplines of your choice. They must be chosen from among the Awakened disciplines.",
-									"Awakened Talent",
-									"At 1st level, you gain proficiency with two of the following skills of your choice: Animal Handling, Deception, Insight, Intimidation, Investigation, Perception, and Persuasion.",
-									"Mind Mastery",
-									"At 1st level, you gain the mind meld and thought spear psionic talents (these are in addition to the talents you gain in the Mystic table). If you already have either one, you can pick any other talent to replace it.",
-									"Awakened Expertise",
-									"Mystics dedicated to the Order of the Awakened seek to unlock the full potential of the mind. By transcending the physical, the Awakened hope to attain a state of being focused on pure intellect and mental energy.",
-									"The Awakened are skilled at bending minds and unleashing devastating psionic attacks, and they can read the secrets of the world through psionic energy. Awakened mystics who take to adventuring excel at unraveling mysteries, solving puzzles, and defeating monsters by turning them into unwilling pawns.",
-									"In addition, choose one skill you are proficient in. Your proficiency bonus is doubled for any ability check you make that uses that skill."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Order of the Immortal",
-								"text": [
-									"The Order of the Immortal uses psionic energy to augment and modify the physical form. Followers of this order are known as Immortals. They use psionic energy to modify their bodies, strengthening them against attack and turning themselves into living weapons.",
-									"Their mastery of the physical form grants them their name, for Immortals are notoriously difficult to kill.",
-									"Bonus Disciplines ",
-									"At 1st level, you learn two additional psionic disciplines of your choice. They must be chosen from among the Immortal disciplines.",
-									"Immortal Durability",
-									"Starting at 1st level, your hit point maximum increases by 1 per mystic level.",
-									"In addition, while you aren’t wearing armor or wielding a shield, your base AC equals 10 + your Dexterity modifier + your Constitution modifier."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Order of the Nomad",
-								"text": [
-									"Mystics of the Order of the Nomad keep their minds in a strange, rarified state. They seek to accumulate as much knowledge as possible, as they quest to unravel the mysteries of the multiverse and seek the underlying structure of all things. At the same time, they perceive a bizarre, living web of knowledge they call the noosphere.",
-									"Nomads, as their name indicates, delight in travel, exploration, and discovery. They desire to accumulate as much knowledge as possible, and the pursuit of secrets and hidden lore can become an obsession for them.",
-									"Bonus Disciplines",
-									"At 1st level, you learn two additional psionic disciplines of your choice. They must be chosen from among the Nomad disciplines.",
-									"Breadth of Knowledge",
-									"At 1st level, you gain the ability to extend your knowledge. When you finish a long rest, you gain two proficiencies of your choice: two tools, two skills, or one of each. You can replace one or both of these selections with languages. This benefit lasts until you finish a long rest."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Order of the Soul Knife",
-								"text": [
-									"The Order of the Soul Knife sacrifices the breadth of knowledge other mystics gain to focus on a specific psionic technique. These mystics learn to manifest a deadly weapon of pure psychic energy that they can use to cleave through foes.",
-									"Soul knives vary widely in their approach to this path. Some follow it out of a desire to achieve martial perfection. Others are ruthless assassins who seek to become the perfect killer.",
-									"Martial Training",
-									"At 1st level, you gain proficiency with medium armor and martial weapons.",
-									"Soul Knife",
-									"Starting at 1st level, you gain the ability to manifest a blade of psychic energy. As a bonus action, you create scintillating knives of energy that project from both of your fists.",
-									"You can’t hold anything in your hands while manifesting these blades. You can dismiss them as a bonus action.",
-									"For you, a soul knife is a martial melee weapon with the light and finesse properties. It deals 1d8 psychic damage on a hit.",
-									"As a bonus action, you can prepare to use the blades to parry; you gain a +2 bonus to AC until the start of your next turn or until you are incapacitated."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Order of the Wu Jen",
-								"text": [
-									"The Order of the Wu Jen features some of the most devoted mystics. These mystics seek to lock themselves away from the world, denying the limits of the physical world and replacing it with a reality that they create for themselves. Known as wu jens, these mystics cast their minds into the world, seize control of its fundamental principles, and rebuild it.",
-									"In practical terms, wu jens excel at controlling the forces of the natural world. They can hurl objects with their minds, control the four elements, and alter reality to fit their desires.",
-									"Bonus Disciplines",
-									"At 1st level, you learn two additional psionic disciplines of your choice. They must be chosen from among the Wu Jen disciplines.",
-									"Hermit’s Study",
-									"At 1st level, you gain proficiency with two of the following skills of your choice: Animal Handling, Arcana, History, Insight, Medicine, Nature, Perception, Religion, or Survival."
-								]
-							}
-						]
-					},
-					{
-						"-level": "2",
-						"feature": [{
-							"name": "Mystical Recovery",
-							"text": [
-								"Starting at 2nd level, you can draw vigor from the psi energy you use to power your psionic disciplines.",
-								"Immediately after you spend psi points on a psionic discipline, you can take a bonus action to regain hit points equal to the number of psi points you spent."
-							]
-						},
-							{
-								"name": "Telepathy",
-								"text": "At 2nd level, your mind awakens to the ability to communicate via telepathy. You can telepathically speak to any creature you can see within 120 feet of you in this manner. You don’t need to share a language with the creature for it to understand your telepathic messages, but the creature must be able to understand at least one language or be telepathic itself."
-							}
-						]
-					},
-					{
-						"-level": "3",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Avatar of Battle (Order of the Avatar)",
-							"text": "Starting at 3rd level, you project an inspiring aura. While you aren’t incapacitated, each ally within 30 feet of you who can see you gains a +2 bonus to initiative rolls."
-						},
-							{
-								"-optional": "YES",
-								"name": "Psionic Investigation (Order of the Awakened)",
-								"text": [
-									"Starting at 3rd level, you can focus your mind to read the psionic imprint left on an object. If you hold an object and concentrate on it for 10 minutes (as if concentrating on a psionic discipline), you learn a few basic facts about it. You gain a mental image from the object’s point of view, showing the last creature to hold the object within the past 24 hours.",
-									"You also learn of any events that have occurred within 20 feet of the object within the past hour. The events you perceive unfold from the object’s perspective. You see and hear such events as if you were there, but can’t use other senses.",
-									"Additionally, you can embed an intangible psionic sensor within the object. For the next 24 hours, you can use an action to learn the object’s location relative to you (its distance and direction) and to look at the object’s surroundings from its point of view as if you were there. This perception lasts until the start of your next turn.",
-									"Once you use this feature, you can’t use it again until you finish a short or long rest."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Psionic Resilience (Order of the Immortal)",
-								"text": "Starting at 3rd level, your psionic energy grants you extraordinary fortitude. At the start of each of your turns, you gain temporary hit points equal to your Intelligence modifier (minimum of 0) if you have at least 1 hit point."
-							},
-							{
-								"-optional": "YES",
-								"name": "Memory of One Thousand Steps (Order of the Nomad)",
-								"text": "At 3rd level, you gain the ability to use psionics to recall your steps. As a reaction when you are hit by an attack, you can teleport to an unoccupied space that you occupied since the start of your last turn, and the attack misses you. Once you use this feature, you can’t use it again until you finish a short or long rest."
-							},
-							{
-								"-optional": "YES",
-								"name": "Hone the Blade (Order of the Soul Knife)",
-								"text": [
-									"Starting at 3rd level, you can spend psi points to augment your soul knife’s attack rolls and damage. You gain a bonus to attack and damage rolls with your soul knives depending on the number of psi points spent, as shown on the table below. This bonus lasts for 10 minutes.",
-									"Attack and Damage Psi Points Bonus",
-									"Psi - Att and Dmg bonus",
-									"2 - +1",
-									"5 - +2",
-									"7 - +4"
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Elemental Attunement (Order of the Wu Jen)",
-								"text": "Starting at 3rd level, when a creature’s resistance reduces the damage dealt by a psionic discipline of yours, you can spend 1 psi point to cause that use of the discipline to ignore the creature’s resistance. You can’t spend this point if doing so would increase the discipline’s cost above your psi limit."
-							}
-						]
-					},
-					{
-						"-level": "4",
-						"feature": [{
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM uses the optional Feats, you can instead take a feat."
-							]
-						},
-							{
-								"name": "Strength of Mind",
-								"text": [
-									"Even the simplest psionic technique requires a deep understanding of how psionic energy can augment mind and body. This understanding allows you to alter your defenses to better deal with threats.",
-									"Starting at 4th level, you can replace your proficiency in Wisdom saving throws whenever you finish a short or long rest. To do so, choose Strength, Dexterity, Constitution, or Charisma. You gain proficiency in saves using that ability, instead of Wisdom. This change lasts until you finish your next short or long rest."
-								]
-							}
-						]
-					},
-					{
-						"-level": "6",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Avatar of Healing (Order of the Avatar)",
-							"text": "Beginning at 6th level, you project an aura of resilience. While you aren’t incapacitated, each ally within 30 feet of you who can see you regains additional hit points equal to your Intelligence modifier (minimum of 0) whenever they regain hit points from a psionic discipline."
-						},
-							{
-								"-optional": "YES",
-								"name": "Psionic Surge (Order of the Awakened)",
-								"text": [
-									"Starting at 6th level, you can overload your psychic focus to batter down an opponent’s defenses. You can impose disadvantage on a target’s saving throw against a discipline or talent you use, but at the cost of using your psychic focus. Your psychic focus immediately ends if it’s active, and you can’t use it until you finish a short or long rest.",
-									"You can’t use this feature if you can’t use your psychic focus."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Surge of Health (Order of the Immortal)",
-								"text": [
-									"Starting at 6th level, you can draw on your psychic focus to escape death’s grasp. As a reaction when you take damage, you can halve that damage against you. Your psychic focus immediately ends if it’s active, and you can’t use it until you finish a short or long rest.",
-									"You can’t use this feature if you can’t use your psychic focus."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Superior Teleportation (Order of the Nomad)",
-								"text": "At 6th level, you gain a superior talent for teleportation. When you use a psionic discipline to teleport any distance, you can increase that distance by up to 10 feet."
-							},
-							{
-								"-optional": "YES",
-								"name": "Consumptive Knife (Order of the Soul Knife)",
-								"text": "Starting at 6th level, whenever you slay an enemy creature with a soul knife attack, you immediately regain 2 psi points."
-							},
-							{
-								"-optional": "YES",
-								"name": "Arcane Dabbler (Order of the Wu Jen)",
-								"text": [
-									"At 6th level, you learn three wizard spells of your choice and always have them prepared. The spells must be of 1st through 3rd level.",
-									"As a bonus action, you can spend psi points to create spell slots that you can use to cast these spells, as well as other spells you are capable of casting. The psi-point cost of each spell slot is detailed on the table below.",
-									"Spell Slot Level - Psi Cost",
-									"1st - 2 ",
-									"2nd - 3 ",
-									"3rd - 5 ",
-									"4th - 6 ",
-									"5th - 7 ",
-									"The spell slot remains until you use it or finish a long rest. You must observe your psi limit when spending psi points to create a spell slot.",
-									"Whenever you gain a level in this class, you can replace one of the chosen wizard spells with a different wizard spell of 1st through 3rd level."
-								]
-							}
-						]
-					},
-					{
-						"-level": "8",
-						"feature": [{
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM uses the optional Feats, you can instead take a feat."
-							]
-						},
-							{
-								"name": "Potent Psionics (Order of the Awakened)",
-								"text": [
-									"At 8th level, you gain the ability to infuse your weapon attacks with psychic energy. Once on each of your turns when you hit a creature with a weapon, you can deal an extra 1d8 psychic damage to that target. When you reach 14th level, this extra damage increases to 2d8.",
-									"In addition, you add your Intelligence modifier to any damage roll you make for a psionic talent."
-								]
-							}
-						]
-					},
-					{
-						"-level": "10",
-						"feature": {
-							"name": "Consumptive Power",
-							"text": [
-								"At 10th level, you gain the ability to sacrifice your physical durability in exchange for psionic power. When activating a psionic discipline, you can pay its psi point cost with your hit points, instead of using any psi points. Your current hit points and hit point maximum are both reduced by the number of hit points you spend. This reduction can’t be lessened in any way, and the reduction to your hit point maximum lasts until you finish a long rest.",
-								"Once you use this feature, you can’t use it again until you finish a long rest."
-							]
-						}
-					},
-					{
-						"-level": "11",
-						"feature": {
-							"name": "Psionic Mastery",
-							"text": [
-								"Beginning at 11th level, your mastery of psionic energy allows you to push your mind beyond its normal limits. As an action, you gain 9 special psi points that you can spend only on disciplines that require an action or a bonus action to use. You can use all 9 points on one discipline, or you can spread them across multiple disciplines. You can’t also spend your normal psi points on these disciplines; you can spend only the special points gained from this feature. When you finish a long rest, you lose any of these special points that you haven’t spent.",
-								"If more than one of the disciplines you activate with these points require concentration, you can concentrate on all of them. Activating one of them ends any effect you were already concentrating on, and if you begin concentrating on an effect that doesn’t use these special points, the disciplines end that you’re concentrating on.",
-								"You have one use of this feature, and you regain any expended use of it with a long rest."
-							]
-						}
-					},
-					{
-						"-level": "12",
-						"feature": {
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM uses the optional Feats, you can instead take a feat."
-							]
-						}
-					},
-					{
-						"-level": "13",
-						"feature": {
-							"name": "Psionic Mastery : Gain 1 Use",
-							"text": "You gain one additional use of the PsionicMastery feature at 13th, 15th, and 17th level."
-						}
-					},
-					{
-						"-level": "14",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Avatar of Speed (Order of the Avatar)",
-							"text": "Starting at 14th level, you project an aura of speed. While you aren’t incapacitated, any ally within 30 feet of you who can see you can take the Dash action as a bonus action."
-						},
-							{
-								"-optional": "YES",
-								"name": "Spectral Form (Order of the Awakened)",
-								"text": [
-									"At 14th level, you gain the ability to become a ghostly figure of psionic energy. As an action, you can transform into a transparent, ghostly version of yourself. While in this form, you have resistance to all damage, move at half speed, and can pass through objects and creatures while moving but can’t willingly end your movement in their spaces. The form lasts for 10 minutes or until you use an action to end it.",
-									"Once you use this feature, you can’t use it again until you finish a long rest."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Immortal Will (Order if the Immortal)",
-								"text": "Starting at 14th level, you can draw on your reserves of psionic power to survive beyond death. At the end of your turn while at 0 hit points, you can spend 5 psi points to immediately regain a number of hit points equal to your mystic level + your Constitution modifier."
-							},
-							{
-								"-optional": "YES",
-								"name": "Effortless Journey (Order of the Nomad)",
-								"text": "Starting at 14th level, your mind can mystically move your body. Once on each of your turns, you can forfeit up to 30 feet of your movement to teleport the distance you forfeited. You must teleport to an unoccupied space you can see."
-							},
-							{
-								"-optional": "YES",
-								"name": "Phantom Knife (Order of the Soul Knife)",
-								"text": "Starting at 14th level, you can make an attack that phases through most defenses. As an action, you can make one attack with your soul knife. Treat the target’s AC as 10 against this attack, regardless of the target’s actual AC."
-							},
-							{
-								"-optional": "YES",
-								"name": "Elemental Mastery (Order of the Wu Jen)",
-								"text": "Starting at 14th level, if you have resistance to a type of damage, you can spend 2 psi points as a reaction when you take damage of that type to ignore that damage; you gain immunity to that damage type until the end of your next turn."
-							}
-						]
-					},
-					{
-						"-level": "15",
-						"feature": [{
-							"name": "Psionic Mastery PSI Pool increase",
-							"text": "At 15th level, the pool of psi points you gain from the Psionic Mastery feature increases to 11."
-						},
-							{
-								"name": "Psionic Mastery : Gain 1 Use",
-								"text": "You gain one additional use of the PsionicMastery feature at 13th, 15th, and 17th level."
-							}
-						]
-					},
-					{
-						"-level": "16",
-						"feature": {
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM uses the optional Feats, you can instead take a feat."
-							]
-						}
-					},
-					{
-						"-level": "17",
-						"feature": {
-							"name": "Psionic Mastery : Gain 1 Use",
-							"text": "You gain one additional use of the PsionicMastery feature at 13th, 15th, and 17th level."
-						}
-					},
-					{
-						"-level": "20",
-						"feature": [{
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM uses the optional Feats, you can instead take a feat."
-							]
-						},
-							{
-								"name": "Psionic Body",
-								"text": [
-									"At 20th level, your mastery of psionic power causes your mind to transcend the body. Your physical form is infused with psionic energy. You gain the following benefits:",
-									"*You gain resistance to bludgeoning, piercing, and slashing damage.",
-									"*You no longer age.",
-									"*You are immune to disease, poison damage, and the poisoned condition.",
-									"*If you die, roll a d20. On a 10 or higher, you discorporate with 0 hit points, instead of dying, and you fall unconscious. You and your gear disappear. You appear at a spot of your choice 1d3 days later on the plane of existence where you died, having gained the benefits of one long rest."
-								]
-							}
-						]
-					}
-				]
-			},
-			{
 				"name": "Paladin",
 				"hd": "10",
 				"proficiency": "Wisdom, Charisma",
 				"spellAbility": "Charisma",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "0,0,0,0,0,0"
 				},
@@ -5460,7 +4281,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -5485,7 +4306,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Divine Sense",
 							"text": [
 								"The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.",
@@ -5505,7 +4326,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Divine Smite",
 							"text": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend."
 						},
@@ -5565,7 +4386,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Divine Health",
 							"text": "By 3rd level, the divine magic flowing through you makes you immune to disease."
 						},
@@ -5791,7 +4612,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Oath of the Ancients: Aura of Warding",
 							"text": [
@@ -5876,7 +4697,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Oath of the Ancients: Undying Sentinel",
 							"text": [
@@ -5935,7 +4756,7 @@ export const classes = {
 					},
 					{
 						"-level": "20",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Oath of the Ancients: Elder Champion",
 							"text": [
@@ -5991,7 +4812,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Sacred Oath: Oath of Conquest",
 							"text": [
@@ -6061,7 +4882,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Oath of Conquest: Aura of Conquest (Oath of Conquest)",
 							"text": [
@@ -6085,7 +4906,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Oath of Conquest: Implacable Spirit (Oath of Conquest)",
 							"text": "Once you reach 15th level, you can no longer be charmed."
@@ -6132,7 +4953,7 @@ export const classes = {
 				"hd": "10",
 				"proficiency": "Strength, Dexterity",
 				"spellAbility": "Wisdom",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "0,0,0,0,0,0"
 				},
@@ -6214,7 +5035,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -6239,7 +5060,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Favored Enemy",
 							"text": [
 								"Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.",
@@ -6267,7 +5088,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Spellcasting",
 							"text": [
 								"By the time you reach 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does. See chapter 10 for the general rules of spellcasting and chapter 11 for the ranger spell list. ",
@@ -6312,7 +5133,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Ranger Archetype",
 							"text": "At 3rd level, you choose an archetype that you strive to emulate: Beast Master, Deep Stalker, or Hunter. Your choice grants features at 3rd level, and again at 7th, 11th, and 15th level."
 						},
@@ -6383,7 +5204,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"name": "Additional Favored Terrains",
 							"text": "You gain an additional favored terrain."
 						},
@@ -6395,7 +5216,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Hunter: Defensive Tactics",
 							"text": "At 7th level, you gain one of the following features of your choice: Escape the Horde, Multiattack Defense, or Steel Will."
@@ -6424,7 +5245,7 @@ export const classes = {
 					},
 					{
 						"-level": "8",
-						"feature": [{
+						"feature": [ {
 							"name": "Ability Score Improvement",
 							"text": [
 								"When you reach 8th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
@@ -6442,7 +5263,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"name": "Hide in Plain Sight",
 							"text": [
 								"Starting at 10th level, you can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage.",
@@ -6457,7 +5278,7 @@ export const classes = {
 					},
 					{
 						"-level": "11",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Hunter: Multiattack",
 							"text": "At 11th level, you gain one of the following features of your choice: Volley or Whirlwind Attack."
@@ -6491,7 +5312,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"name": "Vanish",
 							"text": "Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail."
 						},
@@ -6503,7 +5324,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Hunter: Superior Hunter's Defense",
 							"text": "At 15th level, you gain one of the following features of your choice: Evasion, Stand Against the Tide, or Uncanny Dodge."
@@ -6566,7 +5387,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Fighting Style: Close Quarters Shooter",
 							"text": [
@@ -6591,7 +5412,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Ranger Archetype: Deep Stalker (UA)",
 							"text": [
@@ -6692,7 +5513,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Deep Stalker: Iron Mind",
 							"text": "At 7th level, you gain proficiency in Wisdom saving throws.",
@@ -6712,7 +5533,7 @@ export const classes = {
 					},
 					{
 						"-level": "11",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Deep Stalker: Stalker's Flurry",
 							"text": "Starting at 11th level, you have the ability to ensure that your attacks count. If you miss with an attack during your turn, you can immediately make an additional attack. You can gain one additional attack during your turn with this ability."
@@ -6734,7 +5555,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Deep Stalker: Stalker's Dodge",
 							"text": "At 15th level, you master the ability to disrupt an opponent's attacks. If a creature attacks you and does not have advantage on the attack roll, you can use your reaction to grant it disadvantage on the attack roll. You must use this ability before you know the result of the attack."
@@ -6754,653 +5575,11 @@ export const classes = {
 				]
 			},
 			{
-				"name": "Ranger (Revised)",
-				"hd": "10",
-				"proficiency": "Strength, Dexterity",
-				"spellAbility": "Wisdom",
-				"autolevel": [{
-					"-level": "1",
-					"slots": "0,0,0,0,0,0"
-				},
-					{
-						"-level": "2",
-						"slots": "0,2,0,0,0,0"
-					},
-					{
-						"-level": "3",
-						"slots": "0,3,0,0,0,0"
-					},
-					{
-						"-level": "4",
-						"slots": "0,3,0,0,0,0"
-					},
-					{
-						"-level": "5",
-						"slots": "0,4,2,0,0,0"
-					},
-					{
-						"-level": "6",
-						"slots": "0,4,2,0,0,0"
-					},
-					{
-						"-level": "7",
-						"slots": "0,4,3,0,0,0"
-					},
-					{
-						"-level": "8",
-						"slots": "0,4,3,0,0,0"
-					},
-					{
-						"-level": "9",
-						"slots": "0,4,3,2,0,0"
-					},
-					{
-						"-level": "10",
-						"slots": "0,4,3,2,0,0"
-					},
-					{
-						"-level": "11",
-						"slots": "0,4,3,3,0,0"
-					},
-					{
-						"-level": "12",
-						"slots": "0,4,3,3,0,0"
-					},
-					{
-						"-level": "13",
-						"slots": "0,4,3,3,1,0"
-					},
-					{
-						"-level": "14",
-						"slots": "0,4,3,3,1,0"
-					},
-					{
-						"-level": "15",
-						"slots": "0,4,3,3,2,0"
-					},
-					{
-						"-level": "16",
-						"slots": "0,4,3,3,2,0"
-					},
-					{
-						"-level": "17",
-						"slots": "0,4,3,3,3,1"
-					},
-					{
-						"-level": "18",
-						"slots": "0,4,3,3,3,1"
-					},
-					{
-						"-level": "19",
-						"slots": "0,4,3,3,3,2"
-					},
-					{
-						"-level": "20",
-						"slots": "0,4,3,3,3,2"
-					},
-					{
-						"-level": "1",
-						"feature": [{
-							"name": "Starting Ranger (Revised)",
-							"text": [
-								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-								"Armor: light armor, medium armor, shields",
-								"Weapons: simple weapons, martial weapons",
-								"Tools: none",
-								"Skills: Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival",
-								"You begin play with the following equipment, in addition to any equipment provided by your background.",
-								"• (a) scale mail or (b) leather armor ",
-								"• (a) two shortswords or (b) two simple melee weapons ",
-								"• (a) a dungeoneer's pack or (b) an explorer's pack ",
-								"• A longbow and a quiver of 20 arrows",
-								"Alternatively, you may start with 5d10 x 4 gp and choose your own equipment.",
-								"This class is from Unearthed Arcana: The Range, Revised, and as such may not be allowed in your game. Consult your DM before choosing this class."
-							]
-						},
-							{
-								"name": "Favored Enemy",
-								"text": [
-									"Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy commonly encountered in the wilds. Choose a type of favored enemy: beasts, fey, humanoids, monstrosities, or undead. You gain a +2 bonus to damage rolls with weapon attacks against creatures of the chosen type. Additionally, you have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.",
-									"When you gain this feature, you also learn one language of your choice, typically one spoken by your favored enemy or creatures associated with it. However, you are free to pick any language you wish to learn."
-								]
-							},
-							{
-								"name": "Natural Explorer",
-								"text": [
-									"You are a master of navigating the natural world, and you react with swift and decisive action when attacked. This grants you the following benefits: ",
-									"• You ignore difficult terrain. ",
-									"• You have advantage on initiative rolls. ",
-									"• On your first turn during combat, you have advantage on attack rolls against creatures that have not yet acted. ",
-									"In addition, you are skilled at navigating the wilderness. You gain the following benefits when traveling for an hour or more: ",
-									"• Difficult terrain doesn't slow your group's travel. ",
-									"• Your group can't become lost except by magical means. ",
-									"• Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger. ",
-									"• If you are traveling alone, you can move stealthily at a normal pace. ",
-									"• When you forage, you find twice as much food as you normally would. ",
-									"• While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
-								]
-							}
-						]
-					},
-					{
-						"-level": "2",
-						"feature": [{
-							"name": "Fighting Style",
-							"text": "At 2nd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again."
-						},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Archery",
-								"text": "You gain a +2 bonus to attack rolls you make with ranged weapons."
-							},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Close Quarters Shooter",
-								"text": "You are trained in making ranged attacks at close quarters. When making a ranged attack while you are within 5 feet of a hostile creature, you do not have disadvantage on the attack roll. Your ranged attacks ignore half cover and three-quarters cover against targets within 30 feet of you. Finally, you have a +1 bonus to attack rolls on ranged attacks.",
-								"modifier": {
-									"-category": "bonus",
-									"#text": "ranged attacks +1"
-								}
-							},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Defense",
-								"text": "While you are wearing armor, you gain a +1 bonus to AC."
-							},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Dueling",
-								"text": "When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon."
-							},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Mariner",
-								"text": "As long as you are not wearing heavy armor or using a shield, you have a swimming speed and a climbing speed equal to your normal speed, and you gain a +1 bonus to AC."
-							},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Two-Weapon Fighting",
-								"text": "When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
-							},
-							{
-								"-optional": "YES",
-								"name": "Fighting Style: Tunnel Fighter",
-								"text": "You excel at defending narrow passages, doorways, and other tight spaces. As a bonus action, you can enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you can make opportunity attacks without using your reaction, and you can use your reaction to make a melee attack against a creature that moves more than 5 feet while within your reach."
-							},
-							{
-								"name": "Spellcasting",
-								"text": [
-									"By the time you reach 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does. See chapter 10 for the general rules of spellcasting and chapter 11 for the ranger spell list. ",
-									"Spell Slots: ",
-									"The Ranger table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. ",
-									"For example, if you know the 1st-level spell animal friendship and have a 1st-level and a 2nd-level spell slot available, you can cast animal friendship using either slot. ",
-									"Spells Known of 1st Level and Higher: ",
-									"You know two 1st-level spells of your choice from the ranger spell list. ",
-									"At each odd level, you learn an additional ranger spell of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 5th level in this class, you can learn one new spell of 1st or 2nd level. ",
-									"Additionally, when you gain a level in this class, you can choose one of the ranger spells you know and replace it with another spell from the ranger spell list, which also must be of a level for which you have spell slots. ",
-									"Spellcasting Ability: ",
-									"Wisdom is your spellcasting ability for your ranger spells, since your magic draws on your attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a ranger spell you cast and when making an attack roll with one. ",
-									"Spell save DC = 8 + your proficiency bonus + your Wisdom modifier ",
-									"Spell attack modifier = your proficiency bonus + your Wisdom modifier"
-								]
-							}
-						]
-					},
-					{
-						"-level": "3",
-						"feature": [{
-							"name": "Primeval Awareness",
-							"text": [
-								"Beginning at 3rd level, your mastery of ranger lore allows you to establish a powerful link to beasts and to the land around you. ",
-								"You have an innate ability to communicate with beasts, and they recognize you as a kindred spirit. Through sounds and gestures, you can communicate simple ideas to a beast as an action, and can read its basic mood and intent. You learn its emotional state, whether it is affected by magic of any sort, its short-term needs (such as food or safety), and actions you can take (if any) to persuade it to not attack. ",
-								"You cannot use this ability against a creature that you have attacked within the past 10 minutes. ",
-								"Additionally, you can attune your senses to determine if any of your favored enemies lurk nearby. By spending 1 uninterrupted minute in concentration (as if you were concentrating on a spell), you can sense whether any of your favored enemies are present within 5 miles of you. This feature reveals which of your favored enemies are present, their numbers, and the creatures' general direction and distance (in miles) from you. ",
-								"If there are multiple groups of your favored enemies within range, you learn this information for each group."
-							]
-						},
-							{
-								"name": "Ranger Conclave",
-								"text": "At 3rd level, you choose to emulate the ideals and training of a ranger conclave: the Beast Conclave, the Hunter Conclave, or the Stalker Conclave, all detailed at the end of the class description. Your choice grants you features at 3rd level and again at 5th, 7th, 11th, and 15th level."
-							},
-							{
-								"-optional": "YES",
-								"name": "Ranger Conclave: Beast Conclave",
-								"text": "Many rangers are more at home in the wilds than in civilization, to the point where animals consider them kin. Rangers of the Beast Conclave develop a close bond with a beast, then further strengthen that bond through the use of magic."
-							},
-							{
-								"-optional": "YES",
-								"name": "Beast Conclave: Animal Companion",
-								"text": [
-									"At 3rd level, you learn to use your magic to create a powerful bond with a creature of the natural world. ",
-									"With 8 hours of work and the expenditure of 50 gp worth of rare herbs and fine food, you call forth an animal from the wilderness to serve as your faithful companion. You normally select you companion from among the following animals: an ape, a black bear, a boar, a giant badger, a giant weasel, a mule, a panther, or a wolf. However, your DM might pick one of these animals for you, based on the surrounding terrain and on what types of creatures would logically be present in the area. ",
-									"At the end of the 8 hours, your animal companion appears and gains all the benefits of your Companion's Bond ability. You can have only one animal companion at a time. ",
-									"If your animal companion is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp worth of rare herbs and fine food, you call forth your companion's spirit and use your magic to create a new body for it. You can return an animal companion to life in this manner even if you do not possess any part of its body. ",
-									"If you use this ability to return a former animal companion to life while you have a current animal companion, your current companion leaves you and is replaced by the restored companion."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Beast Conclave: Companion's Bond",
-								"text": [
-									"Your animal companion gains a variety of benefits while it is linked to you. ",
-									"The animal companion loses its Multiattack action, if it has one. ",
-									"The companion obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your companion acts on its own. ",
-									"When using your Natural Explorer feature, you and your animal companion can both move stealthily at a normal pace. ",
-									"Your animal companion has abilities and game statistics determined in part by your level. Your companion uses your proficiency bonus rather than its own. In addition to the areas where it normally uses its proficiency bonus, an animal companion also adds its proficiency bonus to its AC and to its damage rolls. ",
-									"Your animal companion gains proficiency in two skills of your choice. It also becomes proficient with all saving throws. ",
-									"For each level you gain after 3rd, your animal companion gains an additional hit die and increases its hit points accordingly. ",
-									"Whenever you gain the Ability Score Improvement class feature, your companion's abilities also improve. Your companion can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your companion can't increase an ability score above 20 using this feature unless its description specifies otherwise. ",
-									"Your companion shares your alignment, and has a personality trait and a flaw that you can roll for or select from the tables below. Your companion shares your ideal, and its bond is always, \"The ranger who travels with me is a beloved companion for whom I would gladly give my life.\"",
-									"Your animal companion gains the benefits of your Favored Enemy feature, and of your Greater Favored Enemy feature when you gain that feature at 6th level. It uses the favored enemies you selected for those features. ",
-									"Trait: ",
-									"1. I'm dauntless in the face of adversity. ",
-									"2. Threaten my friends, threaten me. ",
-									"3. I stay on alert so others can rest. ",
-									"4. People see an animal and underestimate me. I use that to my advantage. ",
-									"5. I have a knack for showing up in the nick of time. ",
-									"6. I put my friends' needs before my own in all things. ",
-									"Flaw: ",
-									"1. If there's food left unattended, I'll eat it. ",
-									"2. I growl at strangers, and all people except my ranger are strangers to me. ",
-									"3. Any time is a good time for a belly rub. ",
-									"4. I'm deathly afraid of water. ",
-									"5. My idea of hello is a flurry of licks to the face. ",
-									"6. I jump on creatures to tell them how much I love them."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Ranger Conclave: Hunter Conclave",
-								"text": "Some rangers seek to master weapons to better protect civilization from the terrors of the wilderness. Members of the Hunter Conclave learn specialized fighting techniques for use against the most dire threats, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons."
-							},
-							{
-								"-optional": "YES",
-								"name": "Deep Stalker Conclave: Deep Stalker Magic",
-								"text": [
-									"At 3rd level, you gain darkvision out to a range of 90 feet. If you already have darkvision, you increase its range by 30 feet.",
-									"You also gain access to additional spells at 3rd, 5th, 9th, 13th, and 15th level. Once you gain a deep stalker spell, it counts as a ranger spell for you but doesn't count against the number of ranger spells you know.",
-									"3rd-disguise self",
-									"5th-rope trick",
-									"9th-glyph of warding",
-									"13th-greater invisibility",
-									"17th-seeming"
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Hunter Conclave: Hunter's Prey",
-								"text": "At 3rd level, you gain one of the following features of your choice: Colossus Slayer, Giant Killer, or Horde Breaker."
-							},
-							{
-								"-optional": "YES",
-								"name": "Hunter's Prey: Colossus Slayer",
-								"text": "Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it's below its hit point maximum. You can deal this extra damage only once per turn."
-							},
-							{
-								"-optional": "YES",
-								"name": "Hunter's Prey: Giant Killer",
-								"text": "When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature."
-							},
-							{
-								"-optional": "YES",
-								"name": "Hunter's Prey: Horde Breaker",
-								"text": "Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon."
-							},
-							{
-								"-optional": "YES",
-								"name": "Ranger Conclave: Deep Stalker Conclave",
-								"text": [
-									"Most folk descend into the depths of the Underdark only under the most pressing conditions, undertaking some desperate quest or following the promise of vast riches. All too often, evil festers beneath the earth unnoticed, and rangers of the Deep Stalker Conclave strive to uncover and defeat such threats before they can reach the surface.",
-									"",
-									"Source: Unearthed Arcana: The Ranger, Revised, p. 6"
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Deep Stalker Conclave: Underdark Scout",
-								"text": [
-									"At 3rd level, you master the art of the ambush. On your first turn during combat, you gain a +10 bonus to your speed, and if you use the Attack action, you can make one additional attack. ",
-									"You are also adept at evading creatures that rely on darkvision. Such creatures gain no benefit when attempting to detect you in dark and dim conditions. Additionally, when the DM determines if you can hide from a creature, that creature gains no benefit from its darkvision."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Ranger Conclave: Horizon Walker",
-								"text": "Rangers of the Horizon Conclave guard the world against threats that originate from other planes. They seek out planar portals and keep watch over them, venturing to the outer and inner planes as needed to defeat threats."
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Planar Magic",
-								"text": [
-									"Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Horizon Walker Spells table. The spell counts as a ranger spell for you, and it doesn't count against the number of ranger spells you know. ",
-									"3rd-protection from evil and good ",
-									"5th-alter self ",
-									"9th-protection from energy ",
-									"13th-banishment ",
-									"17th-teleportation circle"
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Planar Warrior",
-								"text": "At 3rd level, you learn to draw on the energy of the planes to augment your attacks. As a bonus action, choose one creature you can see within 30 feet of you. Until the end of this turn, your attacks against that creature ignore its damage resistances, and the next time you hit it on this turn, it takes an additional 1d6 force damage."
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Portal Lore",
-								"text": [
-									"At 3rd level, you gain the ability to detect the presence of planar portals. As an action, you detect the distance and direction to any planar portals within 1,000 feet of you. You also sense which plane of existence each portal leads to. However, if magic obscures any details of a portal, this feature doesn't reveal them. ",
-									"Once you use this feature, you can't use it again until you finish a short or long rest. Alternatively, you can use the feature again if you expend a spell slot of 2nd level or higher. ",
-									"See the \"Planar Travel\"section in chapter 2 of the Dungeon Master's Guide for examples of planar portals."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Ranger Conclave: Primeval Guardian",
-								"text": [
-									"Rangers of the Primeval Guardian Conclave follow an ancient tradition rooted in powerful druidic magic. These rangers learn to become one with nature, allowing them to channel the aspects of various beasts and plants in order to overcome their foes. ",
-									"These rangers dwell in the elder forests of the world. They venture out only rarely, as they consider it their sacred duty to protect the druidic groves and ancient trees that saw the earliest days of the world."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Guardian Magic",
-								"text": [
-									"Starting at 3rd level, you learn an additional spell when you reach certain levels in this class, as shown in the Primeval Guardian Spells table. The spell counts as a ranger spell for you, and it doesn't count against the number of ranger spells you know.",
-									"3rd-entangle ",
-									"5th-enhance ability ",
-									"9th-conjure animals ",
-									"13th-giant insect ",
-									"17th-insect plague"
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Guardian Soul",
-								"text": [
-									"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are incapacitated. ",
-									"You undergo the following changes while in your guardian form: ",
-									"• Your size becomes Large, unless you were larger. ",
-									"• Any speed you have becomes 5 feet, unless the speed was lower. ",
-									"• Your reach increases by 5 feet. ",
-									"• You gain a number of temporary hit points at the start of each of your turns. The number equals half your ranger level. When the form ends, you lose any temporary hit points you have from it."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Piercing Thorns",
-								"text": "At 3rd level, your command of primal magic allows you to enhance your attacks with thorns. Once during each of your turns, you can deal an additional 1d6 piercing damage to one creature you hit with a weapon attack."
-							}
-						]
-					},
-					{
-						"-level": "4",
-						"feature": {
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 4th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM allows the use of feats, you may instead take a feat."
-							]
-						}
-					},
-					{
-						"-level": "5",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Beast Conclave: Coordinated Attack",
-							"text": "Beginning at 5th level, you and your animal companion form a more potent fighting team. When you use the Attack action on your turn, if your companion can see you, it can use its reaction to make a melee attack."
-						},
-							{
-								"-optional": "YES",
-								"name": "Hunter Conclave: Extra Attack",
-								"text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-							},
-							{
-								"-optional": "YES",
-								"name": "Deep Stalker Conclave: Extra Attack",
-								"text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Extra Attack",
-								"text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Extra Attack",
-								"text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-							}
-						]
-					},
-					{
-						"-level": "6",
-						"feature": {
-							"name": "Greater Favored Enemy",
-							"text": [
-								"At 6th level, you are ready to hunt even deadlier game. Choose a type of greater favored enemy: aberrations, celestials, constructs, dragons, elementals, fiends, or giants. You gain all the benefits against this chosen enemy that you normally gain against your favored enemy, including an additional language. Your bonus to damage rolls against all your favored enemies increases to +4.",
-								"Additionally, you have advantage on saving throws against the spells and abilities used by a greater favored enemy."
-							]
-						}
-					},
-					{
-						"-level": "7",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Beast Conclave: Beast's Defense",
-							"text": "At 7th level, while your companion can see you, it has advantage on all saving throws."
-						},
-							{
-								"-optional": "YES",
-								"name": "Hunter Conclave: Defensive Tactics",
-								"text": "At 7th level, you gain one of the following features of your choice: Escape the Horde, Multiattack Defense, or Steel Will."
-							},
-							{
-								"-optional": "YES",
-								"name": "Defensive Tactics: Escape the Horde",
-								"text": "Opportunity attacks against you are made with disadvantage."
-							},
-							{
-								"-optional": "YES",
-								"name": "Defensive Tactics: Multiattack Defense",
-								"text": "When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn."
-							},
-							{
-								"-optional": "YES",
-								"name": "Defensive Tactics: Steel Will",
-								"text": "You have advantage on saving throws against being frightened."
-							},
-							{
-								"-optional": "YES",
-								"name": "Deep Stalker Conclave: Iron Mind",
-								"text": "At 7th level, you gain proficiency in Wisdom saving throws.",
-								"proficiency": "Wisdom"
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Ethereal Step",
-								"text": "At 7th level, you learn to step through the Ethereal Plane. As a bonus action on your turn, you can cast the etherealness spell with this feature, but the spell ends at the end of the current turn. Once you use this feature, you can't use it again until you finish a short or long rest."
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Ancient Fortitude",
-								"text": "At 7th level, you gain the endurance of the ancient forests. Your hit point maximum and current hit points increase by 2 per ranger level when you assume your guardian form. This increase lasts until you leave the form; your hit point maximum then returns to normal, but your current hit points remain the same, unless they must decrease to abide by your hit point maximum."
-							}
-						]
-					},
-					{
-						"-level": "8",
-						"feature": [{
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 8th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM allows the use of feats, you may instead take a feat."
-							]
-						},
-							{
-								"name": "Fleet of Foot",
-								"text": "Beginning at 8th level, you can use the Dash action as a bonus action on your turn."
-							}
-						]
-					},
-					{
-						"-level": "10",
-						"feature": {
-							"name": "Hide in Plain Sight",
-							"text": [
-								"Starting at 10th level, you can remain perfectly still for long periods of time to set up ambushes. ",
-								"When you attempt to hide on your turn, you can opt to not move on that turn. If you avoid moving, creatures that attempt to detect you take a -10 penalty to their Wisdom (Perception) checks until the start of your next turn. You lose this benefit if you move or fall prone, either voluntarily or because of some external effect. You are still automatically detected if any effect or action causes you to no longer be hidden. ",
-								"If you are still hidden on your next turn, you can continue to remain motionless and gain this benefit until you are detected."
-							]
-						}
-					},
-					{
-						"-level": "11",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Beast Conclave: Storm of Claws and Fangs",
-							"text": "At 11th level, your companion can use its action to make a melee attack against each creature of its choice within 5 feet of it, with a separate attack roll for each target."
-						},
-							{
-								"-optional": "YES",
-								"name": "Hunter Conclave: Multiattack",
-								"text": "At 11th level, you gain one of the following features of your choice: Volley or Whirlwind Attack"
-							},
-							{
-								"-optional": "YES",
-								"name": "Multiattack: Volley",
-								"text": "You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon's range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target."
-							},
-							{
-								"-optional": "YES",
-								"name": "Multiattack: Whirlwind Attack",
-								"text": "You can use your action to make melee attacks against any number of creatures within 5 feet of you, with a separate attack roll for each target."
-							},
-							{
-								"-optional": "YES",
-								"name": "Deep Stalker Conclave: Stalker's Flurry",
-								"text": "Starting at 11th level, once on each of your turns when you miss with an attack, you can make another attack."
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Distant Strike",
-								"text": [
-									"At 11th level, you gain the ability to step between the planes in a blink of an eye. When you use the Attack action, you can teleport up to 10 feet before each attack. You must be able to see the destination of the teleportation. ",
-									"If you attack at least two different creatures with the action, you can make one additional attack with it against a third creature."
-								]
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Rooted Defense",
-								"text": "At 11th level, you gain the ability to twist and turn the ground beneath you. While you are in your guardian form, the ground within 30 feet of you is difficult terrain for your enemies."
-							}
-						]
-					},
-					{
-						"-level": "12",
-						"feature": {
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 12th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM allows the use of feats, you may instead take a feat."
-							]
-						}
-					},
-					{
-						"-level": "14",
-						"feature": {
-							"name": "Vanish",
-							"text": "Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail."
-						}
-					},
-					{
-						"-level": "15",
-						"feature": [{
-							"-optional": "YES",
-							"name": "Beast Conclave: Superior Beast's Defense",
-							"text": "At 15th level, whenever an attacker that your companion can see hits it with an attack, it can use its reaction to halve the attack's damage against it."
-						},
-							{
-								"-optional": "YES",
-								"name": "Hunter Conclave: Superior Hunter's Defense",
-								"text": "At 15th level, you gain one of the following features of your choice: Evasion, Stand Against the Tide, and Uncanny Dodge."
-							},
-							{
-								"-optional": "YES",
-								"name": "Superior Hunter's Defense: Evasion",
-								"text": "When you are subjected to an effect, such as a red dragon's fiery breath or a lightning bolt spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail."
-							},
-							{
-								"-optional": "YES",
-								"name": "Superior Hunter's Defense: Stand Against the Tide",
-								"text": "When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice."
-							},
-							{
-								"-optional": "YES",
-								"name": "Superior Hunter's Defense: Uncanny Dodge",
-								"text": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
-							},
-							{
-								"-optional": "YES",
-								"name": "Deep Stalker Conclave: Stalker's Dodge",
-								"text": "At 15th level, whenever a creature attacks you and does not have advantage, you can use your reaction to impose disadvantage on the creature's attack roll against you. You can use this feature before or after the attack roll is made, but it must be used before the outcome of the roll is determined."
-							},
-							{
-								"-optional": "YES",
-								"name": "Horizon Walker: Spectral Defense",
-								"text": "At 15th level, your ability to move between planes becomes even more finely tuned. As a reaction when you take damage, you can halve that damage against you. For a moment, you slip into the planar boundary to lessen the harm."
-							},
-							{
-								"-optional": "YES",
-								"name": "Primeval Guardian: Guardian Aura",
-								"text": "Starting at 15th level, your guardian form emanates a magical aura that fortifies your injured allies. When any ally starts their turn within 30 feet of your guardian form, that ally regains a number of hit points equal to half your ranger level. This aura has no effect on a creature that has half or more of its hit points, and it has no effect on undead and constructs."
-							}
-						]
-					},
-					{
-						"-level": "16",
-						"feature": {
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 16th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM allows the use of feats, you may instead take a feat."
-							]
-						}
-					},
-					{
-						"-level": "18",
-						"feature": {
-							"name": "Feral Senses",
-							"text": [
-								"At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it.",
-								"You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened."
-							]
-						}
-					},
-					{
-						"-level": "19",
-						"feature": {
-							"name": "Ability Score Improvement",
-							"text": [
-								"When you reach 19th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-								"If your DM allows the use of feats, you may instead take a feat."
-							]
-						}
-					},
-					{
-						"-level": "20",
-						"feature": {
-							"name": "Foe Slayer",
-							"text": "At 20th level, you become an unparalleled hunter. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make. You can choose to use this feature before or after the roll, but before any effects of the roll are applied."
-						}
-					}
-				]
-			},
-			{
 				"name": "Rogue",
 				"hd": "8",
 				"proficiency": "Dexterity, Intelligence",
 				"spellAbility": "Intelligence",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "3",
 					"slots": {
 						"-optional": "YES",
@@ -7528,7 +5707,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -7553,7 +5732,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Expertise",
 							"text": [
 								"At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
@@ -7586,7 +5765,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Roguish Archetype",
 							"text": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities: Thief, Assassin, or Arcane Trickster, all detailed at the end of the class description. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level."
 						},
@@ -7746,7 +5925,7 @@ export const classes = {
 					},
 					{
 						"-level": "9",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Arcane Trickster: Magical Ambush",
 							"text": "Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn."
@@ -7816,7 +5995,7 @@ export const classes = {
 					},
 					{
 						"-level": "13",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Arcane Trickster: Versatile Trickster",
 							"text": "At 13th level, you gain the ability to distract targets with your mage hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn."
@@ -7872,7 +6051,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Arcane Trickster: Spell Thief",
 							"text": [
@@ -7935,7 +6114,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Roguish Archetype: Inquisitive (UA)",
 							"text": [
@@ -7976,7 +6155,7 @@ export const classes = {
 								"name": "Scout: Survivalist",
 								"text": "When you choose this archetype at 3rd level, you gain proficiency in the Nature and Survival skills. Your proficiency bonus is doubled for any ability check you make that uses either of those proficiencies.",
 								"proficiency": "Nature, Survival",
-								"modifier": [{
+								"modifier": [ {
 									"-category": "skills",
 									"#text": "Nature +PROF"
 								},
@@ -7995,7 +6174,7 @@ export const classes = {
 					},
 					{
 						"-level": "9",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Inquisitive: Steady Eye",
 							"text": "At 9th level, you gain advantage on any Wisdom (Perception) check made on your turn to find a hidden creature or object if you do not move during that turn. If you use this ability before moving, you cannot move or ready movement during your turn."
@@ -8013,7 +6192,7 @@ export const classes = {
 					},
 					{
 						"-level": "13",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Inquisitive: Unerring Eye",
 							"text": "At 13th level, you gain the ability to detect magical deception. As an action, you sense the presence within 30 feet of you of illusions, shapechanger creatures not in their true form, and other magic designed to deceive the senses. Though you determine that an effect is attempting to trick you, you gain no special insight into what is hidden or its true nature."
@@ -8030,7 +6209,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Inquisitive: Eye for Weakness",
 							"text": "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 2d6."
@@ -8049,7 +6228,7 @@ export const classes = {
 				"hd": "6",
 				"proficiency": "Constitution, Charisma",
 				"spellAbility": "Charisma",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "4,2,0,0,0,0,0,0,0,0"
 				},
@@ -8131,7 +6310,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -8156,7 +6335,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Spellcasting",
 							"text": [
 								"An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells. See chapter 10 for the general rules of spellcasting and chapter 11 for the sorcerer spell list.",
@@ -8309,7 +6488,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Sorcery Points",
 							"text": "You have 2 sorcery points, and you gain one additional point every time you level up, to a maximum of 20 at level 20. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest."
 						},
@@ -8332,7 +6511,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"name": "Metamagic",
 							"text": [
 								"At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.",
@@ -8399,7 +6578,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Draconic Bloodline: Elemental Affinity",
 							"text": [
@@ -8440,7 +6619,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"name": "Metamagic Option (3rd)",
 							"text": "At 10th level, you learn an additional metamagic option."
 						},
@@ -8504,7 +6683,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Draconic Bloodline: Dragon Wings",
 							"text": [
@@ -8536,7 +6715,7 @@ export const classes = {
 					},
 					{
 						"-level": "17",
-						"feature": [{
+						"feature": [ {
 							"name": "Metamagic Option (4th)",
 							"text": "At 17th level, you learn an additional metamagic option."
 						},
@@ -8590,7 +6769,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Draconic Bloodline: Draconic Presence",
 							"text": "Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
@@ -8629,7 +6808,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Sorcerous Origin: Shadow (UA)",
 							"text": [
@@ -8816,7 +6995,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Stone Sorcery: Stone Aegis",
 							"text": [
@@ -8862,7 +7041,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Shadow: Shadow Walk",
 							"text": [
@@ -8903,7 +7082,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Shadow: Shadow Form",
 							"text": [
@@ -8960,7 +7139,7 @@ export const classes = {
 				"hd": "8",
 				"proficiency": "Wisdom, Charisma",
 				"spellAbility": "Charisma",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "2,1,0,0,0,0,0,0,0,0"
 				},
@@ -9042,7 +7221,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -9067,7 +7246,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Otherworldly Patron",
 							"text": "At 1st level, you have struck a bargain with an otherworldly being of your choice - the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."
 						},
@@ -9187,7 +7366,7 @@ export const classes = {
 					},
 					{
 						"-level": "3",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Pact Boon: Pact of the Chain",
 							"text": [
@@ -9231,7 +7410,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "The Archfey: Misty Escape",
 							"text": [
@@ -9291,7 +7470,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "The Archfey: Beguiling Defenses",
 							"text": "Beginning at 10th level, your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be charmed by you for 1 minute or until the creature takes any damage."
@@ -9329,7 +7508,7 @@ export const classes = {
 					},
 					{
 						"-level": "12",
-						"feature": [{
+						"feature": [ {
 							"name": "Ability Score Improvement",
 							"text": [
 								"When you reach 12th level you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
@@ -9354,7 +7533,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "The Archfey: Dark Delirium",
 							"text": [
@@ -9392,7 +7571,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"name": "Eldritch Invocation",
 							"text": "You learn an additional eldritch invocation"
 						},
@@ -9451,7 +7630,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -9551,7 +7730,7 @@ export const classes = {
 					},
 					{
 						"-level": "5",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -9683,7 +7862,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -9839,7 +8018,7 @@ export const classes = {
 					},
 					{
 						"-level": "9",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -10027,7 +8206,7 @@ export const classes = {
 					},
 					{
 						"-level": "12",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -10223,7 +8402,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -10451,7 +8630,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Agonizing Blast",
 							"text": [
@@ -10679,7 +8858,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Otherworldly Patron: The Undying Light (UA)",
 							"text": [
@@ -10794,7 +8973,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "The Seeker: Astral Refuge",
 							"text": "At 6th level, you gain the ability to step into an astral refuge. As an action, you disappear from the world for a brief moment and enter the Astral Plane, taking advantage of its timeless nature. While in your astral refuge, you can take two actions to cast spells that target only you. After using those two actions, you return to the space you occupied and your turn ends."
@@ -10824,7 +9003,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "The Seeker: Far Wanderer",
 							"text": "At 10th level, you no longer need to breathe, and you gain resistance to fire damage and cold damage."
@@ -10848,7 +9027,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "The Seeker: Astral Sequestration",
 							"text": [
@@ -10880,7 +9059,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -11031,7 +9210,7 @@ export const classes = {
 					},
 					{
 						"-level": "5",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -11198,7 +9377,7 @@ export const classes = {
 					},
 					{
 						"-level": "7",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -11381,7 +9560,7 @@ export const classes = {
 					},
 					{
 						"-level": "9",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -11572,7 +9751,7 @@ export const classes = {
 					},
 					{
 						"-level": "12",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -11763,7 +9942,7 @@ export const classes = {
 					},
 					{
 						"-level": "15",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -11962,7 +10141,7 @@ export const classes = {
 					},
 					{
 						"-level": "18",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "Eldritch Invocation: Aspect of the Moon (UA)",
 							"text": [
@@ -12174,7 +10353,7 @@ export const classes = {
 				"hd": "6",
 				"proficiency": "Intelligence, Wisdom",
 				"spellAbility": "Intelligence",
-				"autolevel": [{
+				"autolevel": [ {
 					"-level": "1",
 					"slots": "3,2,0,0,0,0,0,0,0,0"
 				},
@@ -12256,7 +10435,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Starting Proficiencies",
 							"text": [
 								"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
@@ -12281,7 +10460,7 @@ export const classes = {
 					},
 					{
 						"-level": "1",
-						"feature": [{
+						"feature": [ {
 							"name": "Arcane Recovery",
 							"text": [
 								"You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.",
@@ -12316,7 +10495,7 @@ export const classes = {
 					},
 					{
 						"-level": "2",
-						"feature": [{
+						"feature": [ {
 							"name": "Arcane Tradition",
 							"text": "When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Bladesinging, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation, all detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
 						},
@@ -12516,7 +10695,7 @@ export const classes = {
 					},
 					{
 						"-level": "6",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "School of Abjuration: Projected Ward",
 							"text": "Starting at 6th level, when a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage."
@@ -12594,7 +10773,7 @@ export const classes = {
 					},
 					{
 						"-level": "10",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "School of Abjuration: Improved Abjuration",
 							"text": "Beginning at 10th level, when you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in counterspell and dispel magic), you add your proficiency bonus to that ability check."
@@ -12665,7 +10844,7 @@ export const classes = {
 					},
 					{
 						"-level": "14",
-						"feature": [{
+						"feature": [ {
 							"-optional": "YES",
 							"name": "School of Abjuration: Spell Resistance",
 							"text": [
@@ -12776,7 +10955,8 @@ export const classes = {
 				]
 			}
 		],
-		"spell": [{
+		"spell": [
+			{
 			"name": "Commander's Strike",
 			"level": "1",
 			"school": "EV",
