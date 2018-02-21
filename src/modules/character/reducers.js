@@ -9,10 +9,18 @@ function CharacterReducer( state = INITIAL_STATE, action ) {
 				...state,
 				stats: action.payload
 			};
+
 		case characterActions.SET_BACKGROUND:
 			state.filter( ( character ) => character.id === action.characterID )[0].background = action.background;
 
 			return state;
+
+		case characterActions.PROTOTYPE_CHARACTER:
+			return state = {
+				...state,
+				prototype: payload
+			};
+
 		default:
 			return state;
 	}

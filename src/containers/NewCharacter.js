@@ -92,13 +92,20 @@ class NewCharacter extends Component {
 	updateProficiencies( proficiencies ) {
 		let newAbilities = this.state.character.abilities;
 
-		if ( proficiencies ) {
-			proficiencies.split( ', ' ).map( ( prof ) => {
-				logger( 'Proficient in :: ', 'info', prof.toLowerCase() );
-				logger( 'Ability to update :: ', 'info', this.state.character.abilities[ prof.toLowerCase() ] )
+		if ( newAbilities ) {
+			if ( proficiencies ) {
+				Object.keys(newAbilities).map( ( key, index ) => {
+					proficiencies.split( ', ' ).map( ( prof ) => {
+						logger( 'Proficient in :: ', 'info', prof.toLowerCase() );
+						logger( 'Ability to update :: ', 'info', this.state.character.abilities[ prof.toLowerCase() ] )
 
-				newAbilities[ prof.toLowerCase() ].isProficient = true;
-			} );
+						if ( key.toLowerCase() === prof.toLowerCase() ) {
+							Object.values( newAbilities )[ index ].isProficient = true;
+						}
+
+					} );
+				} )
+			}
 		}
 
 		return newAbilities;
@@ -112,8 +119,9 @@ class NewCharacter extends Component {
 		this.setState( {
 			character: {
 				...this.state.character,
-				background: chosenBackground,
-				abilities: this.updateProficiencies( chosenBackground.proficiency )
+				background: chosenBackground.name,
+				abilities: chosenBackground.proficiency ? this.updateProficiencies( chosenBackground.proficiency ) : this.state.character.proficiency,
+				traits: chosenBackground.trait ? chosenBackground.trait : this.state.character.traits
 			}
 		} );
 

@@ -7,9 +7,10 @@
 // |>   From jakubbujko with <3   <|  
 // ------------------------------
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { logger } from "../../utils/consoleLogger";
 import ClassCard from "./ClassCard";
+import ClassDetails from "./ClassDetails";
 
 class Classes extends Component {
 	constructor( props ) {
@@ -18,6 +19,22 @@ class Classes extends Component {
 		this.state = {
 			activeClassName: ''
 		};
+
+		this.setActiveCard = this.setActiveCard.bind( this );
+
+	}
+
+	setActiveCard( name ) {
+		if ( this.state.activeClassName !== name ) {
+			this.setState( {
+				activeClassName: name
+			} )
+		}
+		else {
+			this.setState( {
+				activeClassName: ''
+			} )
+		}
 
 	}
 
@@ -38,22 +55,34 @@ class Classes extends Component {
 						Choose your Class
 					</h2>
 					<p className="instructions txt-dim">
-						It's time to decide on a race for your character. Aside from RolePlaying reasons, you might also
-						want to consider proficiencies or bonuses each race provides and how would those play out with
-						your future character class.
+						Your character's class will determine your capabilities and potential as an adventurer.
+						Depending on your playstyle, you may choose to rely mainly on spells with a Sorcerer or Wizard
+						classes, you might also decide to embark on your journey with a trusty maul at your side and
+						become a Fighter or Barbarian. Maybe your main goal is to support your party, by being a Cleric
+						or a Bard. Choice is yours, you can be whoever you want to be!
 					</p>
-					<p className="instructions txt-dim">
-						Mind that you can always go one step back, if your chosen race happens not to play well together
-						with a class you wish to choose in the next step
-					</p>
+					{/*<p className="instructions txt-dim">*/}
+						{/*Mind that you can always go one step back, if your chosen race happens not to play well together*/}
+						{/*with a class you wish to choose in the next step*/}
+					{/*</p>*/}
 				</header>
 				<div className="cards" style={ { maxHeight: activeClassName !== "" ? '0' : '9999px' } }>
 					{
 						classes.map( ( charClass, index ) =>
-							<ClassCard charClass={charClass} key={index} activeClass={activeClassName}/>
+							<ClassCard
+								charClass={ charClass }
+								key={ index }
+								activeClass={ activeClassName }
+								onClick={ charClass.name !== activeClassName ? this.setActiveCard : ( name ) => logger( name + ' card active :: ',
+									'info', 'onClick event disabled' ) }/>
 						)
 					}
 				</div>
+				<ClassDetails
+					activeClass={ activeClass }
+					activeClassName={ activeClassName }
+					newRace={ ( charClass ) => newClass( charClass ) }
+					onCloseClick={ () => { this.setState( { activeClassName: '' } ) } }/>
 
 			</div>
 		)

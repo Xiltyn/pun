@@ -6,45 +6,48 @@ export const classes = {
 				"name": "Barbarian",
 				"hd": "12",
 				"proficiency": "Strength, Constitution",
-				"autolevel": [ {
-					"-level": "1",
-					"feature": [ {
-						"name": "Starting Proficiencies",
-						"text": [
-							"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
-							"Armor: light armor, medium armor, shields",
-							"Weapons: simple weapons, martial weapons",
-							"Tools: none",
-							"Skills: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
-						]
-					},
-						{
-							"name": "Starting Equipment",
-							"text": [
-								"You start with the following items, plus anything provided by your background.",
-								"• (a) a greataxe or (b) any martial melee weapon",
-								"• (a) two handaxes or (b) any simple weapon",
-								"• An explorer's pack, and four javelins",
-								"Alternatively, you may start with 2d4 x 10 gp to buy your own equipment."
-							]
-						}
-					]
-				},
+				"autolevel": [
 					{
 						"-level": "1",
-						"feature": [ {
-							"name": "Rage",
-							"text": [
-								"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.",
-								"While raging, you gain the following benefits if you aren't wearing heavy armor:",
-								"• You have advantage on Strength checks and Strength saving throws.",
-								"• When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll. This bonus increases as you level.",
-								"• You have resistance to bludgeoning, piercing, and slashing damage.",
-								"If you are able to cast spells, you can't cast them or concentrate on them while raging.",
-								"Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.",
-								"Once you have raged the maximum number of times for your barbarian level, you must finish a long rest before you can rage again. You may rage 2 times at 1st level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th."
-							]
-						},
+						"feature": [
+							{
+								"name": "Starting Proficiencies",
+								"text": [
+									"You are proficient with the following items, in addition to any proficiencies provided by your race or background.",
+									"Armor: light armor, medium armor, shields",
+									"Weapons: simple weapons, martial weapons",
+									"Tools: none",
+									"Skills: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
+								]
+							},
+							{
+								"name": "Starting Equipment",
+								"text": [
+									"You start with the following items, plus anything provided by your background.",
+									"• (a) a greataxe or (b) any martial melee weapon",
+									"• (a) two handaxes or (b) any simple weapon",
+									"• An explorer's pack, and four javelins",
+									"Alternatively, you may start with 2d4 x 10 gp to buy your own equipment."
+								]
+							}
+						]
+					},
+					{
+						"-level": "1",
+						"feature": [
+							{
+								"name": "Rage",
+								"text": [
+									"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.",
+									"While raging, you gain the following benefits if you aren't wearing heavy armor:",
+									"• You have advantage on Strength checks and Strength saving throws.",
+									"• When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll. This bonus increases as you level.",
+									"• You have resistance to bludgeoning, piercing, and slashing damage.",
+									"If you are able to cast spells, you can't cast them or concentrate on them while raging.",
+									"Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.",
+									"Once you have raged the maximum number of times for your barbarian level, you must finish a long rest before you can rage again. You may rage 2 times at 1st level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th."
+								]
+							},
 							{
 								"name": "Unarmored Defense",
 								"text": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
@@ -10957,12 +10960,12 @@ export const classes = {
 		],
 		"spell": [
 			{
-			"name": "Commander's Strike",
-			"level": "1",
-			"school": "EV",
-			"classes": "Fighter (Battle Master)",
-			"text": "When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
-		},
+				"name": "Commander's Strike",
+				"level": "1",
+				"school": "EV",
+				"classes": "Fighter (Battle Master)",
+				"text": "When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
+			},
 			{
 				"name": "Disarming Attack",
 				"level": "1",
