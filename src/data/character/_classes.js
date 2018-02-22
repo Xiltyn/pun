@@ -7308,7 +7308,7 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Archfey",
 								"name": "The Archfey: Fey Presence",
 								"text": [
 									"Starting at 1st level, your patron bestows upon you the ability to project the beguiling and fearsome presence of the fey. As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
@@ -7316,17 +7316,17 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Fiend",
 								"name": "The Fiend: Dark One's Blessing",
 								"text": "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Great Old One",
 								"name": "The Great Old One: Awakened Mind",
 								"text": "Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can communicate telepathically with any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Undying",
 								"name": "The Undying: Among the Dead",
 								"text": [
 									"Starting at 1st level, you learn the spare the dying cantrip, which counts as a warlock cantrip for you. You also have advantage on saving throws against any disease.",
@@ -8886,7 +8886,7 @@ export const classes = {
 							]
 						},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Undying Light (UA)",
 								"name": "The Undying Light: Radiant Soul",
 								"text": "Starting at 1st level, your link to the Positive Plane allows you to serve as a conduit for radiant energy. You have resistance to radiant damage, and when you cast a spell that deals radiant damage or fire damage, you add your Charisma modifier to that damage. Additionally, you know the sacred flame and light cantrips and can cast them at will. They don't count against your number of cantrips known."
 							},
@@ -8904,12 +8904,12 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Hexblade (UA)",
 								"name": "The Hexblade: Hex Warrior",
 								"text": "At 1st level, you gain proficiency with medium armor, shields, and martial weapons. In addition, when attacking with a melee weapon that you are proficient with and that lacks the two- handed property, you can use your Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldly Patron: The Hexblade (UA)",
 								"name": "The Hexblade: Hexblade's Curse",
 								"text": [
 									"Starting at 1st level, you gain the ability to place a baleful curse on an enemy. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. Until the curse ends, you gain the following benefits:",
@@ -8937,7 +8937,7 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Otherworldy Patron: The Seeker (UA)",
 								"name": "Shielding Aurora",
 								"text": [
 									"Starting at 1st level, you can invoke the Seeker's power to protect you from harm. As a bonus action, you create a whirling aurora of brilliant energy that swirls around you. Until the end of your next turn, you gain resistance to all damage, and if a hostile creature ends its turn within 10 feet of you, it takes radiant damage equal to your warlock level + your Charisma modifier.",

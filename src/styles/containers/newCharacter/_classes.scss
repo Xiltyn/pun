@@ -242,44 +242,124 @@
 					}
 				}
 			}
-			.level {
-				display: flex;
-				flex-wrap: wrap;
+			.level-wrapper {
 				padding: 0 4.8rem 0 640px;
 
-				@media screen and ( max-width: 1440px ) {
-					padding-left: 580px;
-				}
+				.level {
+					display: flex;
+					flex-wrap: wrap;
 
-				.feat {
-					width: 100%;
-					margin: 0 1% 2.4rem;
-					height: 200px;
-					padding: 1.6rem;
-					box-sizing: border-box;
-					box-shadow: $SH_MEDIUM;
-					overflow-y: scroll;
-					&::-webkit-scrollbar {
-						width: .4rem;
+					@media screen and ( max-width: 1440px ) {
+						padding-left: 580px;
 					}
 
-					&::-webkit-scrollbar-track {
-						background: none;
-					}
-
-					&::-webkit-scrollbar-thumb {
-						width: .2rem;
-						border-radius: 10px;
-						background: rgba( $BASE, .3 );
-					}
-
-					.name {
+					h3 {
+						width: 100%;
 						padding-bottom: 2.4rem;
-						transition: all .3s ease-in;
 					}
-					&:hover {
+
+					.feat {
+						position: relative;
+						width: 48%;
+						margin: 0 1% 2.4rem;
+						height: 200px;
+						padding: 1.6rem;
+						box-sizing: border-box;
+						box-shadow: $SH_MEDIUM;
+						overflow-y: scroll;
+						transition: all .3s ease-in;
+
+						&::-webkit-scrollbar {
+							width: .4rem;
+						}
+
+						&::-webkit-scrollbar-track {
+							background: none;
+						}
+
+						&::-webkit-scrollbar-thumb {
+							width: .2rem;
+							border-radius: 10px;
+							background: rgba( $BASE, .3 );
+						}
+
+						@media screen and ( max-width: 1440px ) {
+							width: 100%;
+							margin: 0 0 2.4rem;
+						}
+
 						.name {
-							color: $PRIMARY;
+							position: relative;
+							padding-bottom: 2.4rem;
+							transition: all .3s ease-in;
+							z-index: $LAYER_4;
+						}
+
+						p {
+							position: relative;
+							transition: all .3s ease-in;
+							z-index: $LAYER_4;
+						}
+
+						&:hover {
+							.name {
+								color: $PRIMARY;
+							}
+						}
+
+						&.optional {
+							cursor: pointer;
+
+							.name {
+								padding: 2.4rem 0;
+							}
+
+							&:after {
+								content: 'optional';
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 3.2rem;
+								padding: 1.2rem 1.6rem 0;
+								background: $PRIMARY;
+								color: $BACKGROUND;
+								font-weight: 800;
+								font-family: $JAAPOKKI;
+								font-size: 1.2rem;
+								letter-spacing: .1rem;
+								text-align: center;
+								text-transform: uppercase;
+								transition: all .3s ease-in;
+								box-sizing: border-box;
+								z-index: $LAYER_3;
+							}
+
+							&:hover {
+								background: $PRIMARY;
+
+								.name, p {
+									color: $BACKGROUND;
+								}
+
+								&:after {
+									height: 100%;
+								}
+							}
+
+							&.active {
+								background: $SECONDARY;
+
+								.name, p {
+									color: $BACKGROUND;
+								}
+
+								&:after {
+									content: 'equipped';
+									height: 100%;
+									background: $SECONDARY;
+								}
+							}
 						}
 					}
 				}
