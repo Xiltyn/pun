@@ -36,19 +36,6 @@ const ClassLevel = ( { ...props } ) =>
 							)
 						}
 						{
-							level[ Object.keys( level )[ 0 ] ].requires && level[ Object.keys(
-								level )[ 0 ] ].requires.map( ( feat, index ) =>
-								<li className={'feat' + ( feat["-requires"] ? feat["-requires"] === props.chosenFeat ? ' prerequisit selected' : ' prerequisit' : '' ) } key={ index }>
-									<h4 className="name txt-dim">
-										{ feat.name && feat.name }
-									</h4>
-									{
-										feat.text && ClassDetails.formatTextPara( feat.text )
-									}
-								</li>
-							)
-						}
-						{
 							level[ Object.keys( level )[ 0 ] ].optional && level[ Object.keys(
 								level )[ 0 ] ].optional.map( ( feat, index ) => {
 
@@ -64,6 +51,19 @@ const ClassLevel = ( { ...props } ) =>
 									</li>
 
 								}
+							)
+						}
+						{
+							level[ Object.keys( level )[ 0 ] ].requires && level[ Object.keys(
+								level )[ 0 ] ].requires.map( ( feat, index ) =>
+								<li className={'feat' + ( feat["-requires"] ? feat["-requires"] === props.chosenFeat ? ' prerequisit selected' : ' prerequisit' : '' ) } key={ index }>
+									<h4 className="name txt-dim">
+										{ feat.name && feat.name }
+									</h4>
+									{
+										feat.text && ClassDetails.formatTextPara( feat.text )
+									}
+								</li>
 							)
 						}
 

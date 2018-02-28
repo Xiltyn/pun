@@ -1295,7 +1295,7 @@ export const classes = {
 							},
 							{
 								"-optional": "YES",
-								"name": "Divine Domain Arcana",
+								"name": "Divine Domain: Arcana",
 								"text": [
 									"Magic is an energy that suffuses the multiverse and that fuels both destruction and creation. Gods of the Arcana domain know the secrets and potential of magic intimately. For some of these gods, magical knowledge is a great responsibility that comes with a special understanding of the nature of reality. Other gods of Arcana see magic as pure power, to be used as its wielder sees fit.",
 									"The gods of this domain are often associated with knowledge, as learning and arcane power tend to go hand-in-hand. In the Realms, deities of this domain include Azuth and Mystra, as well as Corellon Larethian of the elven pantheon. In other worlds, this domain includes Hecate, Math Mathonwy, and Isis; the triple moon gods of Solinari, Lunitari, and Nuitari of Krynn; and Boccob, Vecna, and WeeJas of Greyhawk.",
@@ -1412,22 +1412,22 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Arcana",
 								"name": "Arcana Domain: Arcane Initiate",
 								"text": "When you choose this domain at 1st level, you gain proficiency in the Arcana skill, and you gain two cantrips of your choice from the wizard spell list. For you, these cantrips count as cleric cantrips."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Death",
 								"name": "Death Domain: Bonus Proficiency",
 								"text": "When the cleric chooses this domain at 1st level, he or she gains proficiency with martial weapons."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Death",
 								"name": "Death Domain: Reaper",
 								"text": "At 1st level, the cleric learns one necromancy cantrip of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Knowledge",
 								"name": "Knowledge Domain: Blessings of Knowledge",
 								"text": [
 									"At 1st level, you learn two languages of your choice. You also become proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion.",
@@ -1435,22 +1435,22 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Life",
 								"name": "Life Domain: Bonus Proficiency",
 								"text": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Life",
 								"name": "Life Domain: Disciple of Life",
 								"text": "Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Light",
 								"name": "Light Domain: Bonus Cantrip",
 								"text": "When you choose this domain at 1st level, you gain the light cantrip if you don't already know it."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Light",
 								"name": "Light Domain: Warding Flare",
 								"text": [
 									"Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature.",
@@ -1458,22 +1458,22 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Nature",
 								"name": "Nature Domain: Acolyte of Nature",
 								"text": "At 1st level, you learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Nature",
 								"name": "Nature Domain: Bonus Proficiency",
 								"text": "Also at 1st level, you gain proficiency with heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Tempest",
 								"name": "Tempest Domain: Bonus Proficiencies",
 								"text": "At 1st level, you gain proficiency with martial weapons and heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Tempest",
 								"name": "Tempest Domain: Wrath of the Storm",
 								"text": [
 									"Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.",
@@ -1481,17 +1481,17 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Trickery",
 								"name": "Trickery Domain: Blessing of the Trickster",
 								"text": "Starting when you choose this domain at 1st level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: War",
 								"name": "War Domain: Bonus Proficiencies",
 								"text": "At 1st level, you gain proficiency with martial weapons and heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: War",
 								"name": "War Domain: War Priest",
 								"text": "From 1st level, your god delivers bolts of inspiration to you while you are engaged in battle. When you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
 							}
@@ -1878,12 +1878,12 @@ export const classes = {
 							]
 						},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Forge (UA)",
 								"name": "Forge Domain: Bonus Proficiency",
 								"text": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Forge (UA)",
 								"name": "Forge Domain: Blessing of the Forge",
 								"text": [
 									"At 1st level, you gain the ability to imbue magic into a weapon or armor. At the end of a long rest, touch one nonmagical object that is a suit of armor or a simple or martial weapon. Until the end of your next long rest, the object becomes a magic item, granting a +1 bonus to AC if it's armor or a +1 bonus to attack and damage rolls if it's a weapon. ",
@@ -1905,17 +1905,17 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Grave (UA)",
 								"name": "Grave Domain: Bonus Proficiency",
 								"text": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Grave (UA)",
 								"name": "Grave Domain: Circle of Mortality",
 								"text": "At 1st level, you gain the ability to manipulate the line between life and death. When you cast a spell that restores hit points to a living creature currently at 0, treat any dice rolled to determine the spell's healing as having rolled their maximum result. In addition, if you have the spare the dying cantrip, you can cast it as a bonus action."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Grave (UA)",
 								"name": "Grave Domain: Eyes of the Grave",
 								"text": [
 									"Starting at 1st level, you gain an innate sense of creatures whose existence is an insult to the natural cycle of life. If you spend 1 minute in uninterrupted contemplation, you can determine the presence and nature of undead creatures in the area. This detection extends up to 1 mile in all directions. You learn the number of undead and their distance and direction from you. In addition, you learn the creature type of the undead in that area that has the highest challenge rating. ",
@@ -1937,12 +1937,12 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Protection (UA)",
 								"name": "Protection Domain: Bonus Proficiency",
 								"text": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Divine Domain: Protection (UA)",
 								"name": "Protection Domain: Shield of the Faithful",
 								"text": "Starting at 1st level, you gain the ability to hinder attacks intended for others. When a creature attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. To do so, you must be able to see both the attacker and the target. You interpose an arm, a shield, or some other part of yourself to try to throw the attack off target."
 							}
@@ -6383,7 +6383,6 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
 								"name": "Dragon Ancestor",
 								"text": [
 									"At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.",
@@ -6402,7 +6401,7 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Draconic Bloodline",
 								"name": "Draconic Bloodline: Draconic Resilience",
 								"text": [
 									"As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.",
@@ -6410,17 +6409,17 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Storm",
 								"name": "Storm: Tempestuous Magic",
 								"text": "Starting at 1st level, you can use a bonus action on your turn to cause whirling gusts of elemental air to briefly surround you, immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks."
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Storm",
 								"name": "Storm: Wind Speaker",
 								"text": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. (Knowing this language allows you to understand and be understood by those who speak its dialects: Aquan, Auran, Ignan, and Terran.)"
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Wild Magic",
 								"name": "Wild Magic: Wild Magic Surge",
 								"text": [
 									"Starting when you choose this origin at 1st level, your spellcasting can unleash surges of untamed magic. Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. If you roll a 1, roll on the Wild Magic Surge table to create a random magical effect. A Wild Magic Surge can happen once per turn.",
@@ -6480,7 +6479,7 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Wild Magic",
 								"name": "Wild Magic: Tides of Chaos",
 								"text": [
 									"Starting at 1st level, you can manipulate the forces of chance and chaos to gain advantage on one attack roll, ability check, or saving throw. Once you do so, you must finish a long rest before you can use this feature again.",
@@ -6835,7 +6834,7 @@ export const classes = {
 							]
 						},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Shadow (UA)",
 								"name": "Shadow: Eyes of the Dark",
 								"text": "From 1st level, you have darkvision with a range of 60 feet. You can cast darkness by spending 1 sorcery point. You can see through any darkness spell you cast using this ability."
 							},
@@ -6851,21 +6850,21 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Favored Soul (UA)",
 								"name": "Favored Soul: Divine Magic",
 								"text": [
 									"Your link to the divine allows you to learn spells normally associated with the cleric class. When your Spellcasting feature lets you learn a sorcerer cantrip or a sorcerer spell of 1st level or higher, you can choose the new spell from the cleric spell list, in addition to the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you."
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Favored Soul (UA)",
 								"name": "Favored Soul: Supernatural Resilience",
 								"text": [
 									"At 1st level, the blessing of the gods grants you enhanced durability. Your hit point maximum increases by 1, and it increases by 1 again whenever you gain a level in this class."
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Favored Soul (UA)",
 								"name": "Favored Soul: Favored by the Gods",
 								"text": [
 									"Starting at 1st level, divine power guards your destiny. If you fail a saving throw or miss with an attack roll, you can roll 2d4 and add it to the total, possibly changing the outcome.",
@@ -6899,14 +6898,14 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Phoenix Sorcery (UA)",
 								"name": "Phoenix Sorcery: Ignite",
 								"text": [
 									"At 1st level, you gain the ability to start fires with a touch. As an action, you can magically ignite a flammable object you touch with your hand—an object such as a torch, a piece of tinder, or the hem of drapes."
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Phoenix Sorcery (UA)",
 								"name": "Phoenix Sorcery: Mantle of Flame",
 								"text": [
 									"Starting at 1st level, you can unleash the phoenix fire that blazes within you.",
@@ -6931,14 +6930,14 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Sea Sorcery (UA)",
 								"name": "Sea Sorcery: Soul of the Sea",
 								"text": [
 									"At 1st level, your tie to the sea grants you the ability to breathe underwater, and you have a swim speed equal to your walking speed."
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Sea Sorcery (UA)",
 								"name": "Sea Sorcery: Curse of the Sea",
 								"text": [
 									"When you choose this origin at 1st level, you learn the secret of infusing your spells with a watery curse.",
@@ -6963,14 +6962,14 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Stone Sorcery (UA)",
 								"name": "Stone Sorcery: Bonus Proficiencies",
 								"text": [
 									"At 1st level, you gain proficiency with shields, simple weapons, and martial weapons."
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Stone Sorcery (UA)",
 								"name": "Stone Sorcery: Metal Magic",
 								"text": [
 									"Your affinity for metal gives you the option to learn some non-sorcerer spells that focus on weapon attacks. When your Spellcasting feature lets you learn a sorcerer spell of 1st level or higher, you can select the spell from the following list of spells, in addition to the sorcerer spell list. You must otherwise obey all the restrictions for selecting the spell, and it becomes a sorcerer spell for you.",
@@ -6987,7 +6986,7 @@ export const classes = {
 								]
 							},
 							{
-								"-optional": "YES",
+								"-requires": "Sorcerous Origin: Stone Sorcery (UA)",
 								"name": "Stone Sorcery: Stone's Durability",
 								"text": [
 									"At 1st level, your connection to stone gives you extra fortitude. Your hit point maximum increases by 1, and it increases by 1 again whenever you gain a level in this class.",

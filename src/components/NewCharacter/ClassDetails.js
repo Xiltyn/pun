@@ -157,10 +157,11 @@ class ClassDetails extends Component {
 		if ( newProps.activeClass ) {
 			this.setState( {
 				charClass: newProps.activeClass,
+				chosenFeat: ''
 			} )
 		}
-
 	}
+
 
 	render() {
 		const { activeClassName, activeClass, onCloseClick, newClass } = this.props;
