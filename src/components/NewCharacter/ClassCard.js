@@ -8,7 +8,7 @@
 // ------------------------------
 
 import React, { Component, PropTypes } from 'react';
-import { cardBackground, logo } from "../../utils/SVG";
+import { cardBackground, classes } from "../../utils/SVG";
 
 class ClassCard extends Component {
 	constructor( props ) {
@@ -23,11 +23,12 @@ class ClassCard extends Component {
 
 	render() {
 		const { charClass: { name }, activeClass, newClass } = this.props;
+		const backgroundSVG = classes[ name.toLowerCase() ];
 
 		return(
-			<div className="class-card" onClick={ this._handleClick }>
+			<div className={"class-card " + name.toLowerCase() } onClick={ this._handleClick }>
 				<div className="symbol">
-					{ logo }
+					{ backgroundSVG }
 				</div>
 				<h3 className="h2 txt-dim txt-jaapokki">
 					{ name }

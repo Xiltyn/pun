@@ -79,6 +79,199 @@
 					fill: $PRIMARY;
 				}
 			}
+			&.bard:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $BARD;
+				}
+				svg > g > path {
+					fill: $BARD;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $BARD;
+							box-shadow: $SH_MEDIUM_STRONG;
+						}
+					}
+				}
+			}
+			&.barbarian:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $BARBARIAN;
+				}
+				svg > g > path {
+					fill: $BARBARIAN;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $BARBARIAN
+						}
+					}
+				}
+			}
+			&.wizard:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $WIZARD;
+				}
+				svg > g > path {
+					fill: $WIZARD;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $WIZARD
+						}
+					}
+				}
+			}
+			&.warlock:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $WARLOCK;
+				}
+				svg > g > path {
+					fill: $WARLOCK;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $WARLOCK
+						}
+					}
+				}
+			}
+			&.sorcerer:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $SORCERER;
+				}
+				svg > g > path {
+					fill: $SORCERER;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $SORCERER
+						}
+					}
+				}
+			}
+			&.rogue:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $ROGUE;
+				}
+				svg > g > path {
+					fill: $ROGUE;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $ROGUE
+						}
+					}
+				}
+			}
+			&.ranger:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $RANGER;
+				}
+				svg > g > path {
+					fill: $RANGER;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $RANGER
+						}
+					}
+				}
+			}
+			&.paladin:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $PALADIN;
+				}
+				svg > g > path {
+					fill: $PALADIN;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $PALADIN
+						}
+					}
+				}
+			}
+			&.monk:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $MONK;
+				}
+				svg > g > path {
+					fill: $MONK;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $MONK
+						}
+					}
+				}
+			}
+			&.fighter:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $FIGHTER;
+				}
+				svg > g > path {
+					fill: $FIGHTER;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $FIGHTER
+						}
+					}
+				}
+			}
+			&.cleric:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $CLERIC;
+				}
+				svg > g > path {
+					fill: $CLERIC;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $CLERIC
+						}
+					}
+				}
+			}
+			&.druid:hover {
+				box-shadow: $SH_LARGE;
+				h3 {
+					color: $DRUID;
+				}
+				svg > g > path {
+					fill: $DRUID;
+				}
+				.symbol {
+					svg {
+						& > g > path {
+							fill: $DRUID
+						}
+					}
+				}
+			}
 		}
 	}
 	.details {
@@ -184,7 +377,7 @@
 						justify-content: flex-start;
 						height: 5.6rem;
 						.label {
-							background: #dc172f;
+							background: $PRIMARY;
 							transform: rotate(90deg);
 							width: 5.6rem;
 						}
@@ -260,9 +453,9 @@
 
 					.feat {
 						position: relative;
-						width: 48%;
-						margin: 0 1% 2.4rem;
-						height: 200px;
+						width: 100%;
+						margin: 0 0 2.4rem;
+						height: 300px;
 						padding: 1.6rem;
 						box-sizing: border-box;
 						box-shadow: $SH_MEDIUM;
@@ -274,7 +467,8 @@
 							pointer-events: none;
 							height: 0;
 							padding: 0 1.6rem;
-							margin: 0 1% 0;
+							margin: 0;
+							overflow: hidden;
 
 							.name {
 								padding: 2.4rem 0;
@@ -283,8 +477,8 @@
 							&.selected {
 								opacity: 1;
 								pointer-events: all;
-								margin: 0 1% 2.4rem;
-								height: 200px;
+								margin: 0 0 2.4rem;
+								height: 300px;
 								padding: 1.6rem;
 							}
 
@@ -325,8 +519,7 @@
 						}
 
 						@media screen and ( max-width: 1440px ) {
-							width: 100%;
-							margin: 0 0 2.4rem;
+							height: 200px;
 						}
 
 						.name {
@@ -354,7 +547,8 @@
 							pointer-events: none;
 							height: 0;
 							padding: 0 1.6rem;
-							margin: 0 1% 0;
+							margin: 0;
+							overflow: hidden;
 
 							.name {
 								padding: 2.4rem 0;
@@ -410,8 +604,8 @@
 							&.visible {
 								opacity: 1;
 								pointer-events: all;
-								margin: 0 1% 2.4rem;
-								height: 200px;
+								margin: 0 0 2.4rem;
+								height: 300px;
 								padding: 1.6rem;
 							}
 						}
@@ -527,6 +721,790 @@
 			}
 			&:hover {
 				background: $PRIMARY
+			}
+		}
+
+		&.bard {
+			h3 {
+				color: $BARD;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $BARD;
+				}
+				.proficiency {
+					&--element {
+						background: $BARD;
+						&:after {
+							color: $BARD;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $BARD;
+							}
+						}
+						.optional {
+							&:after {
+								background: $BARD;
+							}
+							&:hover {
+								background: $BARD;
+								.name {
+									color: $BARD;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $BARD;
+					}
+					svg > g > path {
+						fill: $BARD;
+					}
+				}
+			}
+			button:hover {
+				background: $BARD;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $BARD;
+				}
+			}
+
+		}
+		&.barbarian {
+			h3 {
+				color: $BARBARIAN;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $BARBARIAN;
+				}
+				.proficiency {
+					&--element {
+						background: $BARBARIAN;
+						&:after {
+							color: $BARBARIAN;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $BARBARIAN;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $BARBARIAN;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $BARBARIAN;
+								}
+							}
+							&:after {
+								background: $BARBARIAN;
+							}
+							&:hover {
+								background: $BARBARIAN;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $BARBARIAN;
+					}
+					svg > g > path {
+						fill: $BARBARIAN;
+					}
+				}
+			}
+			button:hover {
+				background: $BARBARIAN;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $BARBARIAN;
+				}
+			}
+		}
+		&.wizard {
+			h3 {
+				color: $WIZARD;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $WIZARD;
+				}
+				.proficiency {
+					&--element {
+						background: $WIZARD;
+						&:after {
+							color: $WIZARD;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $WIZARD;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $WIZARD;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $WIZARD;
+								}
+							}
+							&:after {
+								background: $WIZARD;
+							}
+							&:hover {
+								background: $WIZARD;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $WIZARD;
+					}
+					svg > g > path {
+						fill: $WIZARD;
+					}
+				}
+			}
+			button:hover {
+				background: $WIZARD;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $WIZARD;
+				}
+			}
+		}
+		&.warlock {
+			h3 {
+				color: $WARLOCK;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $WARLOCK;
+				}
+				.proficiency {
+					&--element {
+						background: $WARLOCK;
+						&:after {
+							color: $WARLOCK;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $WARLOCK;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $WARLOCK;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $WARLOCK;
+								}
+							}
+							&:after {
+								background: $WARLOCK;
+							}
+							&:hover {
+								background: $WARLOCK;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $WARLOCK;
+					}
+					svg > g > path {
+						fill: $WARLOCK;
+					}
+				}
+			}
+			button:hover {
+				background: $WARLOCK;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $WARLOCK;
+				}
+			}
+		}
+		&.sorcerer {
+			h3 {
+				color: $SORCERER;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $SORCERER;
+				}
+				.proficiency {
+					&--element {
+						background: $SORCERER;
+						&:after {
+							color: $SORCERER;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $SORCERER;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $SORCERER;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $SORCERER;
+								}
+							}
+							&:after {
+								background: $SORCERER;
+							}
+							&:hover {
+								background: $SORCERER;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $SORCERER;
+					}
+					svg > g > path {
+						fill: $SORCERER;
+					}
+				}
+			}
+			button:hover {
+				background: $SORCERER;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $SORCERER;
+				}
+			}
+		}
+		&.rogue {
+			h3 {
+				color: $ROGUE;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $ROGUE;
+				}
+				.proficiency {
+					&--element {
+						background: $ROGUE;
+						&:after {
+							color: $ROGUE;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $ROGUE;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $ROGUE;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $ROGUE;
+								}
+							}
+							&:after {
+								background: $ROGUE;
+							}
+							&:hover {
+								background: $ROGUE;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $ROGUE;
+					}
+					svg > g > path {
+						fill: $ROGUE;
+					}
+				}
+			}
+			button:hover {
+				background: $ROGUE;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $ROGUE;
+				}
+			}
+		}
+		&.ranger {
+			h3 {
+				color: $RANGER;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $RANGER;
+				}
+				.proficiency {
+					&--element {
+						background: $RANGER;
+						&:after {
+							color: $RANGER;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $RANGER;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $RANGER;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $RANGER;
+								}
+							}
+							&:after {
+								background: $RANGER;
+							}
+							&:hover {
+								background: $RANGER;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $RANGER;
+					}
+					svg > g > path {
+						fill: $RANGER;
+					}
+				}
+			}
+			button:hover {
+				background: $RANGER;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $RANGER;
+				}
+			}
+		}
+		&.paladin {
+			h3 {
+				color: $PALADIN;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $PALADIN;
+				}
+				.proficiency {
+					&--element {
+						background: $PALADIN;
+						&:after {
+							color: $PALADIN;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $PALADIN;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $PALADIN;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $PALADIN;
+								}
+							}
+							&:after {
+								background: $PALADIN;
+							}
+							&:hover {
+								background: $PALADIN;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $PALADIN;
+					}
+					svg > g > path {
+						fill: $PALADIN;
+					}
+				}
+			}
+			button:hover {
+				background: $PALADIN;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $PALADIN;
+				}
+			}
+		}
+		&.monk {
+			h3 {
+				color: $MONK;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $MONK;
+				}
+				.proficiency {
+					&--element {
+						background: $MONK;
+						&:after {
+							color: $MONK;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $MONK;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $MONK;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $MONK;
+								}
+							}
+							&:after {
+								background: $MONK;
+							}
+							&:hover {
+								background: $MONK;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $MONK;
+					}
+					svg > g > path {
+						fill: $MONK;
+					}
+				}
+			}
+			button:hover {
+				background: $MONK;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $MONK;
+				}
+			}
+		}
+		&.fighter {
+			h3 {
+				color: $FIGHTER;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $FIGHTER;
+				}
+				.proficiency {
+					&--element {
+						background: $FIGHTER;
+						&:after {
+							color: $FIGHTER;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $FIGHTER;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $FIGHTER;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $FIGHTER;
+								}
+							}
+							&:after {
+								background: $FIGHTER;
+							}
+							&:hover {
+								background: $FIGHTER;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $FIGHTER;
+					}
+					svg > g > path {
+						fill: $FIGHTER;
+					}
+				}
+			}
+			button:hover {
+				background: $FIGHTER;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $FIGHTER;
+				}
+			}
+		}
+		&.cleric {
+			h3 {
+				color: $CLERIC;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $CLERIC;
+				}
+				.proficiency {
+					&--element {
+						background: $CLERIC;
+						&:after {
+							color: $CLERIC;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $CLERIC;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $CLERIC;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $CLERIC;
+								}
+							}
+							&:after {
+								background: $CLERIC;
+							}
+							&:hover {
+								background: $CLERIC;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $CLERIC;
+					}
+					svg > g > path {
+						fill: $CLERIC;
+					}
+				}
+			}
+			button:hover {
+				background: $CLERIC;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $CLERIC;
+				}
+			}
+		}
+		&.druid {
+			h3 {
+				color: $DRUID;
+			}
+			.base-info {
+				.stripe .hit-dice li .label {
+					background: $DRUID;
+				}
+				.proficiency {
+					&--element {
+						background: $DRUID;
+						&:after {
+							color: $DRUID;
+						}
+					}
+				}
+				.level-wrapper {
+					.level {
+						.feat:hover {
+							.name {
+								color: $DRUID;
+							}
+						}
+						.prerequisit {
+							&:after {
+								background: $DRUID;
+							}
+						}
+						.optional {
+							&.active {
+								&:after {
+									background: $DRUID;
+								}
+							}
+							&:after {
+								background: $DRUID;
+							}
+							&:hover {
+								background: $DRUID;
+								.name {
+									color: $BACKGROUND;
+								}
+							}
+						}
+					}
+				}
+			}
+			.class-card {
+				&.active {
+					h3 {
+						color: $DRUID;
+					}
+					svg > g > path {
+						fill: $DRUID;
+					}
+				}
+			}
+			button:hover {
+				background: $DRUID;
+			}
+			.close-wrapper .close {
+				&.active {
+					background: $DRUID;
+				}
 			}
 		}
 	}

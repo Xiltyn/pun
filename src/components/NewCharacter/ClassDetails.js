@@ -9,8 +9,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import Button from "../Button";
-import { cardBackground, logo } from "../../utils/SVG";
+import { cardBackground, classes, logo } from "../../utils/SVG";
 import { logger } from "../../utils/consoleLogger";
+import ClassLevel from "./ClassLevel";
 
 class ClassDetails extends Component {
 	constructor( props ) {
@@ -73,7 +74,9 @@ class ClassDetails extends Component {
 	}
 
 	static sortFeatures( data, level ) {
-		let result = {};
+		let result = {
+
+		};
 
 		if ( data ) {
 			if ( level ) {
@@ -89,7 +92,15 @@ class ClassDetails extends Component {
 									}
 								};
 							}
-							else {
+							else if (feat[ "-requires" ]) {
+								result = {
+									...result,
+									[ element[ "-level" ] ]: {
+										...result[ element[ "-level" ] ],
+										requires: result[ element[ "-level" ] ].requires ? [ ...result[ element[ "-level" ] ].requires, feat ] : [ feat ]
+									}
+								};
+							} else {
 								result = {
 									...result,
 									[ element[ "-level" ] ]: {
@@ -106,10 +117,21 @@ class ClassDetails extends Component {
 				for ( let element of data ) {
 					for ( let feat of element.feature ) {
 						if ( feat[ "-optional" ] && feat[ "-optional" ] === "YES" ) {
-							result.optional = [ ...result.optional, feat ];
+							result = {
+								...result,
+								optional: result.optional ? [ ...result.optional, feat ] : [ feat ]
+							}
+						} else if ( feat[ "-requires" ] ) {
+							result = {
+								...result,
+								requires: result.requires ? [ ...result.requires, feat ] : [ feat ]
+							}
 						}
 						else {
-							result.obligatory = [ ...result.obligatory, feat ];
+							result = {
+								...result,
+								obligatory: result.obligatory ? [ ...result.obligatory, feat ] : [ feat ]
+							}
 						}
 					}
 				}
@@ -145,7 +167,7 @@ class ClassDetails extends Component {
 		const { charClass, chosenFeat } = this.state;
 
 		return activeClass ?
-			<div className={ "details" + (activeClassName !== '' ? " active" : "") }>
+			<div className={ activeClassName.toLowerCase() + " details" + (activeClassName !== '' ? " active" : "") }>
 				<div className="close-wrapper" onClick={ onCloseClick }>
 					<div className={ "close" + (activeClassName !== "" ? " active" : "") }/>
 				</div>
@@ -187,61 +209,12 @@ class ClassDetails extends Component {
 
 						</div>
 					}
-					<div className="level-wrapper">
-						{
-							ClassDetails.sortFeatures( charClass.autolevel, "1" ).map( ( level, index ) => {
-								return (
-									<ul className={ "level level__" + Object.keys( level )[ 0 ] } key={ index }>
-										{
-											!ClassDetails.isOptional( level.feature ) &&
-											<h3 className=" txt-jaapokki txt-alt">
-												Level 1
-											</h3>
-										}
-										{
-											level[ Object.keys( level )[ 0 ] ].obligatory && level[ Object.keys(
-												level )[ 0 ] ].obligatory.map( ( feat, index ) =>
-												<li className={'feat' + ( feat["-requires"] ? feat["-requires"] === chosenFeat ? ' prerequisit selected' : ' prerequisit' : '' ) } key={ index }>
-													<h4 className="name txt-dim">
-														{ feat.name && feat.name }
-													</h4>
-													{
-														feat.text && ClassDetails.formatTextPara( feat.text )
-													}
-												</li>
-											)
-										}
-										{
-											level[ Object.keys( level )[ 0 ] ].optional && level[ Object.keys(
-												level )[ 0 ] ].optional.map( ( feat, index ) => {
-
-														return	<li className={ 'feat' + (feat[ "-optional" ] ? ' optional' : '') + (feat.name === chosenFeat ? ' active' : '') + (feat.name === chosenFeat || chosenFeat === '' ? ' visible' : '') }
-																	  onClick={ () => this._selecOptionalFeat( feat[ "-optional" ] && feat.name ) }
-																	  key={ index }>
-															<h4 className="name txt-dim">
-																{ feat.name && feat.name }
-															</h4>
-															{
-																feat.text && ClassDetails.formatTextPara( feat.text )
-															}
-														</li>
-
-												}
-											)
-										}
-
-									</ul>
-								)
-
-
-							} )
-						}
-					</div>
+					<ClassLevel autolevel={ charClass.autolevel } level={ "1" } chosenFeat={ chosenFeat } selectFeat={ this._selecOptionalFeat } />
 
 				</div>
 				<div className="class-card active">
 					<div className="symbol">
-						{ logo }
+						{ classes[ charClass.name.toLowerCase() ] }
 					</div>
 					<h3 className="h2 txt-dim txt-jaapokki">
 						{ charClass.name }
