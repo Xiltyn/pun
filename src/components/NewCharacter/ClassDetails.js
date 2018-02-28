@@ -18,7 +18,7 @@ class ClassDetails extends Component {
 
 		this.state = {
 			charClass: {},
-			chosenFeat: {}
+			chosenFeat: ''
 		};
 
 		this._selecOptionalFeat = this._selecOptionalFeat.bind( this )
@@ -201,7 +201,7 @@ class ClassDetails extends Component {
 										{
 											level[ Object.keys( level )[ 0 ] ].obligatory && level[ Object.keys(
 												level )[ 0 ] ].obligatory.map( ( feat, index ) =>
-												<li className='feat' style={ feat["-requires"] ? feat["-requires"] === chosenFeat ? { display: 'initial' } : { display: 'none' } : { display: 'initial' } } key={ index }>
+												<li className={'feat' + ( feat["-requires"] ? feat["-requires"] === chosenFeat ? ' prerequisit selected' : ' prerequisit' : '' ) } key={ index }>
 													<h4 className="name txt-dim">
 														{ feat.name && feat.name }
 													</h4>
@@ -213,17 +213,20 @@ class ClassDetails extends Component {
 										}
 										{
 											level[ Object.keys( level )[ 0 ] ].optional && level[ Object.keys(
-												level )[ 0 ] ].optional.map( ( feat, index ) =>
-												<li className={ 'feat' + (feat[ "-optional" ] ? ' optional' : '') + (feat.name === chosenFeat ? ' active' : '') }
-													onClick={ () => this._selecOptionalFeat( feat[ "-optional" ] && feat.name ) }
-													key={ index }>
-													<h4 className="name txt-dim">
-														{ feat.name && feat.name }
-													</h4>
-													{
-														feat.text && ClassDetails.formatTextPara( feat.text )
-													}
-												</li>
+												level )[ 0 ] ].optional.map( ( feat, index ) => {
+
+														return	<li className={ 'feat' + (feat[ "-optional" ] ? ' optional' : '') + (feat.name === chosenFeat ? ' active' : '') + (feat.name === chosenFeat || chosenFeat === '' ? ' visible' : '') }
+																	  onClick={ () => this._selecOptionalFeat( feat[ "-optional" ] && feat.name ) }
+																	  key={ index }>
+															<h4 className="name txt-dim">
+																{ feat.name && feat.name }
+															</h4>
+															{
+																feat.text && ClassDetails.formatTextPara( feat.text )
+															}
+														</li>
+
+												}
 											)
 										}
 
