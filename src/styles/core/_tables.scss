@@ -1,0 +1,21 @@
+.table {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	.row {
+		display: flex;
+		align-items: center;
+		.label {
+			width: 20%;
+		}
+		.values {
+			width: 80%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.cell {
+				width: 10%;
+			}
+		}
+	}
+}

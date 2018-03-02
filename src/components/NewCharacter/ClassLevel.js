@@ -17,12 +17,6 @@ const ClassLevel = ( { ...props } ) =>
 				return (
 					<ul className={ "level level__" + Object.keys( level )[ 0 ] } key={ index }>
 						{
-							!ClassDetails.isOptional( level.feature ) &&
-							<h3 className=" txt-jaapokki">
-								Level 1
-							</h3>
-						}
-						{
 							level[ Object.keys( level )[ 0 ] ].obligatory && level[ Object.keys(
 								level )[ 0 ] ].obligatory.map( ( feat, index ) =>
 								<li className={'feat' + ( feat["-requires"] ? feat["-requires"] === props.chosenFeat ? ' prerequisit selected' : ' prerequisit' : '' ) } key={ index }>

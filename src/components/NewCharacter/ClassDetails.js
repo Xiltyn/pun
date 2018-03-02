@@ -12,6 +12,7 @@ import Button from "../Button";
 import { cardBackground, classes, logo } from "../../utils/SVG";
 import { logger } from "../../utils/consoleLogger";
 import ClassLevel from "./ClassLevel";
+import SpellSlots from "./SpellSlots";
 
 class ClassDetails extends Component {
 	constructor( props ) {
@@ -143,6 +144,28 @@ class ClassDetails extends Component {
 		return [ ...result ];
 	}
 
+	static getSpellslots( data ) {
+		let result = [];
+
+		if( data ) {
+			data.map( ( level ) => {
+				if( level.slots ) {
+					result = [
+						...result,
+						{
+							label: 'Level ' + level["-level"],
+							slots: level.slots.split(",")
+						}
+					]
+				}
+			} )
+		}
+
+		logger( '=> getSpellslots() result :: ', 'info', result );
+
+		return result;
+	}
+
 	_selecOptionalFeat( name ) {
 		if ( name ) {
 			this.setState( {
@@ -210,6 +233,10 @@ class ClassDetails extends Component {
 
 						</div>
 					}
+					{
+						 ClassDetails.getSpellslots( charClass.autolevel ) && <SpellSlots data={ClassDetails.getSpellslots( charClass.autolevel )} />
+					}
+
 					<ClassLevel autolevel={ charClass.autolevel } level={ "1" } chosenFeat={ chosenFeat } selectFeat={ this._selecOptionalFeat } />
 
 				</div>
