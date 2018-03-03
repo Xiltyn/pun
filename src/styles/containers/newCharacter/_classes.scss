@@ -406,7 +406,7 @@
 			}
 			.proficiency {
 				display: flex;
-				padding: 0 4.8rem 4.8rem 640px;
+				padding: 0 4.8rem 4.8rem 580px;
 				text-align: center;
 
 				@media screen and ( max-width: 1440px ) {
@@ -417,7 +417,7 @@
 					position: relative;
 					display: block;
 					width: 150px;
-					margin-left: 1.6rem;
+					margin-right: 1.6rem;
 					padding: .2rem .4rem 0;
 					background: $PRIMARY;
 					&:after {
@@ -436,8 +436,14 @@
 				}
 			}
 
+			.spellability {
+				&--element:after {
+					content: 'Spell Ability'
+				}
+			}
+
 			.spell-slots {
-				padding: 0 0 2.4rem 580px;
+				padding: 1.6rem 0 4.8rem 580px;
 			}
 
 			.level-wrapper {
@@ -762,6 +768,11 @@
 						}
 					}
 				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $BARD;
+					}
+				}
 				.level-wrapper {
 					.level {
 						.feat:hover {
@@ -823,6 +834,11 @@
 						&:after {
 							color: $BARBARIAN;
 						}
+					}
+				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $BARBARIAN;
 					}
 				}
 				.level-wrapper {
@@ -892,6 +908,11 @@
 						}
 					}
 				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $WIZARD;
+					}
+				}
 				.level-wrapper {
 					.level {
 						.feat:hover {
@@ -957,6 +978,11 @@
 						&:after {
 							color: $WARLOCK;
 						}
+					}
+				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $WARLOCK;
 					}
 				}
 				.level-wrapper {
@@ -1026,6 +1052,11 @@
 						}
 					}
 				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $SORCERER;
+					}
+				}
 				.level-wrapper {
 					.level {
 						.feat:hover {
@@ -1091,6 +1122,11 @@
 						&:after {
 							color: $ROGUE;
 						}
+					}
+				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $ROGUE;
 					}
 				}
 				.level-wrapper {
@@ -1160,6 +1196,11 @@
 						}
 					}
 				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $RANGER;
+					}
+				}
 				.level-wrapper {
 					.level {
 						.feat:hover {
@@ -1225,6 +1266,11 @@
 						&:after {
 							color: $PALADIN;
 						}
+					}
+				}
+				.spell-slots {
+					.row:first-of-type {
+						background:$PALADIN ;
 					}
 				}
 				.level-wrapper {
@@ -1294,6 +1340,11 @@
 						}
 					}
 				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $MONK;
+					}
+				}
 				.level-wrapper {
 					.level {
 						.feat:hover {
@@ -1359,6 +1410,11 @@
 						&:after {
 							color: $FIGHTER;
 						}
+					}
+				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $FIGHTER;
 					}
 				}
 				.level-wrapper {
@@ -1428,6 +1484,11 @@
 						}
 					}
 				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $CLERIC;
+					}
+				}
 				.level-wrapper {
 					.level {
 						.feat:hover {
@@ -1493,6 +1554,11 @@
 						&:after {
 							color: $DRUID;
 						}
+					}
+				}
+				.spell-slots {
+					.row:first-of-type {
+						background: $DRUID;
 					}
 				}
 				.level-wrapper {

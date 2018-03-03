@@ -24,7 +24,7 @@ class SpellSlots extends Component {
 		return(
 			<div className="table spell-slots">
 				{
-					data.map( ( level, index ) =>
+					data.length > 1 && data.map( ( level, index ) =>
 						<div className="level row" key={index}>
 							<div className="label">
 								{ level.label }

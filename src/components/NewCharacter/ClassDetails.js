@@ -145,25 +145,44 @@ class ClassDetails extends Component {
 	}
 
 	static getSpellslots( data ) {
+		let columnLabels = { label: '', slots: ["Cantrips Known", "I", "II", "III", "IV", "V", "VI", "VII", "VII", "IX"], };
 		let result = [];
 
 		if( data ) {
 			data.map( ( level ) => {
 				if( level.slots ) {
-					result = [
-						...result,
-						{
-							label: 'Level ' + level["-level"],
-							slots: level.slots.split(",")
-						}
-					]
+					if( level.slots["-optional"] ) {
+						columnLabels = {
+							label: 'OPTIONAL',
+							slots: columnLabels.slots.slice(0, level.slots["#text"].split(",").length)
+						};
+						result = [
+							...result,
+							{
+								label: 'Level ' + level["-level"],
+								slots: level.slots["#text"].split(",")
+							}
+						]
+					} else {
+						columnLabels = {
+							label: '',
+							slots: columnLabels.slots.slice(0, level.slots.split(",").length)
+						};
+						result = [
+							...result,
+							{
+								label: 'Level ' + level["-level"],
+								slots: level.slots.split(",")
+							}
+						]
+					}
 				}
 			} )
 		}
 
 		logger( '=> getSpellslots() result :: ', 'info', result );
 
-		return result;
+		return result = [ columnLabels, ...result ];
 	}
 
 	_selecOptionalFeat( name ) {
@@ -229,6 +248,17 @@ class ClassDetails extends Component {
 									) : <div className="proficiency--element txt-dark txt-jaapokki">
 										{ charClass.proficiency }
 									</div>
+							}
+
+						</div>
+					}
+					{
+						charClass.spellAbility && <div className="p txt-dim proficiency spellability">
+							{
+
+								<div className="proficiency--element spellability--element txt-dark txt-jaapokki">
+									{ charClass.spellAbility }
+								</div>
 							}
 
 						</div>
