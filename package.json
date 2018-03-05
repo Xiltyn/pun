@@ -1,6 +1,6 @@
 {
 	"name": "pun",
-	"version": "0.0.22",
+	"version": "0.0.23",
 	"description": "Punnishers APP for pen&paper RPG",
 	"main": "./src/main.js",
 	"engines": {
