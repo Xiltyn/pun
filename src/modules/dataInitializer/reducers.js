@@ -7,11 +7,12 @@ function DataInitializerReducer( state = INITIAL_STATE, action ) {
 		case dataInitializerActions.GET_DATA:
 			return state = {
 				...state,
-				isProcessing: true
+				isLoading: true
 			};
 		case dataInitializerActions.SET_DATA:
 			return state = {
 				...state,
+				isLoading: false,
 				data: action.payload
 			};
 		default:

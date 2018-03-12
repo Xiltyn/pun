@@ -1,4 +1,16 @@
 
+@keyframes spinner {
+	0% {
+		transform: rotate( 0deg );
+	}
+	90% {
+		transform: rotate( 1080deg );
+	}
+	100% {
+		transform: rotate( 1080deg );
+	}
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;
