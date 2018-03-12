@@ -9,6 +9,7 @@
 		"yarn": "^1.3.2"
 	},
 	"scripts": {
+		"postinstall": "npm run build",
 		"start": "node ./bin/www --babel",
 		"dev": "node ./bin/dev.js",
 		"build": "node ./bin/build.js",
