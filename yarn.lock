@@ -2191,6 +2191,12 @@ detect-port-alt@1.1.3:
     address "^1.0.1"
     debug "^2.6.0"
 
+dice@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/dice/-/dice-0.0.2.tgz#1a3ab2db1ad684d90fc4d67b5c2aff897eb937f4"
+  dependencies:
+    optimist "0.1.7"
+
 diffie-hellman@^5.0.0:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.2.tgz#b5835739270cfe26acf632099fded2a07f209e5e"
@@ -4914,6 +4920,10 @@ opn@5.1.0, opn@^5.1.0:
   dependencies:
     is-wsl "^1.1.0"
 
+optimist@0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.1.7.tgz#f83a9644634d446bf3934518257d55dd6d08e183"
+
 optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
@@ -6174,6 +6184,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^2.0.0"
     inherits "^2.0.1"
+
+roll@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/roll/-/roll-1.2.0.tgz#f4b95051906955739ed3ef000a413955aab06a22"
 
 run-async@^0.1.0:
   version "0.1.0"

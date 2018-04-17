@@ -1,0 +1,257 @@
+.new-character--stats {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	max-width: 500px;
+	min-height: 300px;
+	padding: 1.6rem;
+	background: $BACKGROUND;
+	transform: translate(-50%, -50%);
+	box-shadow: $SH_MEDIUM;
+	box-sizing: border-box;
+
+	h2 {
+		width: 100%;
+		padding: .8rem 0;
+		text-align: center;
+	}
+
+	p {
+		width: 100%;
+		text-align: center;
+		padding: .8rem 0;
+	}
+
+	.rolls-wrapper {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4.8rem 0 0;
+
+		li {
+			position: relative;
+			width: 16%;
+			padding: .8rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			box-sizing: border-box;
+
+			h3 {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+				transition: all .3s ease-in-out;
+			}
+
+			.logo {
+				position: absolute;
+				top: 35%;
+				left: 50%;
+				width: 100%;
+				height: auto;
+				transform: translate(-50%, -50%);
+				transition: all .3s ease-in-out;
+
+				path {
+					fill: rgba($BASE, .3)
+				}
+			}
+
+			.loader {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+				transition: all .3s ease-in-out;
+
+				.copy {
+					display: none;
+				}
+			}
+
+			&.ready0 {
+				.logo path {
+					animation: glowing 1s ease-in-out infinite;
+				}
+			}
+			&.ready1 {
+				.logo path {
+					animation: glowing 1s ease-in-out .2s infinite;
+				}
+			}
+			&.ready2 {
+				.logo path {
+					animation: glowing 1s ease-in-out .4s infinite;
+				}
+			}
+			&.ready3 {
+				.logo path {
+					animation: glowing 1s ease-in-out .6s infinite;
+				}
+			}
+			&.ready4 {
+				.logo path {
+					animation: glowing 1s ease-in-out .8s infinite;
+				}
+			}
+			&.ready5 {
+				.logo path {
+					animation: glowing 1s ease-in-out 1s infinite;
+				}
+			}
+
+			&.rolling0 {
+				.logo {
+					animation: hide .3s ease-in-out forwards;
+				}
+				.loader {
+					animation: show .3s ease-in-out forwards;
+				}
+			}
+			&.rolling1 {
+				.logo {
+					animation: hide .3s ease-in-out .2s forwards;
+				}
+				.loader {
+					animation: show .3s ease-in-out .2s forwards;
+				}
+			}
+			&.rolling2 {
+				.logo {
+					animation: hide .3s ease-in-out .4s forwards;
+				}
+				.loader {
+					animation: show .3s ease-in-out .4s forwards;
+				}
+			}
+			&.rolling3 {
+				.logo {
+					animation: hide .3s ease-in-out .6s forwards;
+				}
+				.loader {
+					animation: show .3s ease-in-out .6s forwards;
+				}
+			}
+			&.rolling4 {
+				.logo {
+					animation: hide .3s ease-in-out .8s forwards;
+				}
+				.loader {
+					animation: show .3s ease-in-out .8s forwards;
+				}
+			}
+			&.rolling5 {
+				.logo {
+					animation: hide .3s ease-in-out 1s forwards;
+				}
+				.loader {
+					animation: show .3s ease-in-out 1s forwards;
+				}
+			}
+
+			&.done0 {
+				.logo {
+					opacity: 0;
+				}
+				h3 {
+					animation: show .3s ease-in-out .2s forwards;
+				}
+				.loader {
+					opacity: 0;
+				}
+			}
+			&.done1 {
+				.logo {
+					opacity: 0;
+				}
+				h3 {
+					animation: show .3s ease-in-out .2s forwards;
+				}
+				.loader {
+					opacity: 0;
+				}
+			}
+			&.done2 {
+				.logo {
+					opacity: 0;
+				}
+				h3 {
+					animation: show .3s ease-in-out .4s forwards;
+				}
+				.loader {
+					opacity: 0;
+				}
+			}
+			&.done3 {
+				.logo {
+					opacity: 0;
+				}
+				h3 {
+					animation: show .3s ease-in-out .6s forwards;
+				}
+				.loader {
+					opacity: 0;
+				}
+			}
+			&.done4 {
+				.logo {
+					opacity: 0;
+				}
+				h3 {
+					animation: show .3s ease-in-out .8s forwards;
+				}
+				.loader {
+					opacity: 0;
+				}
+			}
+			&.done5 {
+				.logo {
+					opacity: 0;
+				}
+				h3 {
+					animation: show .3s ease-in-out 1s forwards;
+				}
+				.loader {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+
+@keyframes glowing {
+	0% {
+		fill: rgba($BASE, .3)
+	}
+	50% {
+		fill: $PRIMARY
+	}
+	100% {
+		fill: rgba($BASE, .3)
+	}
+}
+
+@keyframes show {
+	from {
+		visibility: hidden;
+		opacity: 0;
+	}
+	to {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@keyframes hide {
+	from {
+		visibility: visible;
+		opacity: 1;
+	}
+	to {
+		visibility: hidden;
+		opacity: 0;
+	}
+}

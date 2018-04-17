@@ -17,6 +17,7 @@ import Races from "../components/NewCharacter/Races";
 import { sort } from "../utils/sort";
 import { Stats } from "../modules/character/models";
 import Classes from "../components/NewCharacter/Classes";
+import NewStats from "../components/NewCharacter/NewStats";
 
 const mapStateToProps = ( state ) => {
 	return {
@@ -42,15 +43,9 @@ class NewCharacter extends Component {
 			character: {}
 		};
 
-		this.handleCharacterData = this.handleCharacterData.bind( this );
-		this.updateProficiencies = this.updateProficiencies.bind( this );
-		this.newBackground = this.newBackground.bind( this );
-		this.updateTraits = this.updateTraits.bind( this );
-		this.updateStats = this.updateStats.bind( this );
-		this.newRace = this.newRace.bind( this );
 	}
 
-	handleCharacterData( data ) {
+	handleCharacterData = ( data ) => {
 		this.setState( {
 			character: data
 		} );
@@ -58,13 +53,13 @@ class NewCharacter extends Component {
 		this.state.character.name !== '' ? this.props.history.push( '/app/characters/new/background' ) : null
 	}
 
-	updateTraits( traits ) {
+	updateTraits = ( traits ) => {
 		const currentTraits = this.state.character.traits;
 
 		return [ ...currentTraits, ...traits ]
 	}
 
-	updateStats( stats ) {
+	updateStats = ( stats ) => {
 		const newStats = {
 			str: 0,
 			con: 0,
@@ -82,19 +77,19 @@ class NewCharacter extends Component {
 
 				logger( split[ 0 ] + ' ability bonus :: ', 'info', split[ 1 ] );
 
-				newStats[ split[ 0 ].toLowerCase() ] += parseInt(split[ 1 ]);
+				newStats[ split[ 0 ].toLowerCase() ] += parseInt( split[ 1 ] );
 			} )
 		}
 
 		return newStats;
 	}
 
-	updateProficiencies( proficiencies ) {
+	updateProficiencies = ( proficiencies ) => {
 		let newAbilities = this.state.character.abilities;
 
 		if ( newAbilities ) {
 			if ( proficiencies ) {
-				Object.keys(newAbilities).map( ( key, index ) => {
+				Object.keys( newAbilities ).map( ( key, index ) => {
 					proficiencies.split( ', ' ).map( ( prof ) => {
 						logger( 'Proficient in :: ', 'info', prof.toLowerCase() );
 						logger( 'Ability to update :: ', 'info', this.state.character.abilities[ prof.toLowerCase() ] )
@@ -109,9 +104,30 @@ class NewCharacter extends Component {
 		}
 
 		return newAbilities;
-	}
+	};
 
-	newBackground( backgroundName ) {
+	updateSaves = ( saves ) => {
+		let newSaves = this.state.character.savingThrows;
+
+		if ( newSaves ) {
+			if ( saves ) {
+				Object.keys( newSaves ).map( ( key, index ) => {
+					saves.split( ', ' ).map( ( prof ) => {
+						if ( key.toLowerCase() === prof.toLowerCase() ) {
+							Object.values( newSaves )[ index ].isProficient = true;
+							Object.values( newSaves )[ index ].base = Object.values(
+								newSaves )[ index ].base + this.state.character.proficiencyMod;
+						}
+
+					} );
+				} )
+			}
+		}
+
+		return newSaves;
+	};
+
+	newBackground = ( backgroundName ) => {
 		const chosenBackground = this.props.backgrounds.filter(
 			( background ) => background.name === backgroundName )[ 0 ];
 
@@ -120,7 +136,8 @@ class NewCharacter extends Component {
 			character: {
 				...this.state.character,
 				background: chosenBackground.name,
-				abilities: chosenBackground.proficiency ? this.updateProficiencies( chosenBackground.proficiency ) : this.state.character.proficiency,
+				abilities: chosenBackground.proficiency ? this.updateProficiencies(
+					chosenBackground.proficiency ) : this.state.character.proficiency,
 				traits: chosenBackground.trait ? chosenBackground.trait : this.state.character.traits
 			}
 		} );
@@ -134,26 +151,52 @@ class NewCharacter extends Component {
 		}, 300 );
 	}
 
-	newRace( chosenRace ) {
+	newRace = ( chosenRace ) => {
 
-		this.setState( {
-			character: {
-				...this.state.character,
-				race: chosenRace.name,
-				abilities: this.updateProficiencies( chosenRace.proficiency ),
-				stats: this.updateStats( chosenRace.ability ),
-				size: chosenRace.size,
-				speed: chosenRace.speed,
-				traits: this.updateTraits( chosenRace.trait )
-			}
-		} );
+		if ( chosenRace ) {
+			this.setState( {
+				character: {
+					...this.state.character,
+					race: chosenRace.name,
+					abilities: this.updateProficiencies( chosenRace.proficiency ),
+					stats: this.updateStats( chosenRace.ability ),
+					size: chosenRace.size,
+					speed: chosenRace.speed,
+					traits: this.updateTraits( chosenRace.trait )
+				}
+			} );
 
-		this.props.history.push( '/app/characters/new/class' );
+			this.props.history.push( '/app/characters/new/class' );
+		}
 
 		setTimeout( () => {
 			logger( 'NewCharacter.js curret state :: ', 'info', this.state );
 		}, 300 );
-	}
+	};
+
+	newClass = ( chosenClass ) => {
+
+		if ( chosenClass ) {
+			this.setState( {
+				character: {
+					...this.state.character,
+					className: chosenClass.name,
+					savingThrows: this.updateSaves( chosenClass.proficiency ),
+					stats: chosenClass.ability ? this.updateStats( chosenClass.ability ) : this.state.character.stats,
+					traits: chosenClass.trait ? this.updateTraits( chosenClass.trait ) : this.state.character.traits,
+					spellAbility: chosenClass.spellAbility && chosenClass.spellAbility,
+					hd: chosenClass.hd,
+					autolevel: chosenClass.autolevel
+				}
+			} );
+
+			this.props.history.push( '/app/characters/new/stats' );
+		}
+
+		setTimeout( () => {
+			logger( 'NewCharacter.js curret state :: ', 'info', this.state );
+		}, 300 );
+	};
 
 	componentDidMount() {
 		this.props.history.location !== ('/app/characters/new' || '/app/characters/new/name') && this.props.history.push(
@@ -166,18 +209,30 @@ class NewCharacter extends Component {
 
 		logger( '===> NewCharacter.js location match :: ', 'info', params.stepName );
 
-		const newName = params.stepName === 'name' ? <Name newCharacter={ this.handleCharacterData }/> : null;
-		const newBackground = params.stepName === 'background' ?
-			<Backgrounds backgrounds={ sort( backgrounds ) } newBackground={ this.newBackground }/> : null;
-		const newRace = params.stepName === 'race' ? <Races races={ sort( races ) } newRace={ this.newRace }/> : null;
-		const newClass = params.stepName === 'class' ? <Classes classes={classes} /> : null;
-
 		return (
 			<div className="new-character">
-				{ newName }
-				{ newBackground }
-				{ newRace }
-				{ newClass }
+				{
+					params.stepName === 'name' && <Name
+						newCharacter={ this.handleCharacterData }/>
+				}
+				{
+					params.stepName === 'background' && <Backgrounds
+						backgrounds={ sort( backgrounds ) }
+						newBackground={ this.newBackground }/>
+				}
+				{
+					params.stepName === 'race' && <Races
+						races={ sort( races ) }
+						newRace={ this.newRace }/>
+				}
+				{
+					params.stepName === 'class' && <Classes
+						newClass={ this.newClass }
+						classes={ classes }/>
+				}
+				{
+					params.stepName === 'stats' && <NewStats/>
+				}
 			</div>
 		)
 	}

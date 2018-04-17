@@ -30,7 +30,7 @@ class SpellSlots extends Component {
 								{ level.label }
 							</div>
 							<ul className="values">
-								{ logger( '==> Level element for spellSlots in map', 'warn', level.slots ) }
+								{/*{ logger( '==> Level element for spellSlots in map', 'warn', level.slots ) }*/}
 
 								{
 									level.slots.map( ( slot, index ) =>

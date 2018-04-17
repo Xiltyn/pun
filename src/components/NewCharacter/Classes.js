@@ -7,12 +7,21 @@
 // |>   From jakubbujko with <3   <|  
 // ------------------------------
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { logger } from "../../utils/consoleLogger";
 import ClassCard from "./ClassCard";
 import ClassDetails from "./ClassDetails";
 
 class Classes extends Component {
+	static propTypes = {
+		newClass: PropTypes.func.isRequired,
+		classes: PropTypes.object.isRequired
+	};
+
+	static defaultProps = {
+		classes: {}
+	};
+
 	constructor( props ) {
 		super( props );
 
@@ -61,10 +70,6 @@ class Classes extends Component {
 						become a Fighter or Barbarian. Maybe your main goal is to support your party, by being a Cleric
 						or a Bard. Choice is yours, you can be whoever you want to be!
 					</p>
-					{/*<p className="instructions txt-dim">*/}
-						{/*Mind that you can always go one step back, if your chosen race happens not to play well together*/}
-						{/*with a class you wish to choose in the next step*/}
-					{/*</p>*/}
 				</header>
 				<div className="cards" style={ { maxHeight: activeClassName !== "" ? '0' : '9999px' } }>
 					{
@@ -73,15 +78,16 @@ class Classes extends Component {
 								charClass={ charClass }
 								key={ index }
 								activeClass={ activeClassName }
-								onClick={ charClass.name !== activeClassName ? this.setActiveCard : ( name ) => logger( name + ' card active :: ',
-									'info', 'onClick event disabled' ) }/>
+								onClick={ charClass.name !== activeClassName ?
+									this.setActiveCard :
+									( name ) => logger( `${name} card active :: `, 'info', 'onClick event disabled' ) }/>
 						)
 					}
 				</div>
 				<ClassDetails
 					activeClass={ activeClass }
 					activeClassName={ activeClassName }
-					newRace={ ( charClass ) => newClass( charClass ) }
+					newClass={ ( charClass ) => newClass( charClass ) }
 					onCloseClick={ () => { this.setState( { activeClassName: '' } ) } }/>
 
 			</div>

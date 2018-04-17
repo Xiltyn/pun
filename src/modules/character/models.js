@@ -11,30 +11,30 @@ import React, { PropTypes } from 'react';
 import { logger } from "../../utils/consoleLogger";
 
 export class Stats {
-	constructor( str = 0, dex = 0, con = 0, int = 0, wis = 0, cha = 0 ) {
-		this.str = {
-			base: str,
-			modifier: Stats.getStatModifier( str ),
+	constructor( strength = 0, dexterity = 0, constitution = 0, intelligence = 0, wisdom = 0, charisma = 0 ) {
+		this.strength = {
+			base: strength,
+			modifier: Stats.getStatModifier( strength ),
 		};
-		this.dex = {
-			base: dex,
-			modifier: Stats.getStatModifier( dex ),
+		this.dexterity = {
+			base: dexterity,
+			modifier: Stats.getStatModifier( dexterity ),
 		};
-		this.con = {
-			base: con,
-			modifier: Stats.getStatModifier( con ),
+		this.constitution = {
+			base: constitution,
+			modifier: Stats.getStatModifier( constitution ),
 		};
-		this.int = {
-			base: int,
-			modifier: Stats.getStatModifier( int ),
+		this.intelligence = {
+			base: intelligence,
+			modifier: Stats.getStatModifier( intelligence ),
 		};
-		this.wis = {
-			base: wis,
-			modifier: Stats.getStatModifier( wis ),
+		this.wisdom = {
+			base: wisdom,
+			modifier: Stats.getStatModifier( wisdom ),
 		};
-		this.cha = {
-			base: cha,
-			modifier: Stats.getStatModifier( cha ),
+		this.charisma = {
+			base: charisma,
+			modifier: Stats.getStatModifier( charisma ),
 		}
 	}
 
@@ -49,12 +49,12 @@ export class Stats {
 }
 
 Stats.PropTypes = {
-	str: PropTypes.number.isRequired,
-	dex: PropTypes.number.isRequired,
-	con: PropTypes.number.isRequired,
-	int: PropTypes.number.isRequired,
-	wis: PropTypes.number.isRequired,
-	cha: PropTypes.number.isRequired
+	strength: PropTypes.number.isRequired,
+	dexterity: PropTypes.number.isRequired,
+	constitution: PropTypes.number.isRequired,
+	intelligence: PropTypes.number.isRequired,
+	wisdom: PropTypes.number.isRequired,
+	charisma: PropTypes.number.isRequired
 };
 
 export class Character {
@@ -69,32 +69,34 @@ export class Character {
 		this.speed = 0;
 		this.size = 0;
 		this.className = '';
-		this.classAbilities = '';
+		this.spellAbility = '';
+		this.hd = '';
+		this.proficiencyMod = 2;
 		this.stats = {};
 		this.spells = [];
 		this.traits = [];
 		this.savingThrows = {
-			str: {
+			strength: {
 				base: 0,
 				isProficient: false
 			},
-			dex: {
+			dexterity: {
 				base: 0,
 				isProficient: false
 			},
-			con: {
+			constitution: {
 				base: 0,
 				isProficient: false
 			},
-			int: {
+			intelligence: {
 				base: 0,
 				isProficient: false
 			},
-			wis: {
+			wisdom: {
 				base: 0,
 				isProficient: false
 			},
-			cha: {
+			charisma: {
 				base: 0,
 				isProficient: false
 			}

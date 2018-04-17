@@ -10,7 +10,6 @@
 					}
 				],
 				"react",
-
 				"stage-2"
 			],
 			"plugins": [
@@ -30,7 +29,8 @@
 						"modules": false
 					}
 				],
-				"react"
+				"react",
+				"stage-2"
 			],
 			"plugins": [
 				"react-hot-loader/babel",

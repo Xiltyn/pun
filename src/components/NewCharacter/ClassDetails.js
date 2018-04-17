@@ -15,6 +15,17 @@ import ClassLevel from "./ClassLevel";
 import SpellSlots from "./SpellSlots";
 
 class ClassDetails extends Component {
+	static propTypes = {
+		activeClassName: PropTypes.string.isRequired,
+		activeClass: PropTypes.object.isRequired,
+		onCloseClick: PropTypes.func.isRequired,
+		newClass: PropTypes.func.isRequired
+	};
+
+	static defaultProps = {
+		activeClass: ''
+	};
+
 	constructor( props ) {
 		super( props );
 
@@ -180,7 +191,7 @@ class ClassDetails extends Component {
 			} )
 		}
 
-		logger( '=> getSpellslots() result :: ', 'info', result );
+		//logger( '=> getSpellslots() result :: ', 'info', result );
 
 		return result = [ columnLabels, ...result ];
 	}
@@ -286,10 +297,5 @@ class ClassDetails extends Component {
 
 }
 
-ClassDetails.PropTypes = {
-	activeClassName: PropTypes.string.isRequired,
-	activeClass: PropTypes.object.isRequired,
-	onCloseClick: PropTypes.func.isRequired
-};
 
 export default ClassDetails;
